@@ -4,11 +4,11 @@ export const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Quick Money Tool",
-    "url": "https://www.quickmoneytool.co.za", 
+    "url": "https://www.quickmoneytool.com", 
     "description": "Free, accurate financial calculators for South Africa. Simplify your SARS income tax, vehicle finance, and retirement savings planning with our easy-to-use online tools.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.quickmoneytool.co.za/search?q={search_term_string}", //
+      "target": "https://www.quickmoneytool.com/search?q={search_term_string}", //
       "query-input": "required name=search_term_string"
     },
     "mainEntity": [
