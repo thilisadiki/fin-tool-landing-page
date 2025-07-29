@@ -31,8 +31,9 @@ const Footer = () => {
               </div>
               
               <div>
-                <h3 className="text-foreground font-semibold mb-4">Calculators</h3>
+                <h3 className="text-foreground font-semibold mb-4">Tools</h3>
                 <ul className="space-y-2 text-muted-foreground">
+                  <li><a href="https://quickmoneytool.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a></li>
                   <li><a href="https://taxcalc.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">SARS Tax Calculator</a></li>
                   <li><a href="https://drive.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</a></li>
                   <li><a href="https://retire.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Retirement Savings Calculator</a></li>
@@ -42,9 +43,26 @@ const Footer = () => {
               <div>
                 <h3 className="text-foreground font-semibold mb-4">Legal</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li><button onClick={() => handleToolClick("Help Center")} className="hover:text-foreground transition-colors">Help Center</button></li>
-                  <li><button onClick={() => handleToolClick("Contact Us")} className="hover:text-foreground transition-colors">Contact Us</button></li>
-                  <li><button onClick={() => handleToolClick("Privacy Policy")} className="hover:text-foreground transition-colors">Privacy Policy</button></li>
+                  <li>
+                    <a href="/about.html" className="hover:text-foreground transition-colors">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact.html" className="hover:text-foreground transition-colors">
+                      Contact Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/privacy-policy.html" className="hover:text-foreground transition-colors">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/terms-of-service.html" className="hover:text-foreground transition-colors">
+                      Terms of Service
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

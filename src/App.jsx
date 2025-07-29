@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactGA from 'react';
 import { Helmet } from 'react-helmet';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/sections/Header';
@@ -10,11 +9,6 @@ import FaqSection from '@/components/sections/FaqSection';
 import CtaSection from '@/components/sections/CtaSection';
 import Footer from '@/components/sections/Footer';
 import { websiteSchema, faqSchema } from '@/data/schemaData';
-
-// G4A Measurement ID
-const GA_MEASUREMENT_ID = 'G-42NMWE8582'; 
-
-ReactGA.initialize(GA_MEASUREMENT_ID);
 
 function App() {
   return (

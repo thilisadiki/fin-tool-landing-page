@@ -27,6 +27,7 @@ const Header = () => {
           <a href="#tools" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Calculators</a>
           <a href="#about" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">About</a>
           <a href="#faq" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+          <a href="/blog" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Blog</a>
           <ThemeToggle />
         </motion.nav>
       </div>
