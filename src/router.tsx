@@ -6,6 +6,10 @@ const SarsIncomeTaxCalculator = lazy(
   () => import('@/pages/calculators/SarsIncomeTaxCalculator'),
 );
 
+const VehicleFinanceCalculator = lazy(
+  () => import('@/pages/calculators/VehicleFinanceCalculator'),
+);
+
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -24,6 +28,14 @@ export const router = createBrowserRouter([
     element: (
       <Suspense fallback={<PageLoader />}>
         <SarsIncomeTaxCalculator />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/calculators/vehicle-finance-calculator',
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <VehicleFinanceCalculator />
       </Suspense>
     ),
   },

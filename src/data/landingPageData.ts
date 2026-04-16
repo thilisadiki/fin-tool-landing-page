@@ -40,7 +40,8 @@ export const tools: Tool[] = [
     color: "from-blue-500 to-indigo-600",
     features: ["Monthly payment estimates", "Balloon payment options", "Total cost of credit"],
     keywords: ["vehicle finance calculator", "car payment calculator", "car loan south africa"],
-    url: "https://drive.quickmoneytool.com/"
+    url: "/calculators/vehicle-finance-calculator",
+    isInternal: true
   },
   {
     icon: PiggyBank,

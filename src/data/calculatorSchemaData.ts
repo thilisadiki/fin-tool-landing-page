@@ -32,3 +32,21 @@ export function buildBreadcrumbSchema(
     })),
   };
 }
+
+export function buildVehicleCalculatorSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Vehicle Finance Calculator',
+    url: `${BASE_URL}/calculators/vehicle-finance-calculator`,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description:
+      'Free vehicle finance calculator for South Africa. Calculate your monthly car installments, interest, and balloon payments instantly.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'ZAR',
+    },
+  };
+}
