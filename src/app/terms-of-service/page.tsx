@@ -4,12 +4,27 @@ import { motion } from 'framer-motion';
 import { FileText } from 'lucide-react';
 import Link from 'next/link';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import { buildTermsOfServiceSchema } from '@/data/schemaData';
 
 const LAST_UPDATED = 'April 16, 2026';
+const LAST_UPDATED_ISO = '2026-04-16';
+const termsSchema = buildTermsOfServiceSchema(LAST_UPDATED_ISO);
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Terms of Service', url: '/terms-of-service' },
+];
 
 export default function TermsOfServicePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
+      />
+
+      <Breadcrumbs items={breadcrumbItems} />
+
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">

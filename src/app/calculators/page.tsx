@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Calculator } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import CalculatorHubFilter from '@/components/sections/CalculatorHubFilter';
 import { tools } from '@/data/landingPageData';
 import { buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
@@ -22,10 +23,11 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 const collectionSchema = {
   '@context': 'https://schema.org',
@@ -55,6 +57,8 @@ export default function CalculatorsHubPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
         <div className="max-w-4xl mx-auto text-center">

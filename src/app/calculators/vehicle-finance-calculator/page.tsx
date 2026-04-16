@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Car } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import VehicleFinanceForm from '@/components/calculators/vehicle/VehicleFinanceForm';
 import VehicleResultsPanel from '@/components/calculators/vehicle/VehicleResultsPanel';
 import VehicleAmortizationTable from '@/components/calculators/vehicle/VehicleAmortizationTable';
 import { calculateVehicleFinance, type VehicleFinanceInputs, type VehicleFinanceResult } from '@/lib/calculators/vehicleCalculator';
-import { buildVehicleCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildVehicleCalculatorSchema, buildBreadcrumbSchema, buildVehicleHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 import CalculatorFaq from '@/components/sections/CalculatorFaq';
 import { vehicleFinanceFaqs } from '@/data/calculatorFaqs';
 
@@ -21,11 +24,14 @@ const DEFAULT_INPUTS: VehicleFinanceInputs = {
 };
 
 const vehicleCalcSchema = buildVehicleCalculatorSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const vehicleHowToSchema = buildVehicleHowToSchema();
+const reviewedOn = getCalculatorDateModified('vehicle-finance-calculator');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'Vehicle Finance Calculator', url: '/calculators/vehicle-finance-calculator' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function VehicleFinanceCalculatorPage() {
   const [inputs, setInputs] = useState<VehicleFinanceInputs>(DEFAULT_INPUTS);
@@ -44,8 +50,14 @@ export default function VehicleFinanceCalculatorPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950 from-slate-50 via-blue-50 to-indigo-50">
@@ -63,6 +75,8 @@ export default function VehicleFinanceCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Calculator */}
       <Section maxWidth="max-w-4xl">

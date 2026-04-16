@@ -4,18 +4,24 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Globe } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import CurrencyForm from '@/components/calculators/currency/CurrencyForm';
 import CurrencyResults from '@/components/calculators/currency/CurrencyResults';
 import CurrencyChart from '@/components/calculators/currency/CurrencyChart';
 import { fetchSupportedCurrencies, fetchExchangeRates, type CurrencyRatesResponse, FALLBACK_CURRENCIES } from '@/lib/calculators/currencyApi';
-import { buildCurrencyConverterSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildCurrencyConverterSchema, buildBreadcrumbSchema, buildCurrencyConverterHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 
 const currencySchema = buildCurrencyConverterSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const currencyHowToSchema = buildCurrencyConverterHowToSchema();
+const reviewedOn = getCalculatorDateModified('currency-converter');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'Currency Converter', url: '/calculators/currency-converter' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function CurrencyConverterPage() {
   const [currencies, setCurrencies] = useState<Record<string, string>>(FALLBACK_CURRENCIES);
@@ -63,8 +69,14 @@ export default function CurrencyConverterPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(currencyHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950 from-slate-50 via-blue-50 to-indigo-50">
@@ -82,6 +94,8 @@ export default function CurrencyConverterPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Main Converter */}
       <Section maxWidth="max-w-4xl">

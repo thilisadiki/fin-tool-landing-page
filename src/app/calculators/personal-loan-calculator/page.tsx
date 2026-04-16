@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Landmark } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import LoanForm from '@/components/calculators/loan/LoanForm';
 import LoanResultsPanel from '@/components/calculators/loan/LoanResultsPanel';
 import LoanAmortizationTable from '@/components/calculators/loan/LoanAmortizationTable';
 import { calculatePersonalLoan, type PersonalLoanInputs, type PersonalLoanResult } from '@/lib/calculators/loanCalculator';
-import { buildPersonalLoanCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildPersonalLoanCalculatorSchema, buildBreadcrumbSchema, buildPersonalLoanHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 import CalculatorFaq from '@/components/sections/CalculatorFaq';
 import { personalLoanFaqs } from '@/data/calculatorFaqs';
 
@@ -20,11 +23,14 @@ const DEFAULT_INPUTS: PersonalLoanInputs = {
 };
 
 const loanCalcSchema = buildPersonalLoanCalculatorSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const loanHowToSchema = buildPersonalLoanHowToSchema();
+const reviewedOn = getCalculatorDateModified('personal-loan-calculator');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'Personal Loan Calculator', url: '/calculators/personal-loan-calculator' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function PersonalLoanCalculatorPage() {
   const [inputs, setInputs] = useState<PersonalLoanInputs>(DEFAULT_INPUTS);
@@ -43,8 +49,14 @@ export default function PersonalLoanCalculatorPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(loanHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-amber-950 dark:to-orange-950 from-slate-50 via-amber-50 to-orange-50">
@@ -62,6 +74,8 @@ export default function PersonalLoanCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Calculator */}
       <Section maxWidth="max-w-4xl">

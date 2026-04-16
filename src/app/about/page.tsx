@@ -1,8 +1,19 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Calculator, Shield, TrendingUp, Users, Heart, Target, Zap } from 'lucide-react';
+import { Calculator, Shield, TrendingUp, Users, Heart, Target, Zap, Linkedin, UserCheck } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import { aboutPageSchema, organizationSchema } from '@/data/schemaData';
+import { ndulamiso, buildPersonSchema } from '@/data/authors';
+
+const reviewerPersonSchema = buildPersonSchema(ndulamiso);
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about' },
+];
 
 const values = [
   {
@@ -34,6 +45,21 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewerPersonSchema) }}
+      />
+
+      <Breadcrumbs items={breadcrumbItems} />
+
       {/* Hero */}
       <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -81,12 +107,87 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We are a small, independent team of developers and finance enthusiasts based in South Africa. We are passionate about technology and financial literacy, and we combine the two to build tools that genuinely help people make better financial decisions.
+              Quick Money Tool is a small, independent team based in South Africa. Our calculators are built by developers who care about financial literacy, and every SARS, retirement, and personal finance tool is reviewed by a qualified contributor working inside the South African tax profession.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Quick Money Tool is not affiliated with any bank, financial institution, or government body. Our recommendations are unbiased, and our tools are designed to serve you, the user, first and foremost.
+              We are not affiliated with any bank, lender, or government body. Our tools and recommendations are independent, unbiased, and designed to serve you, the user, first.
             </p>
           </motion.div>
+        </div>
+      </Section>
+
+      {/* Reviewer */}
+      <Section maxWidth="max-w-4xl">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <UserCheck className="w-3.5 h-3.5" />
+            Reviewed by a professional
+          </div>
+          <h2 className="text-3xl font-bold text-foreground mb-3">Meet our technical reviewer</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Every SARS, tax, retirement and personal finance calculator on this site is reviewed against current South African tax tables and regulatory guidance.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-border bg-white dark:bg-slate-800/50 p-6 md:p-8">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+            <div
+              aria-hidden="true"
+              className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl font-bold shrink-0"
+            >
+              {ndulamiso.name
+                .split(' ')
+                .slice(0, 2)
+                .map((part) => part[0])
+                .join('')}
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl font-bold text-foreground mb-1">{ndulamiso.name}</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                {ndulamiso.jobTitle} at{' '}
+                {ndulamiso.affiliation.url ? (
+                  <a
+                    href={ndulamiso.affiliation.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-foreground"
+                  >
+                    {ndulamiso.affiliation.name}
+                  </a>
+                ) : (
+                  ndulamiso.affiliation.name
+                )}
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                {ndulamiso.credentials.map((credential) => (
+                  <span
+                    key={credential}
+                    className="text-xs px-3 py-1 rounded-full bg-accent border border-border text-foreground"
+                  >
+                    {credential}
+                  </span>
+                ))}
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-5">{ndulamiso.shortBio}</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                <Link
+                  href={`/authors/${ndulamiso.slug}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm font-medium transition-colors"
+                >
+                  View full profile
+                </Link>
+                <a
+                  href={ndulamiso.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:border-foreground text-sm font-medium transition-colors"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 

@@ -5,6 +5,13 @@ import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import { contactPageSchema } from '@/data/schemaData';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Contact', url: '/contact' },
+];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -27,6 +34,13 @@ export default function ContactPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+
+      <Breadcrumbs items={breadcrumbItems} />
+
       {/* Hero */}
       <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">

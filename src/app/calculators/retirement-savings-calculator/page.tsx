@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PiggyBank } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import RetirementForm from '@/components/calculators/retirement/RetirementForm';
 import RetirementResultsPanel from '@/components/calculators/retirement/RetirementResultsPanel';
 import RetirementProjectionTable from '@/components/calculators/retirement/RetirementProjectionTable';
 import { calculateRetirement, type RetirementInputs, type RetirementResult } from '@/lib/calculators/retirementCalculator';
-import { buildRetirementCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildRetirementCalculatorSchema, buildBreadcrumbSchema, buildRetirementHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 import CalculatorFaq from '@/components/sections/CalculatorFaq';
 import { retirementSavingsFaqs } from '@/data/calculatorFaqs';
 
@@ -23,11 +26,14 @@ const DEFAULT_INPUTS: RetirementInputs = {
 };
 
 const retirementSchema = buildRetirementCalculatorSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const retirementHowToSchema = buildRetirementHowToSchema();
+const reviewedOn = getCalculatorDateModified('retirement-savings-calculator');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'Retirement Savings Calculator', url: '/calculators/retirement-savings-calculator' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function RetirementSavingsCalculatorPage() {
   const [inputs, setInputs] = useState<RetirementInputs>(DEFAULT_INPUTS);
@@ -47,8 +53,14 @@ export default function RetirementSavingsCalculatorPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(retirementHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-purple-950 dark:to-pink-950 from-slate-50 via-purple-50 to-pink-50">
@@ -66,6 +78,8 @@ export default function RetirementSavingsCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Calculator */}
       <Section maxWidth="max-w-4xl">

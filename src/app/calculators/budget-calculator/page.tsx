@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Wallet } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import BudgetForm from '@/components/calculators/budget/BudgetForm';
 import BudgetResultsPanel from '@/components/calculators/budget/BudgetResultsPanel';
 import BudgetBreakdown from '@/components/calculators/budget/BudgetBreakdown';
 import { calculateBudget, type BudgetInputs, type BudgetResult } from '@/lib/calculators/budgetCalculator';
-import { buildBudgetCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildBudgetCalculatorSchema, buildBreadcrumbSchema, buildBudgetHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 import CalculatorFaq from '@/components/sections/CalculatorFaq';
 import { budgetFaqs } from '@/data/calculatorFaqs';
 
@@ -34,11 +37,14 @@ const DEFAULT_INPUTS: BudgetInputs = {
 };
 
 const budgetCalcSchema = buildBudgetCalculatorSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const budgetHowToSchema = buildBudgetHowToSchema();
+const reviewedOn = getCalculatorDateModified('budget-calculator');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'Budget Calculator', url: '/calculators/budget-calculator' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function BudgetCalculatorPage() {
   const [inputs, setInputs] = useState<BudgetInputs>(DEFAULT_INPUTS);
@@ -56,8 +62,14 @@ export default function BudgetCalculatorPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(budgetHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-lime-950 dark:to-green-950 from-slate-50 via-lime-50 to-green-50">
@@ -75,6 +87,8 @@ export default function BudgetCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Calculator */}
       <Section maxWidth="max-w-4xl">

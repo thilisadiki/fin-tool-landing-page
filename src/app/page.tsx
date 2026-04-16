@@ -6,6 +6,11 @@ import LatestArticles from '@/components/sections/LatestArticles';
 import FaqSection from '@/components/sections/FaqSection';
 import CtaSection from '@/components/sections/CtaSection';
 import { websiteSchema, faqSchema } from '@/data/schemaData';
+import { buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+
+const homeBreadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+]);
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -21,6 +26,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeBreadcrumbSchema) }}
       />
       <HeroSection />
       <ToolsSection />

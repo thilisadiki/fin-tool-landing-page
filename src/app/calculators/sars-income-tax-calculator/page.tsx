@@ -4,12 +4,15 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileText } from 'lucide-react';
 import Section from '@/components/ui/Section';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import ReviewedBy from '@/components/ui/ReviewedBy';
+import { ndulamiso } from '@/data/authors';
 import TaxCalculatorForm from '@/components/calculators/tax/TaxCalculatorForm';
 import TaxResultsPanel from '@/components/calculators/tax/TaxResultsPanel';
 import TaxBreakdownTable from '@/components/calculators/tax/TaxBreakdownTable';
 import { calculateTax, type TaxInputs, type TaxResult } from '@/lib/calculators/taxCalculator';
 import { CURRENT_TAX_YEAR } from '@/data/taxData';
-import { buildTaxCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import { buildTaxCalculatorSchema, buildBreadcrumbSchema, buildTaxHowToSchema, getCalculatorDateModified } from '@/data/calculatorSchemaData';
 import { formatZAR } from '@/lib/formatters';
 import CalculatorFaq from '@/components/sections/CalculatorFaq';
 import { sarsTaxFaqs } from '@/data/calculatorFaqs';
@@ -25,11 +28,14 @@ const DEFAULT_INPUTS: TaxInputs = {
 };
 
 const taxCalcSchema = buildTaxCalculatorSchema();
-const breadcrumbSchema = buildBreadcrumbSchema([
+const taxHowToSchema = buildTaxHowToSchema();
+const reviewedOn = getCalculatorDateModified('sars-income-tax-calculator');
+const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: 'Calculators', url: '/calculators' },
   { name: 'SARS Income Tax Calculator', url: '/calculators/sars-income-tax-calculator' },
-]);
+];
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
 export default function SarsIncomeTaxCalculatorPage() {
   const [inputs, setInputs] = useState<TaxInputs>(DEFAULT_INPUTS);
@@ -48,8 +54,14 @@ export default function SarsIncomeTaxCalculatorPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(taxHowToSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
@@ -68,6 +80,8 @@ export default function SarsIncomeTaxCalculatorPage() {
           </motion.div>
         </div>
       </section>
+
+      <ReviewedBy author={ndulamiso} dateReviewed={reviewedOn} />
 
       {/* Calculator */}
       <Section maxWidth="max-w-4xl">
