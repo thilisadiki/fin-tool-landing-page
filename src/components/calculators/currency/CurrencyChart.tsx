@@ -134,7 +134,7 @@ export default function CurrencyChart({ fromCurrency, toCurrency }: CurrencyChar
                 }}
                 itemStyle={{ color: '#fff', fontWeight: 'bold' }}
                 labelStyle={{ color: '#94a3b8', marginBottom: '4px' }}
-                formatter={(value: number) => [value.toFixed(4), 'Rate']}
+                formatter={(value: any) => [Number(value).toFixed(4), 'Rate']}
                 labelFormatter={(label) => new Date(label).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
               />
               <Area 
