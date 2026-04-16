@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Calculator, Award } from 'lucide-react';
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-emerald-400" />
-                  <span className="text-muted-foreground">Free, Secure & Accurate</span>
+                  <span className="text-muted-foreground">Free, Secure &amp; Accurate</span>
                 </div>
               </div>
 
@@ -26,9 +26,9 @@ const Footer = () => {
                 <h3 className="text-foreground font-semibold mb-4">Tools</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li><a href="https://quickmoneytool.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a></li>
-                  <li><Link to="/calculators/sars-income-tax-calculator" className="hover:text-foreground transition-colors">SARS Tax Calculator</Link></li>
-                  <li><a href="https://drive.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</a></li>
-                  <li><a href="https://retire.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Retirement Savings Calculator</a></li>
+                  <li><Link href="/calculators/sars-income-tax-calculator" className="hover:text-foreground transition-colors">SARS Tax Calculator</Link></li>
+                  <li><Link href="/calculators/vehicle-finance-calculator" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</Link></li>
+                  <li><Link href="/calculators/retirement-savings-calculator" className="hover:text-foreground transition-colors">Retirement Savings Calculator</Link></li>
                 </ul>
               </div>
 

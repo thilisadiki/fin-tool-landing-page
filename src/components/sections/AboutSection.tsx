@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
 import { features } from '@/data/landingPageData';

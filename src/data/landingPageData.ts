@@ -50,7 +50,8 @@ export const tools: Tool[] = [
     color: "from-purple-500 to-pink-600",
     features: ["Compound growth projection", "Inflation adjustment", "Retirement goal tracking"],
     keywords: ["retirement calculator south africa", "retirement annuity", "savings goal"],
-    url: "https://retire.quickmoneytool.com/"
+    url: "/calculators/retirement-savings-calculator",
+    isInternal: true
   },
   {
     icon: Landmark,

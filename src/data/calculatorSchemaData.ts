@@ -50,3 +50,21 @@ export function buildVehicleCalculatorSchema() {
     },
   };
 }
+
+export function buildRetirementCalculatorSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Retirement Savings Calculator',
+    url: `${BASE_URL}/calculators/retirement-savings-calculator`,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description:
+      'Free retirement savings calculator for South Africa. Project your retirement annuity growth, estimate monthly income with the 4% Rule, and check if you are on track.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'ZAR',
+    },
+  };
+}

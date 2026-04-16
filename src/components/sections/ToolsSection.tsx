@@ -1,5 +1,7 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
 import { tools } from '@/data/landingPageData';
@@ -51,7 +53,7 @@ const ToolsSection = () => {
 
               <Button asChild className={`w-full mt-auto bg-gradient-to-r ${tool.color} hover:opacity-90 text-white dark:text-white`}>
                 {tool.isInternal ? (
-                  <Link to={tool.url}>
+                  <Link href={tool.url}>
                     Use {tool.title.split(' ')[0]} Calculator
                   </Link>
                 ) : (

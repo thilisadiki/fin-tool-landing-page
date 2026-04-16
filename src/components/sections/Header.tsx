@@ -1,10 +1,13 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Calculator } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 function NavAnchor({ hash, children }: { hash: string; children: React.ReactNode }) {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const href = pathname === '/' ? hash : `/${hash}`;
 
   return (
@@ -22,7 +25,7 @@ const Header = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <Link to="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-lg flex items-center justify-center">
               <Calculator className="w-6 h-6 text-white" />
             </div>
