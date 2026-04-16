@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
@@ -28,6 +28,16 @@ export const metadata: Metadata = {
     'free financial tools',
   ],
   metadataBase: new URL('https://www.quickmoneytool.com'),
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/logo-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo-192-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/logo-512-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/logo-180.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/logo-32.png'],
+  },
   openGraph: {
     type: 'website',
     siteName: 'Quick Money Tool',
@@ -40,6 +50,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -48,7 +65,6 @@ export default function RootLayout({
   return (
     <html lang="en-ZA" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7185526762692935"
