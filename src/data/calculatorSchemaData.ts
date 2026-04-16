@@ -105,3 +105,21 @@ export function buildBudgetCalculatorSchema() {
   };
 }
 
+export function buildCurrencyConverterSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Currency Converter',
+    url: `${BASE_URL}/calculators/currency-converter`,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description:
+      'Free real-time currency converter supporting international exchange rates and historical trends.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'ZAR',
+    },
+  };
+}
+

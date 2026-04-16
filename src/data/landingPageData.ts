@@ -78,9 +78,10 @@ export const tools: Tool[] = [
     title: "Currency Conversion",
     description: "Get up-to-date exchange rates. Convert between the South African Rand (ZAR) and major international currencies instantly.",
     color: "from-cyan-500 to-sky-600",
-    features: ["Live exchange rates", "Major world currencies", "Simple conversion interface"],
-    keywords: ["currency converter", "exchange rate", "zar to usd"],
-    url: "https://convert.quickmoneytool.com"
+    features: ["Real-time rates", "Multiple currencies", "Historical data charts"],
+    keywords: ["currency converter", "exchange rates", "foreign exchange"],
+    url: "/calculators/currency-converter",
+    isInternal: true
   }
 ];
 
