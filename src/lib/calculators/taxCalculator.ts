@@ -7,6 +7,7 @@ export interface TaxInputs {
   ageCategory: AgeCategory;
   medicalAidMembers: number;
   retirementContribution: number;
+  includeUIF: boolean;
 }
 
 export interface BracketResult {
@@ -25,6 +26,8 @@ export interface TaxResult {
   annualRebates: number;
   annualMedicalCredits: number;
   annualTaxPayable: number;
+  annualUIF: number;
+  monthlyUIF: number;
   monthlyTax: number;
   monthlyGross: number;
   monthlyNet: number;
@@ -115,9 +118,14 @@ export function calculateTax(
 
   const monthlyGross = annualGrossIncome / 12;
   const monthlyTax = annualTaxPayable / 12;
-  const monthlyNet = monthlyGross - monthlyTax;
+  
+  // UIF Calculation (1% capped at R177.12 per month)
+  const monthlyUIF = inputs.includeUIF ? Math.min(monthlyGross * 0.01, 177.12) : 0;
+  const annualUIF = monthlyUIF * 12;
+  
+  const monthlyNet = monthlyGross - monthlyTax - monthlyUIF;
   const effectiveTaxRate =
-    annualGrossIncome > 0 ? (annualTaxPayable / annualGrossIncome) * 100 : 0;
+    annualGrossIncome > 0 ? ((annualTaxPayable + annualUIF) / annualGrossIncome) * 100 : 0;
 
   return {
     annualGrossIncome,
@@ -127,6 +135,8 @@ export function calculateTax(
     annualRebates,
     annualMedicalCredits,
     annualTaxPayable,
+    annualUIF,
+    monthlyUIF,
     monthlyTax,
     monthlyGross,
     monthlyNet,

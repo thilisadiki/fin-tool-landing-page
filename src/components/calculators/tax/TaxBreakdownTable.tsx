@@ -63,9 +63,19 @@ export default function TaxBreakdownTable({ result }: TaxBreakdownTableProps) {
                 <span className="font-medium text-emerald-500">-{formatZAR(result.annualMedicalCredits)}</span>
               </div>
             )}
-            <div className="flex justify-between py-2 font-bold">
+            <div className="flex justify-between py-2 font-bold border-b border-border/50">
               <span className="text-foreground">Annual tax payable</span>
               <span className="text-foreground">{formatZAR(result.annualTaxPayable)}</span>
+            </div>
+            {result.annualUIF > 0 && (
+              <div className="flex justify-between py-2 border-b border-border/50">
+                <span className="text-muted-foreground">Annual UIF Contribution</span>
+                <span className="font-medium text-amber-500">{formatZAR(result.annualUIF)}</span>
+              </div>
+            )}
+            <div className="flex justify-between py-2 font-bold">
+              <span className="text-foreground">Total Annual Deductions (Tax + UIF)</span>
+              <span className="text-foreground">{formatZAR(result.annualTaxPayable + result.annualUIF)}</span>
             </div>
           </div>
         </AccordionContent>

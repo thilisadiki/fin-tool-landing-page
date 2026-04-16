@@ -124,6 +124,20 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
         />
       </div>
 
+      {/* UIF Toggle */}
+      <div className="flex items-center gap-3">
+        <input
+          type="checkbox"
+          id="includeUIF"
+          checked={inputs.includeUIF}
+          onChange={(e) => update({ includeUIF: e.target.checked })}
+          className="w-5 h-5 rounded border-input text-emerald-500 focus:ring-emerald-500"
+        />
+        <label htmlFor="includeUIF" className="text-sm font-medium text-foreground cursor-pointer">
+          Include UIF contribution (1% capped at R177.12/m)
+        </label>
+      </div>
+
       <Button
         size="lg"
         className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg py-6"

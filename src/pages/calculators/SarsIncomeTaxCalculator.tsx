@@ -19,6 +19,7 @@ const DEFAULT_INPUTS: TaxInputs = {
   ageCategory: 'under65',
   medicalAidMembers: 0,
   retirementContribution: 0,
+  includeUIF: true,
 };
 
 const taxCalcSchema = buildTaxCalculatorSchema();
