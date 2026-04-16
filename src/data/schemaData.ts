@@ -12,11 +12,6 @@ export const websiteSchema = {
     "name": "Quick Money Tool",
     "url": BASE_URL,
     "description": "Free, accurate financial calculators for South Africa. Simplify your SARS income tax, vehicle finance, and retirement savings planning with our easy-to-use online tools.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${BASE_URL}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    },
     "mainEntity": tools.map(tool => ({
       "@type": "WebPage",
       "name": tool.title,
