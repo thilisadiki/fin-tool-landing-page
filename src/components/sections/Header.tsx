@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Calculator } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -18,7 +17,7 @@ const Header = () => {
           </div>
           <span className="text-xl font-bold text-foreground">Quick Money Tool</span>
         </motion.a>
-        
+
         <motion.nav
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -27,7 +26,7 @@ const Header = () => {
           <a href="#tools" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Calculators</a>
           <a href="#about" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">About</a>
           <a href="#faq" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
-          <a href="/blog" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Blog</a>
+          <a href="/articles" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Articles</a>
           <ThemeToggle />
         </motion.nav>
       </div>

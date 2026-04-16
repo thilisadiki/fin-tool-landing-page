@@ -1,9 +1,13 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import react from '@vitejs/plugin-react';
-import { createLogger, defineConfig } from 'vite';
+import { createLogger, defineConfig, type Plugin } from 'vite';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const isDev = process.env.NODE_ENV !== 'production';
-let inlineEditPlugin, editModeDevPlugin;
+let inlineEditPlugin: (() => Plugin) | undefined;
+let editModeDevPlugin: (() => Plugin) | undefined;
 
 if (isDev) {
 	inlineEditPlugin = (await import('./plugins/visual-editor/vite-plugin-react-inline-editor.js')).default;
@@ -132,7 +136,7 @@ window.fetch = function(...args) {
 			return response;
 		})
 		.catch(error => {
-			if (!url.match(/\.html?$/i)) {
+			if (!url.match(/\\.html?$/i)) {
 				console.error(error);
 			}
 
@@ -141,7 +145,7 @@ window.fetch = function(...args) {
 };
 `;
 
-const addTransformIndexHtml = {
+const addTransformIndexHtml: Plugin = {
 	name: 'add-transform-index-html',
 	transformIndexHtml(html) {
 		return {
@@ -161,7 +165,7 @@ const addTransformIndexHtml = {
 				},
 				{
 					tag: 'script',
-					attrs: {type: 'module'},
+					attrs: { type: 'module' },
 					children: configHorizonsConsoleErrroHandler,
 					injectTo: 'head',
 				},
@@ -192,7 +196,7 @@ logger.error = (msg, options) => {
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
+		...(isDev && inlineEditPlugin && editModeDevPlugin ? [inlineEditPlugin(), editModeDevPlugin()] : []),
 		react(),
 		addTransformIndexHtml
 	],
@@ -204,7 +208,7 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},

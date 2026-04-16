@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
@@ -12,34 +11,34 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Free Financial Calculators for
+            Free Finance Calculators for
             <span className="bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"> South Africa </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Simplify your finances with Quick Money Tool. Get instant, accurate calculations for SARS income tax, vehicle finance, and retirement savings.
+            Simplify your finances with Quick Money Tool. Get instant, accurate calculations for SARS income tax, vehicle finance, personal loans and retirement savings.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white dark:text-white px-8 py-4 text-lg"
-              onClick={() => document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View All Calculators
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="border-border text-foreground hover:bg-accent hover:text-accent-foreground px-8 py-4 text-lg"
-              onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
             </Button>
           </div>
         </motion.div>
       </div>
-      
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}

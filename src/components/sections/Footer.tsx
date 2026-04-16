@@ -1,15 +1,6 @@
-import React from 'react';
 import { Calculator, Award } from 'lucide-react';
-import { toast } from '@/components/ui/use-toast';
 
 const Footer = () => {
-    const handleToolClick = (toolName) => {
-        toast({
-          title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-          description: `${toolName} will be available soon!`,
-        });
-    };
-
     return (
         <footer className="px-6 py-12 bg-accent/50 border-t border-border">
           <div className="max-w-7xl mx-auto">
@@ -22,14 +13,14 @@ const Footer = () => {
                   <span className="text-lg font-bold text-foreground">Quick Money Tool</span>
                 </div>
                 <p className="text-muted-foreground mb-4 max-w-md">
-                  Empowering South Africans with accurate, easy-to-use financial calculators for better money management and planning.
+                  Empowering South Africans with accurate, easy-to-use finance calculators for better money management and planning.
                 </p>
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-emerald-400" />
                   <span className="text-muted-foreground">Free, Secure & Accurate</span>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-foreground font-semibold mb-4">Tools</h3>
                 <ul className="space-y-2 text-muted-foreground">
@@ -39,7 +30,7 @@ const Footer = () => {
                   <li><a href="https://retire.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Retirement Savings Calculator</a></li>
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-foreground font-semibold mb-4">Legal</h3>
                 <ul className="space-y-2 text-muted-foreground">
@@ -66,10 +57,10 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            
+
             <div className="border-t border-border pt-8 text-center">
               <p className="text-muted-foreground">
-                © {new Date().getFullYear()} Quick Money Tool. All Rights Reserved. For estimation purposes only.
+                &copy; {new Date().getFullYear()} Quick Money Tool. All Rights Reserved. For estimation purposes only. | Website by <a href="https://thilisadiki.dev" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Jason Sadiki</a>
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import type { ToastActionElement, ToastProps } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
 
@@ -8,25 +9,38 @@ function generateId() {
   return count.toString()
 }
 
+type ToasterToast = ToastProps & {
+  id: string
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: ToastActionElement
+  dismiss: () => void
+  duration?: number
+}
+
+interface ToastState {
+  toasts: ToasterToast[]
+}
+
 const toastStore = {
   state: {
     toasts: [],
-  },
-  listeners: [],
-  
+  } as ToastState,
+  listeners: [] as Array<(state: ToastState) => void>,
+
   getState: () => toastStore.state,
-  
-  setState: (nextState) => {
+
+  setState: (nextState: ToastState | ((prev: ToastState) => ToastState)) => {
     if (typeof nextState === 'function') {
       toastStore.state = nextState(toastStore.state)
     } else {
       toastStore.state = { ...toastStore.state, ...nextState }
     }
-    
+
     toastStore.listeners.forEach(listener => listener(toastStore.state))
   },
-  
-  subscribe: (listener) => {
+
+  subscribe: (listener: (state: ToastState) => void) => {
     toastStore.listeners.push(listener)
     return () => {
       toastStore.listeners = toastStore.listeners.filter(l => l !== listener)
@@ -34,10 +48,12 @@ const toastStore = {
   }
 }
 
-export const toast = ({ ...props }) => {
+type ToastInput = Omit<ToasterToast, "id" | "dismiss">
+
+export const toast = ({ ...props }: ToastInput) => {
   const id = generateId()
 
-  const update = (props) =>
+  const update = (props: Partial<ToasterToast>) =>
     toastStore.setState((state) => ({
       ...state,
       toasts: state.toasts.map((t) =>
@@ -53,7 +69,7 @@ export const toast = ({ ...props }) => {
   toastStore.setState((state) => ({
     ...state,
     toasts: [
-      { ...props, id, dismiss },
+      { ...props, id, dismiss } as ToasterToast,
       ...state.toasts,
     ].slice(0, TOAST_LIMIT),
   }))
@@ -66,18 +82,18 @@ export const toast = ({ ...props }) => {
 }
 
 export function useToast() {
-  const [state, setState] = useState(toastStore.getState())
-  
+  const [state, setState] = useState<ToastState>(toastStore.getState())
+
   useEffect(() => {
     const unsubscribe = toastStore.subscribe((state) => {
       setState(state)
     })
-    
+
     return unsubscribe
   }, [])
-  
+
   useEffect(() => {
-    const timeouts = []
+    const timeouts: ReturnType<typeof setTimeout>[] = []
 
     state.toasts.forEach((toast) => {
       if (toast.duration === Infinity) {

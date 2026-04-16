@@ -1,6 +1,27 @@
-import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat } from 'lucide-react';
+import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, type LucideIcon } from 'lucide-react';
 
-export const tools = [
+export interface Tool {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  color: string;
+  features: string[];
+  keywords: string[];
+  url: string;
+}
+
+export interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+export const tools: Tool[] = [
   {
     icon: FileText,
     title: "SARS Income Tax Calculator",
@@ -57,7 +78,7 @@ export const tools = [
   }
 ];
 
-export const features = [
+export const features: Feature[] = [
   {
     icon: Calculator,
     title: "Accurate Calculations",
@@ -80,7 +101,7 @@ export const features = [
   }
 ];
 
-export const faqs = [
+export const faqs: Faq[] = [
   {
     question: "Are these financial calculators free to use?",
     answer: "Yes, absolutely! All financial tools on Quick Money Tool are 100% free to use. Our goal is to provide accessible financial planning resources for all South Africans."
