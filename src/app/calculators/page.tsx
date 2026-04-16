@@ -186,7 +186,11 @@ export default function CalculatorsHubPage() {
               Every calculation runs entirely in your browser. Nothing you type
               is sent to our servers, and nothing is stored. Tax tables,
               interest-rate formulas, and amortisation schedules are reviewed
-              whenever SARS, the SARB, or major lenders update their numbers.
+              whenever{' '}
+              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>,
+              the{' '}
+              <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARB</a>,
+              or major lenders update their numbers.
               The tools are free, with no sign-up, no paywall, and no newsletter
               nag.
             </p>

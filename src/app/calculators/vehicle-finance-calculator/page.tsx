@@ -119,7 +119,9 @@ export default function VehicleFinanceCalculatorPage() {
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Understanding the Interest Rate</h3>
               <p className="text-muted-foreground mb-4">
-                The prime lending rate typically dictates the baseline interest for car loans in SA. Your personalized interest rate will depend on your credit score, affordability, and the size of your deposit. An interest rate below prime is excellent, while a rate higher than prime is more typical for high-risk profiles.
+                The{' '}
+                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">prime lending rate</a>{' '}
+                published by the South African Reserve Bank (SARB) typically dictates the baseline interest for car loans in SA. Your personalized interest rate will depend on your credit score, affordability, and the size of your deposit. An interest rate below prime is excellent, while a rate higher than prime is more typical for high-risk profiles.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">The Power of a Deposit</h3>
@@ -144,9 +146,21 @@ export default function VehicleFinanceCalculatorPage() {
           <div className="mt-8 p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border">
             <h3 className="text-xl font-semibold text-foreground mb-3">Important Costs to Remember</h3>
             <p className="text-muted-foreground mb-3">
-              Remember that when buying a car, the monthly installment is just one part of the cost. Always account for:
+              Remember that when buying a car, the monthly installment is just one part of the cost. The{' '}
+              <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator (NCR)</a>{' '}
+              regulates the maximum fees lenders may charge under the{' '}
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Act</a>.
+              Always account for:
             </p>
             <ul className="space-y-2 text-muted-foreground">
+              <li className="flex justify-between">
+                <span>Initiation Fee (once-off)</span>
+                <span className="text-foreground text-right">Up to R1,207.50 incl. VAT</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Monthly Service Fee</span>
+                <span className="text-foreground text-right">Up to R69.00/month</span>
+              </li>
               <li className="flex justify-between">
                 <span>Comprehensive Insurance</span>
                 <span className="text-foreground">Required by law for financed vehicles</span>
@@ -160,6 +174,10 @@ export default function VehicleFinanceCalculatorPage() {
                 <span className="text-foreground">Tyres, brakes, standard intervals</span>
               </li>
             </ul>
+            <p className="text-xs text-muted-foreground mt-3">
+              Fee caps sourced from the{' '}
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">NCR maximum rates &amp; fees schedule</a>.
+            </p>
           </div>
         </div>
       </Section>

@@ -131,7 +131,11 @@ export default function BudgetCalculatorPage() {
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">What is the 50/30/20 Rule?</h3>
               <p className="text-muted-foreground mb-4">
-                The 50/30/20 rule is a simple, intuitive budgeting framework introduced by Senator Elizabeth Warren. It suggests dividing your after-tax income (your net salary) into three main categories: 50% for Needs, 30% for Wants, and 20% for Savings and Investments. It provides a solid baseline for anyone looking to structure their finances without getting bogged down in complex spreadsheets.
+                The 50/30/20 rule is a simple, intuitive budgeting framework introduced by{' '}
+                <a href="https://en.wikipedia.org/wiki/Elizabeth_Warren" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">Senator Elizabeth Warren</a>{' '}
+                in her book{' '}
+                <a href="https://www.simonandschuster.com/books/All-Your-Worth/Elizabeth-Warren/9780743269889" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500"><em>All Your Worth: The Ultimate Lifetime Money Plan</em></a>.
+                It suggests dividing your after-tax income (your net salary) into three main categories: 50% for Needs, 30% for Wants, and 20% for Savings and Investments. It provides a solid baseline for anyone looking to structure their finances without getting bogged down in complex spreadsheets.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">50% Needs & Essentials</h3>

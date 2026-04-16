@@ -59,6 +59,25 @@ const Footer = () => {
                     </Link>
                   </li>
                 </ul>
+
+                <h3 className="text-foreground font-semibold mb-4 mt-8">Sources</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>
+                    <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                      SARS (sars.gov.za)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                      Reserve Bank (resbank.co.za)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                      NCR (ncr.org.za)
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -73,3 +92,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

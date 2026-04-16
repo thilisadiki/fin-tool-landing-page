@@ -144,7 +144,9 @@ export default function CurrencyConverterPage() {
 
               <h3 className="text-xl font-semibold text-foreground mb-3">What Influences the South African Rand (ZAR)?</h3>
               <p className="text-muted-foreground mb-4">
-                The Rand is often influenced by global commodity prices (especially gold and platinum), domestic political stability, inflation rates compared to trading partners, and changes in interest rates by the South African Reserve Bank (SARB). Because South Africa is an emerging market, the ZAR can sometimes be volatile during periods of global economic uncertainty as investors move to "safe haven" currencies like the USD.
+                The Rand is often influenced by global commodity prices (especially gold and platinum), domestic political stability, inflation rates compared to trading partners, and changes in interest rates by the{' '}
+                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Reserve Bank (SARB)</a>.
+                Because South Africa is an emerging market, the ZAR can sometimes be volatile during periods of global economic uncertainty as investors move to &quot;safe haven&quot; currencies like the USD.
               </p>
             </div>
 

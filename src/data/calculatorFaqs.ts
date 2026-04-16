@@ -7,12 +7,12 @@ export const sarsTaxFaqs: CalculatorFaq[] = [
   {
     question: 'How is PAYE calculated in South Africa?',
     answer:
-      'PAYE is worked out by taking your annual taxable income, applying the progressive SARS tax tables to get your annual tax liability, subtracting the primary rebate (plus the secondary rebate if you are 65–74 and tertiary rebate if 75+), and then dividing by 12 to get your monthly deduction. Employers must deduct PAYE every month and pay it over to SARS by the 7th of the following month.',
+      'PAYE is worked out by taking your annual taxable income, applying the progressive SARS tax tables to get your annual tax liability, subtracting the primary rebate (plus the secondary rebate if you are 65–74 and tertiary rebate if 75+), and then dividing by 12 to get your monthly deduction. Employers must deduct PAYE every month and pay it over to SARS by the 7th of the following month. See the official brackets at sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/.',
   },
   {
     question: 'When is the 2026/2027 tax return due in South Africa?',
     answer:
-      'SARS typically opens tax season for individual filers in July each year. For the 2026/2027 tax year, non-provisional taxpayers usually have until late October 2027 to file via eFiling, while provisional taxpayers have until late January 2028. Always check the official SARS website closer to the date for the exact cut-off, as the dates are confirmed each June.',
+      'SARS typically opens tax season for individual filers in July each year. For the 2026/2027 tax year, non-provisional taxpayers usually have until late October 2027 to file via eFiling, while provisional taxpayers have until late January 2028. Always check the official SARS website (www.sars.gov.za) closer to the date for the exact cut-off, as the dates are confirmed each June.',
   },
   {
     question: 'What is the difference between income tax and PAYE?',
@@ -27,7 +27,7 @@ export const sarsTaxFaqs: CalculatorFaq[] = [
   {
     question: 'How much can I deduct for retirement annuity contributions?',
     answer:
-      'Contributions to a pension fund, provident fund, or retirement annuity are deductible up to 27.5% of the greater of your taxable income or remuneration, with an annual cap of R350,000. This means putting money into an RA not only grows your retirement savings but also directly reduces the income SARS taxes you on.',
+      'Contributions to a pension fund, provident fund, or retirement annuity are deductible up to 27.5% of the greater of your taxable income or remuneration, with an annual cap of R350,000 (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/). This means putting money into an RA not only grows your retirement savings but also directly reduces the income SARS taxes you on.',
   },
   {
     question: 'What tax rebates do South African pensioners get?',
@@ -60,7 +60,7 @@ export const vehicleFinanceFaqs: CalculatorFaq[] = [
   {
     question: 'What interest rate can I expect on a car loan?',
     answer:
-      'South African vehicle finance rates are typically quoted as "prime plus X%". The exact spread depends on your credit score, deposit size, and the age of the car. New cars with good credit often get close to prime, while used cars or weaker credit profiles can pay prime + 3% or more. Always negotiate — dealers are paid commission on the rate they sell you.',
+      'South African vehicle finance rates are typically quoted as "prime plus X%". The current prime rate is set by the South African Reserve Bank (see resbank.co.za). The exact spread depends on your credit score, deposit size, and the age of the car. New cars with good credit often get close to prime, while used cars or weaker credit profiles can pay prime + 3% or more. Always negotiate — dealers are paid commission on the rate they sell you.',
   },
   {
     question: 'Should I finance or lease my next car?',
@@ -88,7 +88,7 @@ export const retirementSavingsFaqs: CalculatorFaq[] = [
   {
     question: 'What is the difference between a pension fund, provident fund, and retirement annuity?',
     answer:
-      'Pension and provident funds are employer-sponsored — your employer chooses the fund and usually matches part of your contribution. A retirement annuity (RA) is a personal product you open yourself, which is useful if you are self-employed or want to save more than your employer fund allows. All three enjoy the same tax deduction up to 27.5% of remuneration, capped at R350,000 per year.',
+      'Pension and provident funds are employer-sponsored — your employer chooses the fund and usually matches part of your contribution. A retirement annuity (RA) is a personal product you open yourself, which is useful if you are self-employed or want to save more than your employer fund allows. All three enjoy the same tax deduction up to 27.5% of remuneration, capped at R350,000 per year (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/).',
   },
   {
     question: 'Does the retirement calculator account for inflation?',
@@ -103,7 +103,7 @@ export const retirementSavingsFaqs: CalculatorFaq[] = [
   {
     question: 'What tax do I pay on my retirement savings when I retire?',
     answer:
-      'At retirement, you can take up to one-third of most retirement funds as a lump sum (provident funds contributed before 1 March 2021 may allow more). The lump sum is taxed on the retirement tax table, where the first R550,000 is tax-free. The remaining two-thirds must be used to buy an annuity (a living annuity or a guaranteed life annuity), and the monthly income from that annuity is taxed as normal income.',
+      'At retirement, you can take up to one-third of most retirement funds as a lump sum (provident funds contributed before 1 March 2021 may allow more). The lump sum is taxed on the retirement tax table, where the first R550,000 is tax-free (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/). The remaining two-thirds must be used to buy an annuity (a living annuity or a guaranteed life annuity), and the monthly income from that annuity is taxed as normal income.',
   },
 ];
 
@@ -121,12 +121,12 @@ export const personalLoanFaqs: CalculatorFaq[] = [
   {
     question: 'What is the maximum personal loan interest rate in South Africa?',
     answer:
-      'The National Credit Act caps unsecured personal loan interest rates. The current cap is the repo rate × 2.2 + 20% per annum (plus once-off initiation fees and monthly service fees regulated separately). Always ask for the total cost of credit, not just the headline rate, so you can compare apples to apples.',
+      'The National Credit Act (ncr.org.za) caps unsecured personal loan interest rates. The current cap is the repo rate × 2.2 + 20% per annum (plus once-off initiation fees capped at R1,207.50 and monthly service fees capped at R69, as per the NCR maximum rates & fees schedule). Always ask for the total cost of credit, not just the headline rate, so you can compare apples to apples.',
   },
   {
     question: 'Does paying off a personal loan early save money?',
     answer:
-      'Yes, but check the fine print. Under the NCA, lenders cannot charge early-settlement penalties on small agreements, but may charge a settlement fee equal to up to three months of interest on larger agreements if you settle more than three months before term end. Even with the fee, paying off a 15%+ loan early almost always beats keeping the money in a savings account.',
+      'Yes, but check the fine print. Under the NCA (enforced by the National Credit Regulator at ncr.org.za), lenders cannot charge early-settlement penalties on small agreements, but may charge a settlement fee equal to up to three months of interest on larger agreements if you settle more than three months before term end. Even with the fee, paying off a 15%+ loan early almost always beats keeping the money in a savings account.',
   },
   {
     question: 'What is APR and why is it different from the interest rate?',
@@ -192,7 +192,7 @@ export const currencyConverterFaqs: CalculatorFaq[] = [
   {
     question: 'How much forex can I take out of South Africa per year?',
     answer:
-      'South African tax residents have a R1 million single discretionary allowance (SDA) per calendar year for travel, gifts, maintenance, investment, or online purchases — you do not need SARS approval. Above that, up to R10 million per year requires a SARS tax compliance status (TCS) PIN, and anything above R10 million needs Reserve Bank approval.',
+      'South African tax residents have a R1 million single discretionary allowance (SDA) per calendar year for travel, gifts, maintenance, investment, or online purchases — you do not need SARS approval. Above that, up to R10 million per year requires a SARS tax compliance status (TCS) PIN, and anything above R10 million needs Reserve Bank approval (see resbank.co.za).',
   },
   {
     question: 'Why does the Rand weaken when the US dollar strengthens?',
@@ -202,6 +202,6 @@ export const currencyConverterFaqs: CalculatorFaq[] = [
   {
     question: 'Can I use this currency converter for SARS or accounting purposes?',
     answer:
-      'The converter is a useful reference but is not an official SARS rate. For tax returns and accounting, SARS publishes monthly and annual average exchange rates for the major currencies. Use those official tables when translating foreign income, capital gains, or foreign-denominated assets into Rand for your return.',
+      'The converter is a useful reference but is not an official SARS rate. For tax returns and accounting, SARS publishes monthly and annual average exchange rates for the major currencies (see sars.gov.za/legal-counsel/secondary-legislation/exchange-rates/). Use those official tables when translating foreign income, capital gains, or foreign-denominated assets into Rand for your return.',
   },
 ];

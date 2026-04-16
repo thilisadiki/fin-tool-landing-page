@@ -28,8 +28,10 @@ export interface VehicleFinanceResult {
 export function calculateVehicleFinance(inputs: VehicleFinanceInputs): VehicleFinanceResult {
   const { vehiclePrice, deposit, interestRate, loanTermMonths, balloonPercentage } = inputs;
   
-  const INITIATION_FEE = 1207.50;
-  const MONTHLY_SERVICE_FEE = 69.00;
+  // NCR maximum rates & fees schedule (National Credit Act)
+  // Source: https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf
+  const INITIATION_FEE = 1207.50;   // Maximum once-off initiation fee (incl. VAT)
+  const MONTHLY_SERVICE_FEE = 69.00; // Maximum monthly service fee
 
   const purePrincipal = Math.max(0, vehiclePrice - deposit);
   const principalFinanced = purePrincipal > 0 ? purePrincipal + INITIATION_FEE : 0;

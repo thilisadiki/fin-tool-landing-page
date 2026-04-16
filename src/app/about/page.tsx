@@ -25,7 +25,7 @@ const values = [
   {
     icon: TrendingUp,
     title: 'Always Accurate',
-    description: 'Our calculators are kept up-to-date with the latest SARS tax brackets, lending rates, and financial regulations for South Africa.',
+    description: 'Our calculators are kept up-to-date with the latest SARS tax brackets, lending rates, and financial regulations for South Africa. See sars.gov.za for current figures.',
     color: 'from-blue-500 to-indigo-600',
   },
   {
@@ -107,7 +107,12 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Quick Money Tool is a small, independent team based in South Africa. Our calculators are built by developers who care about financial literacy, and every SARS, retirement, and personal finance tool is reviewed by a qualified contributor working inside the South African tax profession.
+              Quick Money Tool is a small, independent team based in South Africa. Our calculators are built by developers who care about financial literacy, and every SARS, retirement, and personal finance tool is reviewed by a qualified contributor working inside the South African tax profession. We source our data from authorities like{' '}
+              <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>,{' '}
+              the{' '}
+              <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Reserve Bank</a>,{' '}
+              and the{' '}
+              <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator</a>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We are not affiliated with any bank, lender, or government body. Our tools and recommendations are independent, unbiased, and designed to serve you, the user, first.

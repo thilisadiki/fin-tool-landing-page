@@ -127,7 +127,9 @@ export default function RetirementSavingsCalculatorPage() {
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Retirement Annuities (RAs)</h3>
               <p className="text-muted-foreground mb-4">
-                A Retirement Annuity is a private pension plan in South Africa that offers significant tax benefits. Contributions to an RA are tax-deductible up to 27.5% of your taxable income (capped at R350,000 per year). This means your investment grows more efficiently because you&apos;re investing pre-tax money. RAs are available through most financial service providers.
+                A Retirement Annuity is a private pension plan in South Africa that offers significant tax benefits. Contributions to an RA are tax-deductible up to 27.5% of your taxable income (capped at R350,000 per year), as outlined in the{' '}
+                <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS retirement fund guide</a>.
+                This means your investment grows more efficiently because you&apos;re investing pre-tax money. RAs are available through most financial service providers.
               </p>
             </div>
 
@@ -160,7 +162,7 @@ export default function RetirementSavingsCalculatorPage() {
               </li>
               <li className="flex justify-between">
                 <span>Living Annuity</span>
-                <span className="text-foreground">Flexible income (2.5%–17.5% p.a.) at retirement</span>
+                <span className="text-foreground">Flexible income (2.5%–17.5% p.a.) at retirement — <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS guide</a></span>
               </li>
               <li className="flex justify-between">
                 <span>Life Annuity</span>

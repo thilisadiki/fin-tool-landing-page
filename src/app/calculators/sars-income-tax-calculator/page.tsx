@@ -126,7 +126,8 @@ export default function SarsIncomeTaxCalculatorPage() {
               <p className="text-muted-foreground mb-4">
                 South Africa uses a progressive tax system where higher earners pay a higher percentage of tax.
                 For the {CURRENT_TAX_YEAR.year} tax year, rates range from 18% on the first R245,100 up to 45%
-                on income above R1,878,600.
+                on income above R1,878,600. These brackets are published annually by the{' '}
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Revenue Service (SARS)</a>.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Tax Rebates</h3>
@@ -134,6 +135,9 @@ export default function SarsIncomeTaxCalculatorPage() {
                 All taxpayers receive a primary rebate of {formatZAR(CURRENT_TAX_YEAR.rebates.primary)}.
                 Taxpayers aged 65–74 receive an additional secondary rebate of {formatZAR(CURRENT_TAX_YEAR.rebates.secondary)},
                 and those 75 and older receive a further tertiary rebate of {formatZAR(CURRENT_TAX_YEAR.rebates.tertiary)}.
+                Rebate amounts are set by{' '}
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>{' '}
+                and adjust periodically with the annual Budget Speech.
               </p>
             </div>
 
@@ -144,12 +148,17 @@ export default function SarsIncomeTaxCalculatorPage() {
                 {' '}{formatZAR(CURRENT_TAX_YEAR.medicalCredits.mainMember)} for yourself,
                 {' '}{formatZAR(CURRENT_TAX_YEAR.medicalCredits.firstDependent)} for the first dependent,
                 and {formatZAR(CURRENT_TAX_YEAR.medicalCredits.additional)} for each additional dependent.
+                Credit amounts are specified in the{' '}
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/medical-tax-credit-rates/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS medical tax credit schedule</a>.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Retirement Fund Deductions</h3>
               <p className="text-muted-foreground mb-4">
                 Contributions to approved retirement funds (pension, provident, or retirement annuity) are deductible
                 up to 27.5% of your remuneration, with an annual cap of {formatZAR(CURRENT_TAX_YEAR.retirementDeductionCap)}.
+                This deduction is governed by section 11F of the Income Tax Act — see the{' '}
+                <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS retirement fund guide</a>{' '}
+                for full details.
               </p>
             </div>
           </div>
@@ -157,7 +166,9 @@ export default function SarsIncomeTaxCalculatorPage() {
           <div className="mt-8 p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border">
             <h3 className="text-xl font-semibold text-foreground mb-3">Tax Thresholds ({CURRENT_TAX_YEAR.year})</h3>
             <p className="text-muted-foreground mb-3">
-              You are not required to pay income tax if your annual taxable income is below these thresholds:
+              You are not required to pay income tax if your annual taxable income is below these thresholds.
+              Source:{' '}
+              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS — Rates of tax for individuals</a>.
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex justify-between">

@@ -14,7 +14,13 @@ const AboutSection = () => {
                     Quick Money Tool was created to demystify financial planning for everyday South Africans. We believe that everyone deserves access to high-quality, easy-to-use tools to make informed decisions about their money. Whether you're planning for your first car, submitting your tax returns, or saving for retirement, our calculators are here to provide clarity and confidence.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                    Our commitment is to accuracy, privacy, and simplicity. We continuously update our tools to reflect the latest SARS tax tables and financial regulations, ensuring you get the most reliable estimates. Your data is yours alone, and we never store it.
+                    Our commitment is to accuracy, privacy, and simplicity. We continuously update our tools to reflect the latest{' '}
+                    <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS tax tables</a>{' '}
+                    and financial regulations from the{' '}
+                    <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">NCR</a>{' '}
+                    and{' '}
+                    <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARB</a>,
+                    ensuring you get the most reliable estimates. Your data is yours alone, and we never store it.
                 </p>
                 <Link
                     href="/about"
