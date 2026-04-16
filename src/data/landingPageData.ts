@@ -8,6 +8,7 @@ export interface Tool {
   features: string[];
   keywords: string[];
   url: string;
+  isInternal?: boolean;
 }
 
 export interface Feature {
@@ -29,7 +30,8 @@ export const tools: Tool[] = [
     color: "from-emerald-500 to-teal-600",
     features: ["Updated 2024/2025 tax brackets", "Medical aid credits", "Retirement fund deductions"],
     keywords: ["sars tax calculator", "income tax south africa", "provisional tax"],
-    url: "https://taxcalc.quickmoneytool.com/"
+    url: "/calculators/sars-income-tax-calculator",
+    isInternal: true
   },
   {
     icon: Car,

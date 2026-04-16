@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Calculator, Award } from 'lucide-react';
 
 const Footer = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
                 <h3 className="text-foreground font-semibold mb-4">Tools</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li><a href="https://quickmoneytool.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a></li>
-                  <li><a href="https://taxcalc.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">SARS Tax Calculator</a></li>
+                  <li><Link to="/calculators/sars-income-tax-calculator" className="hover:text-foreground transition-colors">SARS Tax Calculator</Link></li>
                   <li><a href="https://drive.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</a></li>
                   <li><a href="https://retire.quickmoneytool.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Retirement Savings Calculator</a></li>
                 </ul>

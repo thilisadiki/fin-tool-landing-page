@@ -7,7 +7,7 @@ import FaqSection from '@/components/sections/FaqSection';
 import CtaSection from '@/components/sections/CtaSection';
 import { websiteSchema, faqSchema } from '@/data/schemaData';
 
-function App() {
+export default function HomePage() {
   return (
     <>
       <Helmet>
@@ -28,5 +28,3 @@ function App() {
     </>
   );
 }
-
-export default App;

@@ -1,0 +1,12 @@
+export function formatZAR(amount: number): string {
+  return new Intl.NumberFormat('en-ZA', {
+    style: 'currency',
+    currency: 'ZAR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
+}
+
+export function formatPercent(rate: number): string {
+  return `${rate.toFixed(1)}%`;
+}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
 import { tools } from '@/data/landingPageData';
@@ -49,9 +50,15 @@ const ToolsSection = () => {
               </ul>
 
               <Button asChild className={`w-full mt-auto bg-gradient-to-r ${tool.color} hover:opacity-90 text-white dark:text-white`}>
-                <a href={tool.url} target="_blank" rel="noopener noreferrer">
-                  Use {tool.title.split(' ')[0]} Calculator
-                </a>
+                {tool.isInternal ? (
+                  <Link to={tool.url}>
+                    Use {tool.title.split(' ')[0]} Calculator
+                  </Link>
+                ) : (
+                  <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                    Use {tool.title.split(' ')[0]} Calculator
+                  </a>
+                )}
               </Button>
             </div>
           </motion.article>
