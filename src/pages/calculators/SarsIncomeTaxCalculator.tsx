@@ -47,7 +47,7 @@ export default function SarsIncomeTaxCalculator() {
         />
         <meta
           name="keywords"
-          content="sars income tax calculator, paye calculator, south africa tax calculator, tax rebates, medical tax credits, 2024 2025 tax brackets"
+          content="sars income tax calculator, paye calculator, south africa tax calculator, tax rebates, medical tax credits, 2026 2027 tax brackets"
         />
         <link rel="canonical" href="https://www.quickmoneytool.com/calculators/sars-income-tax-calculator" />
         <meta property="og:title" content={`Free SARS Income Tax Calculator ${CURRENT_TAX_YEAR.year}`} />

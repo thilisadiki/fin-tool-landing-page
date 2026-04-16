@@ -28,7 +28,7 @@ export const tools: Tool[] = [
     title: "SARS Income Tax Calculator",
     description: "Estimate your annual income tax with our free SARS tax calculator. Perfect for provisional tax and tax return planning in South Africa.",
     color: "from-emerald-500 to-teal-600",
-    features: ["Updated 2024/2025 tax brackets", "Medical aid credits", "Retirement fund deductions"],
+    features: ["Updated 2026/2027 tax brackets", "Medical aid credits", "Retirement fund deductions"],
     keywords: ["sars tax calculator", "income tax south africa", "provisional tax"],
     url: "/calculators/sars-income-tax-calculator",
     isInternal: true
@@ -84,7 +84,7 @@ export const features: Feature[] = [
   {
     icon: Calculator,
     title: "Accurate Calculations",
-    description: "Our tools use the latest 2024/2025 financial data and tax rates for South Africa."
+    description: "Our tools use the latest 2026/2027 financial data and tax rates for South Africa."
   },
   {
     icon: Shield,
@@ -110,7 +110,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "How accurate is the SARS Income Tax Calculator?",
-    answer: "Our SARS tax calculator uses the official 2024/2025 tax brackets and rates provided by SARS. It provides a very accurate estimate for most individuals, perfect for provisional tax planning. However, for complex financial situations, we always recommend consulting with a certified financial advisor."
+    answer: "Our SARS tax calculator uses the official 2026/2027 tax brackets and rates provided by SARS. It provides a very accurate estimate for most individuals, perfect for provisional tax planning. However, for complex financial situations, we always recommend consulting with a certified financial advisor."
   },
   {
     question: "Is my personal information safe?",

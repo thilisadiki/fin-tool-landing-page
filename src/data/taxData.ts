@@ -55,4 +55,34 @@ export const TAX_2024_2025: TaxYearConfig = {
   retirementDeductionCap: 350_000,
 };
 
-export const CURRENT_TAX_YEAR = TAX_2024_2025;
+export const TAX_2026_2027: TaxYearConfig = {
+  year: '2026/2027',
+  brackets: [
+    { min: 0, max: 245_100, rate: 0.18, baseTax: 0 },
+    { min: 245_101, max: 383_100, rate: 0.26, baseTax: 44_118 },
+    { min: 383_101, max: 530_200, rate: 0.31, baseTax: 79_998 },
+    { min: 530_201, max: 695_800, rate: 0.36, baseTax: 125_599 },
+    { min: 695_801, max: 887_000, rate: 0.39, baseTax: 185_215 },
+    { min: 887_001, max: 1_878_600, rate: 0.41, baseTax: 259_783 },
+    { min: 1_878_601, max: Infinity, rate: 0.45, baseTax: 666_339 },
+  ],
+  rebates: {
+    primary: 17_820,
+    secondary: 9_765,
+    tertiary: 3_249,
+  },
+  thresholds: {
+    under65: 99_000,
+    '65to74': 153_250,
+    '75plus': 171_300,
+  },
+  medicalCredits: {
+    mainMember: 376,
+    firstDependent: 376,
+    additional: 254,
+  },
+  retirementDeductionRate: 0.275,
+  retirementDeductionCap: 350_000,
+};
+
+export const CURRENT_TAX_YEAR = TAX_2026_2027;
