@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8" />
+<title>Senior SEO Audit — Quick Money Tool</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  :root {
+    --fg: #0f172a;
+    --muted: #475569;
+    --accent: #0ea5e9;
+    --accent-dark: #0369a1;
+    --rule: #e2e8f0;
+    --code-bg: #f1f5f9;
+    --highlight: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+  }
+  .cover {
+    padding: 60mm 0 0 0;
+    text-align: left;
+    page-break-after: always;
+  }
+  .cover .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent-dark);
+    font-size: 9pt;
+    font-weight: 600;
+  }
+  .cover h1 {
+    font-size: 32pt;
+    line-height: 1.1;
+    margin: 10px 0 16px 0;
+    color: var(--fg);
+  }
+  .cover .sub {
+    font-size: 12pt;
+    color: var(--muted);
+    max-width: 140mm;
+  }
+  .cover .meta {
+    margin-top: 28mm;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8mm;
+    font-size: 10pt;
+  }
+  .cover .meta .label {
+    color: var(--muted);
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .cover .meta .value {
+    color: var(--fg);
+    font-weight: 500;
+  }
+  h1, h2, h3, h4 { color: var(--fg); line-height: 1.25; }
+  h2 {
+    font-size: 17pt;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 12.5pt;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: var(--accent-dark);
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 11pt;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    page-break-after: avoid;
+  }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0 6px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  code {
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 9pt;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 10px 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 9pt;
+    line-height: 1.45;
+    page-break-inside: avoid;
+  }
+  pre code { background: transparent; padding: 0; }
+  .callout {
+    background: #f0f9ff;
+    border-left: 4px solid var(--accent);
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+    page-break-inside: avoid;
+  }
+  .callout.warn {
+    background: #fff7ed;
+    border-left-color: #f59e0b;
+  }
+  .callout.crit {
+    background: #fef2f2;
+    border-left-color: #dc2626;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .pill.p0 { background: #fee2e2; color: #991b1b; }
+  .pill.p1 { background: #fef3c7; color: #92400e; }
+  .pill.p2 { background: #dbeafe; color: #1e40af; }
+  .pill.p3 { background: #e0e7ff; color: #3730a3; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid var(--rule);
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .toc {
+    background: #f8fafc;
+    padding: 14px 20px;
+    border-radius: 6px;
+    margin: 12px 0 24px 0;
+  }
+  .toc h3 { margin-top: 0; color: var(--fg); }
+  .toc ol { margin: 6px 0; padding-left: 22px; }
+  .toc li { color: var(--muted); }
+  .toc li strong { color: var(--fg); }
+  .section { page-break-inside: auto; }
+  .section-break { page-break-before: always; }
+  .file-ref {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 9pt;
+    color: var(--accent-dark);
+  }
+  .footer-note {
+    font-size: 8.5pt;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 8px;
+    margin-top: 24px;
+  }
+  .priority-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .action-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .action-item .num {
+    font-weight: 700;
+    color: var(--accent-dark);
+    font-size: 10pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="eyebrow">Senior SEO Audit</div>
+  <h1>Quick Money Tool<br/>Full Site SEO &amp; E-E-A-T Audit</h1>
+  <p class="sub">A detailed technical, on-page, structured data, content, and E-E-A-T audit of quickmoneytool.com — with a prioritized 90-day action plan.</p>
+  <div class="meta">
+    <div>
+      <div class="label">Domain</div>
+      <div class="value">quickmoneytool.com</div>
+    </div>
+    <div>
+      <div class="label">Stack</div>
+      <div class="value">Next.js 14 (App Router) · Tailwind · Vercel</div>
+    </div>
+    <div>
+      <div class="label">Niche</div>
+      <div class="value">South African personal finance (YMYL)</div>
+    </div>
+    <div>
+      <div class="label">Date</div>
+      <div class="value">16 April 2026</div>
+    </div>
+    <div>
+      <div class="label">Prepared for</div>
+      <div class="value">Jason Sadiki</div>
+    </div>
+    <div>
+      <div class="label">Scope</div>
+      <div class="value">Technical · Schema · Content · IA · E-E-A-T</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOC -->
+<section>
+  <h2>Contents</h2>
+  <div class="toc">
+    <ol>
+      <li><strong>Critical Technical SEO Gaps</strong> — sitemap, robots, canonicals, OG, favicons</li>
+      <li><strong>Schema / Structured Data</strong> — Organization, FAQ, HowTo, breadcrumbs</li>
+      <li><strong>E-E-A-T</strong> — the single biggest gap on a YMYL site</li>
+      <li><strong>Content Strategy &amp; Topical Authority</strong> — depth, comparison content, glossary</li>
+      <li><strong>On-Page / Metadata</strong> — titles, descriptions, H1 variants, CTAs</li>
+      <li><strong>Information Architecture &amp; Internal Linking</strong></li>
+      <li><strong>Performance / Core Web Vitals</strong></li>
+      <li><strong>Accessibility (indirect SEO)</strong></li>
+      <li><strong>Local / International SEO</strong></li>
+      <li><strong>Conversion / Engagement Features that Aid SEO</strong></li>
+      <li><strong>Prioritized 90-Day Action Plan</strong></li>
+      <li><strong>Competitive Landscape Note</strong></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="section section-break">
+  <h2>1. Critical Technical SEO Gaps <span class="pill p0">Ship First</span></h2>
+
+  <h3>1.1 Missing sitemap.xml</h3>
+  <p>No <span class="file-ref">src/app/sitemap.ts</span> exists. Google can't discover your URL set reliably. Ship a dynamic sitemap listing home, <code>/about</code>, <code>/contact</code>, <code>/privacy-policy</code>, <code>/terms-of-service</code>, and all six calculators with <code>lastModified</code>, <code>changeFrequency: 'monthly'</code>, and <code>priority</code> (home + tax calc at 1.0, others 0.8).</p>
+
+  <h3>1.2 Missing robots.txt</h3>
+  <p>No <span class="file-ref">src/app/robots.ts</span>. Add one that allows all user agents, references the sitemap, and optionally blocks <code>/api/</code> routes once you add them.</p>
+
+  <h3>1.3 Broken internal link → /articles (404)</h3>
+  <p><span class="file-ref">Header.tsx:44</span> points to <code>/articles</code> but the route doesn't exist. This wastes crawl budget and creates poor UX. Either build the hub or remove the link. The footer (<span class="file-ref">Footer.tsx:28</span>) simultaneously points to an <em>external</em> <code>quickmoneytool.com/blog</code> — pick one, and make blog/articles a first-class internal route.</p>
+
+  <h3>1.4 Homepage has no canonical URL</h3>
+  <p><span class="file-ref">src/app/layout.tsx</span> sets <code>metadataBase</code> but no <code>alternates.canonical</code>. Every sub-page has a canonical — homepage does not. Add <code>alternates: { canonical: '/' }</code> to root metadata (or better, set it in the homepage route).</p>
+
+  <h3>1.5 /calculators/ is not a real page</h3>
+  <p>Breadcrumbs point to <code>/#tools</code> (an anchor, not a page). Google will not treat this as a breadcrumb node. Build a real <code>/calculators/</code> index page: a hub with filters (by goal: "borrowing", "saving", "tax", "daily"), SEO copy, and interlinks to each calculator. This is also the site's most valuable internal link target.</p>
+
+  <h3>1.6 Invalid SearchAction schema</h3>
+  <p><span class="file-ref">schemaData.ts:17</span> points to <code>/search?q={search_term_string}</code> which doesn't exist. Google validates this — remove the <code>potentialAction</code> until you have a real site search, or you risk schema suppression.</p>
+
+  <h3>1.7 Legacy .htaccess in /public</h3>
+  <p><span class="file-ref">public/.htaccess</span> is leftover from Hostinger/Apache hosting. On Vercel/Next.js it does nothing, but it's served as a static file and leaks <code>X-Powered-By: Hostinger Horizons</code>. <strong>Delete it.</strong></p>
+
+  <h3>1.8 Missing OG image + Twitter Card</h3>
+  <p>Every page defines <code>openGraph</code> but no <code>images</code> array. No social previews = fewer clicks from social/referral traffic.</p>
+  <ul>
+    <li>Add <code>app/opengraph-image.png</code> (1200×630) as root fallback</li>
+    <li>Per-calculator OG images (or dynamic <code>opengraph-image.tsx</code> using <code>next/og</code>)</li>
+    <li>Add <code>twitter: { card: 'summary_large_image', ... }</code> in each layout</li>
+  </ul>
+
+  <h3>1.9 No favicon pack</h3>
+  <p>Only <span class="file-ref">public/favicon.svg</span> exists. Add <code>icon.png</code> (32×32), <code>apple-icon.png</code> (180×180), and a <code>manifest.json</code> via Next.js metadata icons convention.</p>
+
+  <h3>1.10 &lt;html lang&gt; should be en-ZA</h3>
+  <p><span class="file-ref">layout.tsx:39</span>. You target South Africa exclusively; declare the locale explicitly. Add <code>openGraph.locale: 'en_ZA'</code> too.</p>
+</section>
+
+<!-- 2 -->
+<section class="section section-break">
+  <h2>2. Schema / Structured Data</h2>
+
+  <h3>2.1 Missing Organization schema</h3>
+  <p>No publisher entity exists. Critical for E-E-A-T on YMYL (finance). Add to root layout:</p>
+  <pre><code>{
+  "@type": "Organization",
+  "name": "Quick Money Tool",
+  "url": "https://www.quickmoneytool.com",
+  "logo": "https://www.quickmoneytool.com/logo.png",
+  "sameAs": ["&lt;twitter&gt;", "&lt;linkedin&gt;", "&lt;facebook&gt;"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@quickmoneytool.com",
+    "contactType": "customer support",
+    "areaServed": "ZA"
+  }
+}</code></pre>
+
+  <h3>2.2 SoftwareApplication schema is thin</h3>
+  <p><span class="file-ref">calculatorSchemaData.ts</span> lacks <code>aggregateRating</code>, <code>author</code>, <code>publisher</code>, <code>datePublished</code>, <code>dateModified</code>, <code>featureList</code>, <code>softwareVersion</code>. Google surfaces rating stars and freshness signals from this.</p>
+
+  <h3>2.3 No calculator-specific FAQ schema</h3>
+  <p>Homepage has 4 FAQs. Every calculator page needs its own FAQ section with <code>FAQPage</code> schema attached. Currently <code>/calculators/sars-income-tax-calculator</code> has zero FAQs, missing massive long-tail traffic ("how is paye calculated", "when is tax return due in south africa").</p>
+
+  <h3>2.4 Missing schemas per page type</h3>
+  <ul>
+    <li><code>/about</code> → add <code>AboutPage</code> + <code>Organization</code></li>
+    <li><code>/contact</code> → add <code>ContactPage</code> with <code>ContactPoint</code></li>
+    <li>Every calculator → add <code>HowTo</code> schema ("How to calculate your SARS income tax") with steps matching the form fields</li>
+    <li><code>/privacy-policy</code>, <code>/terms-of-service</code> → <code>WebPage</code> with <code>lastReviewed</code></li>
+  </ul>
+
+  <h3>2.5 Breadcrumb nodes pointing to anchors</h3>
+  <p>"Calculators" → <code>/#tools</code> in every breadcrumb is invalid. Once a real <code>/calculators/</code> page exists, wire the breadcrumb to it.</p>
+
+  <h3>2.6 No BreadcrumbList on homepage</h3>
+  <p>Homepage should itself declare a trivial <code>BreadcrumbList</code> with just "Home".</p>
+</section>
+
+<!-- 3 -->
+<section class="section section-break">
+  <h2>3. E-E-A-T — The Single Biggest Gap</h2>
+
+  <div class="callout crit">
+    Finance is <strong>YMYL</strong> (Your Money Your Life). Google holds it to the highest trust bar. Currently the site reads as anonymous — this is your #1 ranking ceiling.
+  </div>
+
+  <h3>3.1 No named authors / credentials</h3>
+  <p><span class="file-ref">about/page.tsx:84</span> says "small, independent team of developers and finance enthusiasts" — no names, no qualifications. Competitors with named CFPs and tax practitioners will outrank you on query intent around SARS/retirement.</p>
+  <p><strong>Fix:</strong></p>
+  <ul>
+    <li>Add author bios with photos, qualifications (SAICA, CFP®, FPI), LinkedIn</li>
+    <li>Add a "Reviewed by" line on every calculator page with a dated reviewer (e.g., "Reviewed by [Name], CA(SA), 16 April 2026")</li>
+    <li>Create <code>/authors/[slug]</code> pages with <code>Person</code> schema and <code>knowsAbout</code></li>
+  </ul>
+
+  <h3>3.2 No "Last updated" dates</h3>
+  <p>No calculator page shows when tax brackets / logic were last verified. Add a visible "Tax tables updated: March 2026" line near the H1 + <code>dateModified</code> schema.</p>
+
+  <h3>3.3 No authoritative outbound citations</h3>
+  <p>You reference SARS, NCR, SARB, Elizabeth Warren (50/30/20) — none are linked. Link to:</p>
+  <ul>
+    <li>sars.gov.za (tax brackets/thresholds)</li>
+    <li>resbank.co.za (prime rate reference)</li>
+    <li>ncr.org.za (fee caps on personal loans — you quote R1,207.50 with no source)</li>
+  </ul>
+  <p>Outbound links to <code>.gov.za</code> and major authorities lift trust meaningfully.</p>
+
+  <h3>3.4 No trust social proof</h3>
+  <p>No testimonials, usage counts, press mentions, or review widgets. Consider integrating a third-party review (Trustpilot) badge once you have volume.</p>
+
+  <h3>3.5 Disclaimer placement</h3>
+  <p>Disclaimer only lives on <code>/about</code>. Add a compact "Not financial advice — estimates only" disclaimer directly on every calculator results panel, linking to <code>/about#disclaimer</code>.</p>
+</section>
+
+<!-- 4 -->
+<section class="section section-break">
+  <h2>4. Content Strategy &amp; Topical Authority</h2>
+
+  <h3>4.1 Long-form depth gap on calculators</h3>
+  <p>Each calculator has ~300–500 words of educational content. Competitors (TaxTim, Old Mutual, 10X) have 1,500–3,000+ words per page. To be competitive for "sars tax calculator" (high volume, high commercial intent):</p>
+  <p><strong>Add to the SARS page:</strong></p>
+  <ul>
+    <li>"Tax-free threshold explained" (~300w)</li>
+    <li>"How PAYE is deducted monthly" (~250w)</li>
+    <li>"Provisional tax vs PAYE" (~300w)</li>
+    <li>"Section 10(1)(o)(ii) foreign income exemption" (~200w)</li>
+    <li>"What is taxable: rental, side hustle, crypto" (~400w)</li>
+    <li>"When you don't need to submit a return" (~200w)</li>
+    <li>Worked example with screenshots</li>
+    <li>FAQ (8–12 questions)</li>
+  </ul>
+  <p>Apply same scaling to all six calculators.</p>
+
+  <h3>4.2 Blog/resource hub is missing</h3>
+  <p>Header teases <code>/articles</code> but nothing ships. For topical authority in this space you need a content layer:</p>
+  <ul>
+    <li><code>/articles/sars-tax-brackets-2026-2027</code> (direct keyword)</li>
+    <li><code>/articles/tax-free-savings-account-vs-retirement-annuity</code></li>
+    <li><code>/articles/vehicle-finance-vs-cash-purchase</code></li>
+    <li><code>/articles/50-30-20-budget-south-africa</code></li>
+    <li><code>/articles/interest-rates-explained</code></li>
+    <li>Glossary: <code>/glossary/[term]</code> for PAYE, UIF, SDL, TFSA, RA, Living Annuity (each 200–400w + <code>DefinedTerm</code> schema)</li>
+  </ul>
+  <p>Each article interlinks to the most relevant calculator — closes the SEO → conversion loop.</p>
+
+  <h3>4.3 Comparison content (high-intent long tail)</h3>
+  <ul>
+    <li>"Personal Loan vs Credit Card for Debt Consolidation"</li>
+    <li>"Balloon Payment: Pros and Cons for SA Car Buyers"</li>
+    <li>"RA vs Pension Fund vs Provident Fund"</li>
+  </ul>
+  <p>These rank quickly and drive qualified traffic into calculators.</p>
+
+  <h3>4.4 Missing cross-linking between calculators</h3>
+  <p>A user on <code>/calculators/vehicle-finance-calculator</code> should see "Related: Personal Loan Calculator | Budget Calculator" at the bottom. Currently each page is an island — hurts dwell time and crawl equity distribution.</p>
+
+  <h3>4.5 Homepage copy over-optimizes for brand</h3>
+  <p><span class="file-ref">HeroSection.tsx:15</span> subheading lists 4 calculators in prose — fine. But consider H2s on homepage that hit modifier keywords: "Free SA tax calculator", "Retirement planning tools for South Africa", etc., so the homepage competes for broader head terms.</p>
+
+  <h3>4.6 Currency converter content</h3>
+  <p>Only ~300w, weak on local intent. Add sections: "Best time to exchange ZAR", "How banks price their forex", "Rand watch: what moves the Rand". Cross-link to SARS for travel allowance rules.</p>
+</section>
+
+<!-- 5 -->
+<section class="section section-break">
+  <h2>5. On-Page / Metadata</h2>
+
+  <h3>5.1 Meta descriptions are templated</h3>
+  <p>All follow "Free X calculator for South Africa. Calculate Y..." — safe but uniform. Rewrite to include emotional hooks or specific CTA modifiers ("...in under 30 seconds", "updated 16 April 2026"). Aim for 150–158 chars.</p>
+
+  <h3>5.2 Title tag optimization</h3>
+  <p>Most titles good. Consider including the year in titles where freshness matters:</p>
+  <ul>
+    <li>"SARS Income Tax Calculator 2026/2027 | Free SA Take-Home Pay Tool"</li>
+    <li>"Car Finance Calculator South Africa 2026 | Monthly Repayments"</li>
+  </ul>
+
+  <h3>5.3 H1 variants</h3>
+  <p>Calculator H1s are plain ("SARS Income Tax Calculator"). Consider a slightly keyword-enriched variant: "SARS Income Tax Calculator for South Africa (2026/2027)" to match search intent fully.</p>
+
+  <h3>5.4 Button anchor text is weak</h3>
+  <p><span class="file-ref">ToolsSection.tsx:45</span> renders "Use SARS Calculator" by splitting <code>tool.title</code> on space — produces "Use Vehicle Calculator", "Use Currency Calculator" (wrong for "Currency Conversion"). Replace with descriptive CTAs like "Calculate my tax", "Estimate car repayments".</p>
+
+  <h3>5.5 Hero CTA's internal-anchor design</h3>
+  <p>Hero "View All Calculators" goes to <code>#tools</code>, not a real <code>/calculators/</code> page. Once the hub exists, point primary CTAs there.</p>
+</section>
+
+<!-- 6 -->
+<section class="section section-break">
+  <h2>6. Information Architecture &amp; Internal Linking</h2>
+
+  <h3>6.1 Current structure</h3>
+  <pre><code>/  (home — single-page hero/tools/about/FAQ)
+/about
+/contact
+/privacy-policy
+/terms-of-service
+/calculators/[6 calculators]</code></pre>
+
+  <h3>6.2 Recommended structure</h3>
+  <pre><code>/
+/calculators/                      ← NEW hub page (critical)
+/calculators/[6 calculators]
+/articles/                         ← NEW blog hub
+/articles/[slug]
+/glossary/                         ← NEW
+/glossary/[term]
+/authors/                          ← NEW for E-E-A-T
+/authors/[slug]
+/about
+/contact
+/privacy-policy
+/terms-of-service
+/disclaimer                        ← separate from /about</code></pre>
+
+  <h3>6.3 Internal link opportunities missed</h3>
+  <ul>
+    <li>No contextual links inside calculator educational content back to related calculators</li>
+    <li>Footer "Tools" column doesn't include the home page anchor links</li>
+    <li>No sitewide "Related tools" rail</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section class="section section-break">
+  <h2>7. Performance / Core Web Vitals</h2>
+
+  <h3>7.1 Framer-motion weight on calculator pages</h3>
+  <p>Every calculator page is <code>'use client'</code> and imports <code>framer-motion</code> just for a hero fade-in (<span class="file-ref">vehicle-finance-calculator/page.tsx:4</span>). You already migrated the homepage hero to CSS transitions — continue that migration. Framer-motion is ~50KB gzipped; replacing these intros with <code>animate-in fade-in</code> Tailwind utilities (already in use) cuts meaningful JS.</p>
+
+  <h3>7.2 All calculator pages force client-render</h3>
+  <p>The whole route is a client component. Split the static SEO prose and hero into a server component wrapper, leave only the interactive form as a client boundary. This gives better TTFB and FCP.</p>
+
+  <h3>7.3 No next/image usage anywhere</h3>
+  <p>Zero image optimization infra. When you add author photos, OG images, diagrams, and article hero images, route them through <code>next/image</code> for AVIF/WebP + lazy loading.</p>
+
+  <h3>7.4 Font loading</h3>
+  <p><code>Inter</code> with <code>subsets: ['latin']</code> is good. Consider <code>display: 'swap'</code> explicitly and preloading only the weights used.</p>
+
+  <h3>7.5 Third-party scripts</h3>
+  <p>GA4 + AdSense are <code>lazyOnload</code> — good. Consider moving GA to <code>afterInteractive</code> if you need earlier page_view pings, or use Partytown for AdSense.</p>
+</section>
+
+<!-- 8 -->
+<section class="section section-break">
+  <h2>8. Accessibility (Indirect SEO)</h2>
+  <ul>
+    <li>Form labels present on contact page — good.</li>
+    <li><span class="file-ref">Header.tsx:14</span> nav items <code>hidden md:inline-block</code> means <strong>mobile users have no navigation at all</strong> — major UX and SEO signal issue (high bounce on mobile). Build a mobile menu.</li>
+    <li>Icon-only CTA buttons don't have visible text on all states — audit for <code>aria-label</code>.</li>
+    <li>Color contrast on <code>text-muted-foreground</code> against <code>bg-accent/30</code> should be checked in WCAG — some areas look borderline.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section class="section">
+  <h2>9. Local / International SEO</h2>
+  <ul>
+    <li>Set <code>&lt;html lang="en-ZA"&gt;</code>.</li>
+    <li>Add <code>openGraph.locale: 'en_ZA'</code> in root metadata.</li>
+    <li>Add <code>Organization.address.addressCountry: 'ZA'</code> in schema.</li>
+    <li>If you expand to other markets (Namibia, Botswana use similar tax logic), build <code>hreflang</code> strategy early.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section class="section section-break">
+  <h2>10. Conversion / Engagement Features that Aid SEO</h2>
+
+  <h3>10.1 Shareable result permalinks</h3>
+  <p>Encode calculator state in the URL (e.g., <code>?income=50000&amp;age=under65</code>). Enables:</p>
+  <ul>
+    <li>Users sharing results (natural backlinks)</li>
+    <li>Ranking for long-tail calculation queries</li>
+    <li>Session depth / return visits</li>
+  </ul>
+
+  <h3>10.2 "Download as PDF" / "Email my results"</h3>
+  <p>Drives email capture and creates a backlinkable artifact ("I used Quick Money Tool's SARS calculator — here's the PDF").</p>
+
+  <h3>10.3 Comparison mode</h3>
+  <p>e.g., on the vehicle calculator, compare two deals side-by-side. Very linkable content.</p>
+
+  <h3>10.4 Embed widget</h3>
+  <p>Offer a free HTML embed of your SARS calculator — blogs and forums will link back, earning DR. This is how NerdWallet/Bankrate win in the US.</p>
+</section>
+
+<!-- 11 -->
+<section class="section section-break">
+  <h2>11. Prioritized 90-Day Action Plan</h2>
+
+  <h3>P0 — This week <span class="pill p0">Ship now</span></h3>
+  <div class="priority-grid">
+    <div class="action-item"><div class="num">1</div><div>Ship <code>app/sitemap.ts</code> and <code>app/robots.ts</code></div></div>
+    <div class="action-item"><div class="num">2</div><div>Delete <code>public/.htaccess</code></div></div>
+    <div class="action-item"><div class="num">3</div><div>Fix <code>/articles</code> 404 (remove link or stub the hub)</div></div>
+    <div class="action-item"><div class="num">4</div><div>Remove invalid <code>SearchAction</code> from website schema</div></div>
+    <div class="action-item"><div class="num">5</div><div>Add canonical to homepage</div></div>
+    <div class="action-item"><div class="num">6</div><div>Add OG image (<code>app/opengraph-image.png</code>) + Twitter card</div></div>
+    <div class="action-item"><div class="num">7</div><div>Add mobile navigation menu</div></div>
+    <div class="action-item"><div class="num">8</div><div>Change <code>&lt;html lang&gt;</code> to <code>en-ZA</code></div></div>
+  </div>
+
+  <h3>P1 — Next 2 weeks <span class="pill p1">High impact</span></h3>
+  <div class="priority-grid">
+    <div class="action-item"><div class="num">9</div><div>Build real <code>/calculators/</code> hub page; rewrite breadcrumbs</div></div>
+    <div class="action-item"><div class="num">10</div><div>Add <code>Organization</code> schema to root</div></div>
+    <div class="action-item"><div class="num">11</div><div>Add <code>dateModified</code> + "Last updated" UI on every calculator</div></div>
+    <div class="action-item"><div class="num">12</div><div>Add per-calculator FAQ + <code>FAQPage</code> schema (8–12 Qs each)</div></div>
+    <div class="action-item"><div class="num">13</div><div>Add <code>HowTo</code> schema per calculator</div></div>
+    <div class="action-item"><div class="num">14</div><div>Add named author + "Reviewed by" on calculators (<code>Person</code> schema)</div></div>
+    <div class="action-item"><div class="num">15</div><div>Add outbound citations to sars.gov.za, resbank.co.za, ncr.org.za</div></div>
+    <div class="action-item"><div class="num">16</div><div>Add "Related calculators" block on every calc page</div></div>
+    <div class="action-item"><div class="num">17</div><div>Replace framer-motion on calculator heroes with CSS</div></div>
+    <div class="action-item"><div class="num">18</div><div>Add favicon pack + <code>apple-icon.png</code></div></div>
+  </div>
+
+  <h3>P2 — Month 2 <span class="pill p2">Content build-out</span></h3>
+  <div class="priority-grid">
+    <div class="action-item"><div class="num">19</div><div>Ship blog at <code>/articles/</code> with 10 cornerstone posts</div></div>
+    <div class="action-item"><div class="num">20</div><div>Ship glossary at <code>/glossary/</code> with <code>DefinedTerm</code> schema</div></div>
+    <div class="action-item"><div class="num">21</div><div>Expand each calculator's educational content to 1,500+ words</div></div>
+    <div class="action-item"><div class="num">22</div><div>Add shareable permalink state to calculators</div></div>
+    <div class="action-item"><div class="num">23</div><div>Build embeddable widget + dedicated "Embed" page</div></div>
+    <div class="action-item"><div class="num">24</div><div>Add author/team pages (<code>/authors/[slug]</code>)</div></div>
+    <div class="action-item"><div class="num">25</div><div>Split each calculator into server (SEO shell) + client (form) components</div></div>
+  </div>
+
+  <h3>P3 — Month 3+ <span class="pill p3">Compounding growth</span></h3>
+  <div class="priority-grid">
+    <div class="action-item"><div class="num">26</div><div>Comparison content (RA vs TFSA, Balloon vs No-balloon, etc.)</div></div>
+    <div class="action-item"><div class="num">27</div><div>Review acquisition (Trustpilot/Product Hunt) for <code>aggregateRating</code> schema</div></div>
+    <div class="action-item"><div class="num">28</div><div>PR / digital outreach → SA personal finance publishers for backlinks</div></div>
+    <div class="action-item"><div class="num">29</div><div>Local expansion (hreflang) if you go regional</div></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="section section-break">
+  <h2>12. Competitive Landscape Note</h2>
+  <div class="callout warn">
+    For "sars tax calculator" the SERP is dominated by <strong>TaxTim</strong>, <strong>Old Mutual</strong>, <strong>Sage</strong>, <strong>Fincheck</strong>, and <strong>SARS itself</strong>.
+  </div>
+  <p>You will not outrank them on page one short term without:</p>
+  <ol>
+    <li>Named CA(SA) / CFP® authorship</li>
+    <li>Deep content per calculator (1,500w+, FAQ, HowTo)</li>
+    <li>Earned backlinks from SA fintech/media</li>
+  </ol>
+  <p>The embeddable-widget + free-PDF strategy is your fastest path to DR growth — both TaxTim and Fincheck grew this way.</p>
+
+  <div class="footer-note">
+    Prepared for quickmoneytool.com · 16 April 2026 · Save this document and revisit after each P0/P1/P2 milestone to re-audit progress.
+  </div>
+</section>
+
+</body>
+</html>
