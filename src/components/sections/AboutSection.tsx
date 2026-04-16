@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import { features } from '@/data/landingPageData';
 
@@ -11,9 +13,16 @@ const AboutSection = () => {
                 <p className="text-lg text-muted-foreground mb-4">
                     Quick Money Tool was created to demystify financial planning for everyday South Africans. We believe that everyone deserves access to high-quality, easy-to-use tools to make informed decisions about their money. Whether you're planning for your first car, submitting your tax returns, or saving for retirement, our calculators are here to provide clarity and confidence.
                 </p>
-                <p className="text-lg text-muted-foreground">
-                    Our commitment is to accuracy, privacy, and simplicity. We continuously update our tools to reflect the latest SARS tax tables and financial regulations, ensuring you get the most reliable estimates. Your data is yours alone—we never store it.
+                <p className="text-lg text-muted-foreground mb-6">
+                    Our commitment is to accuracy, privacy, and simplicity. We continuously update our tools to reflect the latest SARS tax tables and financial regulations, ensuring you get the most reliable estimates. Your data is yours alone, and we never store it.
                 </p>
+                <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300 font-semibold transition-colors group"
+                >
+                    Learn more about us
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
             </div>
             <div className="grid grid-cols-2 gap-6 animate-in fade-in zoom-in-95 duration-700 fill-mode-both delay-200">
                 {features.map((feature) => (

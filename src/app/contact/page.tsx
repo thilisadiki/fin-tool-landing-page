@@ -57,7 +57,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Get in Touch</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Whether it&apos;s feedback on an existing tool, a request for a new feature, or just a quick question — we read every message.
+                Whether it&apos;s feedback on an existing tool, a request for a new feature, or just a quick question, we read every message.
               </p>
             </div>
 

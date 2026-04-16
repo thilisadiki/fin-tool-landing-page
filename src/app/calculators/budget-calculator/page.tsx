@@ -127,7 +127,7 @@ export default function BudgetCalculatorPage() {
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">30% Wants & Lifestyle</h3>
               <p className="text-muted-foreground mb-4">
-                Budgeting shouldn&apos;t mean stripping all the joy from your life. The 30% allocation is for your wants — the "fun" part of your budget. This includes eating out, entertainment, hobbies, new clothes, Netflix subscriptions, or vacations. By explicitly allocating budget to these areas, you can spend guilt-free knowing your essentials and future are already covered.
+                Budgeting shouldn&apos;t mean stripping all the joy from your life. The 30% allocation is for your wants, the "fun" part of your budget. This includes eating out, entertainment, hobbies, new clothes, Netflix subscriptions, or vacations. By explicitly allocating budget to these areas, you can spend guilt-free knowing your essentials and future are already covered.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">20% Savings & Debt Reduction</h3>

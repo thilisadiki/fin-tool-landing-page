@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Read the Quick Money Tool privacy policy. Learn how we handle your data — all calculations are processed in your browser and we do not store personal financial information.',
+    'Read the Quick Money Tool privacy policy. Learn how we handle your data: all calculations are processed in your browser and we do not store personal financial information.',
   alternates: {
     canonical: '/privacy-policy',
   },

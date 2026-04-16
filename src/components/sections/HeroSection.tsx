@@ -7,7 +7,7 @@ const HeroSection = () => {
         <div>
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
             Free Finance Calculators for
-            <span className="bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"> South Africa </span>
+            <span className="bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"> South Africans </span>
           </h1>
 
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-150">

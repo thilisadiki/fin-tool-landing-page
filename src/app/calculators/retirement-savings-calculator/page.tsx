@@ -106,7 +106,7 @@ export default function RetirementSavingsCalculatorPage() {
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">The Power of Compound Interest</h3>
               <p className="text-muted-foreground mb-4">
-                Compound interest is the single most powerful force behind building retirement wealth. When your investment earns returns, those returns themselves earn returns in subsequent periods. Starting early — even with a small monthly contribution — can result in dramatically more wealth than starting later with a larger amount, purely because of the extra compounding years.
+                Compound interest is the single most powerful force behind building retirement wealth. When your investment earns returns, those returns themselves earn returns in subsequent periods. Starting early, even with a small monthly contribution, can result in dramatically more wealth than starting later with a larger amount, purely because of the extra compounding years.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Retirement Annuities (RAs)</h3>
@@ -123,7 +123,7 @@ export default function RetirementSavingsCalculatorPage() {
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Accounting for Inflation</h3>
               <p className="text-muted-foreground mb-4">
-                South African inflation has historically averaged around 5% per year. When projecting your retirement savings, you should think in &quot;real returns&quot; — your investment return minus inflation. For example, if your RA earns 9% annually and inflation is 5%, your real return is only 4%. This calculator allows you to factor in inflation so your projection reflects actual purchasing power.
+                South African inflation has historically averaged around 5% per year. When projecting your retirement savings, you should think in &quot;real returns&quot;, which is your investment return minus inflation. For example, if your RA earns 9% annually and inflation is 5%, your real return is only 4%. This calculator allows you to factor in inflation so your projection reflects actual purchasing power.
               </p>
             </div>
           </div>

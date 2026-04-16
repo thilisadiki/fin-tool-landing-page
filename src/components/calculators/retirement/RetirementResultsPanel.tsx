@@ -70,7 +70,7 @@ export default function RetirementResultsPanel({ result }: RetirementResultsPane
         <p className="text-lg font-bold">
           {result.onTrack
             ? '✅ You are on track to meet your retirement goal!'
-            : `⚠️ Shortfall of ${formatZAR(result.shortfall)} — consider increasing contributions.`}
+            : `⚠️ Shortfall of ${formatZAR(result.shortfall)}. Consider increasing contributions.`}
         </p>
       </motion.div>
 

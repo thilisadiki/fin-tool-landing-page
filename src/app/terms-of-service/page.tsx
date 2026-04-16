@@ -95,7 +95,7 @@ export default function TermsOfServicePage() {
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-3">6. Intellectual Property</h2>
             <p className="text-muted-foreground leading-relaxed">
-              All content on the Site — including but not limited to text, design, graphics, logos, code, and calculator logic — is the intellectual property of Quick Money Tool and is protected by applicable copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without prior written consent.
+              All content on the Site, including but not limited to text, design, graphics, logos, code, and calculator logic, is the intellectual property of Quick Money Tool and is protected by applicable copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without prior written consent.
             </p>
           </div>
 

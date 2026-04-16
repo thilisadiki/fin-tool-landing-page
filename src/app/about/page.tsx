@@ -45,7 +45,7 @@ export default function AboutPage() {
               About Quick Money Tool
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We believe that every South African deserves access to accurate, easy-to-use financial tools — no matter their background or income level.
+              We believe that every South African deserves access to accurate, easy-to-use financial tools, no matter their background or income level.
             </p>
           </motion.div>
         </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Quick Money Tool was created with a simple goal: to make financial planning accessible to everyone. We noticed that many South Africans struggle with understanding tax deductions, loan repayments, and retirement projections — not because of a lack of intelligence, but because of a lack of accessible tools.
+              Quick Money Tool was created with a simple goal: to make financial planning accessible to everyone. We noticed that many South Africans struggle with understanding tax deductions, loan repayments, and retirement projections, not because of a lack of intelligence, but because of a lack of accessible tools.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               That&apos;s why we built a suite of free, no-nonsense calculators that give you instant, accurate results without requiring you to create an account or hand over your personal information.
@@ -84,7 +84,7 @@ export default function AboutPage() {
               We are a small, independent team of developers and finance enthusiasts based in South Africa. We are passionate about technology and financial literacy, and we combine the two to build tools that genuinely help people make better financial decisions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Quick Money Tool is not affiliated with any bank, financial institution, or government body. Our recommendations are unbiased, and our tools are designed to serve you — the user — first and foremost.
+              Quick Money Tool is not affiliated with any bank, financial institution, or government body. Our recommendations are unbiased, and our tools are designed to serve you, the user, first and foremost.
             </p>
           </motion.div>
         </div>
