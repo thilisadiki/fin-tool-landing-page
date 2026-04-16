@@ -32,6 +32,7 @@ const HeroSection = () => {
               <a href="#about">Learn More</a>
             </Button>
           </div>
+          </div>
         </div>
       </div>
 
