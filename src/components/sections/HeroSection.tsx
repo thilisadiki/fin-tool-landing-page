@@ -4,15 +4,16 @@ const HeroSection = () => {
   return (
     <section className="relative px-6 py-20 overflow-hidden bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-indigo-900 from-slate-50 via-purple-100 to-indigo-100">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
+        <div>
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
             Free Finance Calculators for
             <span className="bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"> South Africa </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Simplify your finances with Quick Money Tool. Get instant, accurate calculations for SARS income tax, vehicle finance, personal loans and retirement savings.
-          </p>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-150">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Simplify your finances with Quick Money Tool. Get instant, accurate calculations for SARS income tax, vehicle finance, personal loans and retirement savings.
+            </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
