@@ -19,9 +19,9 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 
 export default function CurrencyConverterPage() {
   const [currencies, setCurrencies] = useState<Record<string, string>>(FALLBACK_CURRENCIES);
-  const [amount, setAmount] = useState<number>(1000);
-  const [fromCurrency, setFromCurrency] = useState<string>('ZAR');
-  const [toCurrency, setToCurrency] = useState<string>('USD');
+  const [amount, setAmount] = useState<number>(1);
+  const [fromCurrency, setFromCurrency] = useState<string>('USD');
+  const [toCurrency, setToCurrency] = useState<string>('ZAR');
   
   const [ratesData, setRatesData] = useState<CurrencyRatesResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
