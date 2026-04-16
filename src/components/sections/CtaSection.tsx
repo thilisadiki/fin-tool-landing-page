@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
 
@@ -11,11 +8,7 @@ const CtaSection = () => {
           maxWidth="max-w-4xl"
           containerClassName="text-center"
         >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Take Control of Your Finances?
               </h2>
@@ -25,14 +18,14 @@ const CtaSection = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
+                  asChild
                   size="lg"
                   className="bg-white text-emerald-600 hover:bg-slate-200 px-8 py-4 text-lg"
-                  onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Start Calculating Now
+                  <a href="#tools">Start Calculating Now</a>
                 </Button>
               </div>
-            </motion.div>
+            </div>
         </Section>
     );
 };

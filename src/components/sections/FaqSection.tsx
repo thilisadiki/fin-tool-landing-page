@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
 import {
   Accordion,
@@ -14,12 +11,7 @@ import { faqs } from '@/data/landingPageData';
 const FaqSection = () => {
     return (
         <Section id="faq" maxWidth="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
               <HelpCircle className="mx-auto h-12 w-12 text-emerald-400 mb-4" />
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Frequently Asked Questions
@@ -27,14 +19,9 @@ const FaqSection = () => {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Have questions? We've got answers. Here are some common queries about our finance calculators.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both delay-200">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
                   <AccordionItem value={`item-${index}`} key={index}>
@@ -45,7 +32,7 @@ const FaqSection = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-            </motion.div>
+            </div>
         </Section>
     );
 };

@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
@@ -9,33 +6,24 @@ import { tools } from '@/data/landingPageData';
 const ToolsSection = () => {
   return (
     <Section id="tools">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
+      <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
           Our Finance Calculators
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Select a tool to get started. All our calculators are free, secure, and designed for the South African financial landscape.
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {tools.map((tool, index) => (
-          <motion.article
+          <article
             key={tool.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -10, scale: 1.02 }}
-            className="group"
+            className="group animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both"
+            style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="dark:bg-slate-800/50 bg-slate-100 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-accent transition-all duration-300 h-full flex flex-col">
-              <div className={`w-16 h-16 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+            <div className="dark:bg-slate-800/50 bg-slate-100 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-accent hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
+              <div className={`w-16 h-16 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <tool.icon className="w-8 h-8 text-white" />
               </div>
 
@@ -63,7 +51,7 @@ const ToolsSection = () => {
                 )}
               </Button>
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
     </Section>
