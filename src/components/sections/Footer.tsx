@@ -29,6 +29,8 @@ const Footer = () => {
                   <li><Link href="/calculators/sars-income-tax-calculator" className="hover:text-foreground transition-colors">SARS Tax Calculator</Link></li>
                   <li><Link href="/calculators/vehicle-finance-calculator" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</Link></li>
                   <li><Link href="/calculators/retirement-savings-calculator" className="hover:text-foreground transition-colors">Retirement Savings Calculator</Link></li>
+                  <li><Link href="/calculators/personal-loan-calculator" className="hover:text-foreground transition-colors">Personal Loan Calculator</Link></li>
+                  <li><Link href="/calculators/budget-calculator" className="hover:text-foreground transition-colors">Budget Calculator</Link></li>
                 </ul>
               </div>
 
@@ -36,24 +38,24 @@ const Footer = () => {
                 <h3 className="text-foreground font-semibold mb-4">Legal</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>
-                    <a href="/about.html" className="hover:text-foreground transition-colors">
+                    <Link href="/about" className="hover:text-foreground transition-colors">
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/contact.html" className="hover:text-foreground transition-colors">
+                    <Link href="/contact" className="hover:text-foreground transition-colors">
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/privacy-policy.html" className="hover:text-foreground transition-colors">
+                    <Link href="/privacy-policy" className="hover:text-foreground transition-colors">
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/terms-of-service.html" className="hover:text-foreground transition-colors">
+                    <Link href="/terms-of-service" className="hover:text-foreground transition-colors">
                       Terms of Service
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -68,3 +68,40 @@ export function buildRetirementCalculatorSchema() {
     },
   };
 }
+
+export function buildPersonalLoanCalculatorSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Personal Loan Calculator',
+    url: `${BASE_URL}/calculators/personal-loan-calculator`,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description:
+      'Free personal loan calculator for South Africa. Calculate your monthly repayments, total interest, and total cost of credit instantly.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'ZAR',
+    },
+  };
+}
+
+export function buildBudgetCalculatorSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Personal Budget Calculator',
+    url: `${BASE_URL}/calculators/budget-calculator`,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description:
+      'Free personal budget calculator for South Africa. Track your income and expenses, and check if your budget aligns with the 50/30/20 rule.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'ZAR',
+    },
+  };
+}
+

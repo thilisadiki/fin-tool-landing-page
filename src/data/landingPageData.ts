@@ -60,7 +60,8 @@ export const tools: Tool[] = [
     color: "from-amber-500 to-orange-600",
     features: ["Interest rate impact", "Loan term analysis", "Total repayment amount"],
     keywords: ["personal loan calculator", "loan repayment", "debt consolidation"],
-    url: "https://loan.quickmoneytool.com"
+    url: "/calculators/personal-loan-calculator",
+    isInternal: true
   },
   {
     icon: Wallet,
@@ -69,7 +70,8 @@ export const tools: Tool[] = [
     color: "from-lime-500 to-green-600",
     features: ["Categorize expenses", "Visualize spending habits", "Set savings goals"],
     keywords: ["budget calculator", "monthly budget planner", "expense tracker"],
-    url: "https://budget.quickmoneytool.com"
+    url: "/calculators/budget-calculator",
+    isInternal: true
   },
   {
     icon: Repeat,

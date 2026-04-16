@@ -26,7 +26,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
     <div className="space-y-6">
       {/* Income */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Gross Income (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Gross Income (R)</label>
         <div className="flex gap-2">
           <input
             type="number"
@@ -65,7 +65,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
 
       {/* Other Income */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Other Annual Income (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Other Annual Income (R)</label>
         <input
           type="number"
           min={0}
@@ -113,7 +113,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
 
       {/* Retirement Contribution */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Annual Retirement Fund Contribution (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Annual Retirement Fund Contribution (R)</label>
         <input
           type="number"
           min={0}

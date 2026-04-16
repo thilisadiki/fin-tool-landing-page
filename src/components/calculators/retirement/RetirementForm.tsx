@@ -49,7 +49,7 @@ export default function RetirementForm({ inputs, onChange, onCalculate }: Retire
 
       {/* Current Savings */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Current Retirement Savings (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Current Retirement Savings (R)</label>
         <input
           type="number"
           min={0}
@@ -62,7 +62,7 @@ export default function RetirementForm({ inputs, onChange, onCalculate }: Retire
 
       {/* Monthly Contribution */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Monthly Contribution (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Monthly Contribution (R)</label>
         <input
           type="number"
           min={0}
@@ -103,7 +103,7 @@ export default function RetirementForm({ inputs, onChange, onCalculate }: Retire
 
       {/* Retirement Goal */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Retirement Goal (ZAR)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Retirement Goal (R)</label>
         <input
           type="number"
           min={0}

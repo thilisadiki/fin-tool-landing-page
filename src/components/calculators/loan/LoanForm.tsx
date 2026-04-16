@@ -1,46 +1,33 @@
 import { Button } from '@/components/ui/button';
-import type { VehicleFinanceInputs } from '@/lib/calculators/vehicleCalculator';
+import type { PersonalLoanInputs } from '@/lib/calculators/loanCalculator';
 
-interface VehicleFinanceFormProps {
-  inputs: VehicleFinanceInputs;
-  onChange: (inputs: VehicleFinanceInputs) => void;
+interface LoanFormProps {
+  inputs: PersonalLoanInputs;
+  onChange: (inputs: PersonalLoanInputs) => void;
   onCalculate: () => void;
 }
 
 const TERM_OPTIONS = [12, 24, 36, 48, 60, 72, 84];
 
-export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: VehicleFinanceFormProps) {
-  const update = (partial: Partial<VehicleFinanceInputs>) => onChange({ ...inputs, ...partial });
+export default function LoanForm({ inputs, onChange, onCalculate }: LoanFormProps) {
+  const update = (partial: Partial<PersonalLoanInputs>) => onChange({ ...inputs, ...partial });
 
-  const handleNumberChange = (field: keyof VehicleFinanceInputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNumberChange = (field: keyof PersonalLoanInputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value) || 0;
     update({ [field]: value });
   };
 
   return (
     <div className="space-y-6">
-      {/* Vehicle Price */}
+      {/* Loan Amount */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Vehicle Price (R)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Loan Amount (R)</label>
         <input
           type="number"
           min={0}
-          value={inputs.vehiclePrice || ''}
-          onChange={handleNumberChange('vehiclePrice')}
-          placeholder="e.g. 350000"
-          className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-        />
-      </div>
-
-      {/* Deposit */}
-      <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Deposit Amount (R)</label>
-        <input
-          type="number"
-          min={0}
-          value={inputs.deposit || ''}
-          onChange={handleNumberChange('deposit')}
-          placeholder="e.g. 35000"
+          value={inputs.loanAmount || ''}
+          onChange={handleNumberChange('loanAmount')}
+          placeholder="e.g. 100000"
           className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         />
       </div>
@@ -54,7 +41,7 @@ export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: Ve
           min={0}
           value={inputs.interestRate || ''}
           onChange={handleNumberChange('interestRate')}
-          placeholder="e.g. 11.75"
+          placeholder="e.g. 15.5"
           className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         />
       </div>
@@ -70,7 +57,7 @@ export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: Ve
               onClick={() => update({ loanTermMonths: term })}
               className={`flex-1 min-w-[3rem] rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                 inputs.loanTermMonths === term
-                  ? 'border-indigo-500 bg-indigo-500 text-white'
+                  ? 'border-orange-500 bg-orange-500 text-white'
                   : 'border-input bg-background text-muted-foreground hover:bg-accent'
               }`}
             >
@@ -80,29 +67,28 @@ export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: Ve
         </div>
       </div>
 
-      {/* Balloon Payment */}
+      {/* Monthly Service Fee */}
       <div>
-        <label className="block text-sm font-medium text-foreground mb-2">Balloon Payment (%)</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Monthly Service Fee (R)</label>
         <input
           type="number"
           min={0}
-          max={100}
-          value={inputs.balloonPercentage || ''}
-          onChange={handleNumberChange('balloonPercentage')}
-          placeholder="e.g. 20"
+          value={inputs.monthlyFee || ''}
+          onChange={handleNumberChange('monthlyFee')}
+          placeholder="e.g. 69"
           className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         />
         <p className="text-xs text-muted-foreground mt-2">
-          A balloon payment reduces your monthly installments but requires a lump sum payment at the end of the term.
+          Most banks charge a monthly administration fee (typically R57–R69). Check your loan agreement for the exact amount.
         </p>
       </div>
 
       <Button
         size="lg"
-        className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg py-6"
+        className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-lg py-6"
         onClick={onCalculate}
       >
-        Calculate Finance
+        Calculate Loan
       </Button>
     </div>
   );
