@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import { organizationSchema } from '@/data/schemaData';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -65,6 +66,10 @@ export default function RootLayout({
   return (
     <html lang="en-ZA" suppressHydrationWarning>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7185526762692935"

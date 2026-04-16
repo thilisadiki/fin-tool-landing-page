@@ -9,6 +9,8 @@ import LoanResultsPanel from '@/components/calculators/loan/LoanResultsPanel';
 import LoanAmortizationTable from '@/components/calculators/loan/LoanAmortizationTable';
 import { calculatePersonalLoan, type PersonalLoanInputs, type PersonalLoanResult } from '@/lib/calculators/loanCalculator';
 import { buildPersonalLoanCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import CalculatorFaq from '@/components/sections/CalculatorFaq';
+import { personalLoanFaqs } from '@/data/calculatorFaqs';
 
 const DEFAULT_INPUTS: PersonalLoanInputs = {
   loanAmount: 100000,
@@ -146,6 +148,12 @@ export default function PersonalLoanCalculatorPage() {
           </div>
         </div>
       </Section>
+
+      <CalculatorFaq
+        faqs={personalLoanFaqs}
+        title="Personal loans: frequently asked questions"
+        subtitle="Interest vs APR, early settlement, consolidation, and the rules set by the National Credit Act."
+      />
     </>
   );
 }

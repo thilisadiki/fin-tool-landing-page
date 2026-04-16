@@ -9,6 +9,8 @@ import RetirementResultsPanel from '@/components/calculators/retirement/Retireme
 import RetirementProjectionTable from '@/components/calculators/retirement/RetirementProjectionTable';
 import { calculateRetirement, type RetirementInputs, type RetirementResult } from '@/lib/calculators/retirementCalculator';
 import { buildRetirementCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import CalculatorFaq from '@/components/sections/CalculatorFaq';
+import { retirementSavingsFaqs } from '@/data/calculatorFaqs';
 
 const DEFAULT_INPUTS: RetirementInputs = {
   currentAge: 30,
@@ -154,6 +156,12 @@ export default function RetirementSavingsCalculatorPage() {
           </div>
         </div>
       </Section>
+
+      <CalculatorFaq
+        faqs={retirementSavingsFaqs}
+        title="Retirement planning: frequently asked questions"
+        subtitle="The 4% rule, RA tax deductions, inflation, and how much is actually enough to retire in South Africa."
+      />
     </>
   );
 }

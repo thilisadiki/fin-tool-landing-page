@@ -11,6 +11,8 @@ import { calculateTax, type TaxInputs, type TaxResult } from '@/lib/calculators/
 import { CURRENT_TAX_YEAR } from '@/data/taxData';
 import { buildTaxCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
 import { formatZAR } from '@/lib/formatters';
+import CalculatorFaq from '@/components/sections/CalculatorFaq';
+import { sarsTaxFaqs } from '@/data/calculatorFaqs';
 
 const DEFAULT_INPUTS: TaxInputs = {
   grossIncome: 0,
@@ -160,6 +162,12 @@ export default function SarsIncomeTaxCalculatorPage() {
           </div>
         </div>
       </Section>
+
+      <CalculatorFaq
+        faqs={sarsTaxFaqs}
+        title="SARS income tax: frequently asked questions"
+        subtitle="Common questions about PAYE, filing deadlines, provisional tax, and the 2026/2027 tax tables."
+      />
     </>
   );
 }

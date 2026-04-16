@@ -9,6 +9,8 @@ import BudgetResultsPanel from '@/components/calculators/budget/BudgetResultsPan
 import BudgetBreakdown from '@/components/calculators/budget/BudgetBreakdown';
 import { calculateBudget, type BudgetInputs, type BudgetResult } from '@/lib/calculators/budgetCalculator';
 import { buildBudgetCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import CalculatorFaq from '@/components/sections/CalculatorFaq';
+import { budgetFaqs } from '@/data/calculatorFaqs';
 
 const DEFAULT_INPUTS: BudgetInputs = {
   income: {

@@ -9,6 +9,8 @@ import VehicleResultsPanel from '@/components/calculators/vehicle/VehicleResults
 import VehicleAmortizationTable from '@/components/calculators/vehicle/VehicleAmortizationTable';
 import { calculateVehicleFinance, type VehicleFinanceInputs, type VehicleFinanceResult } from '@/lib/calculators/vehicleCalculator';
 import { buildVehicleCalculatorSchema, buildBreadcrumbSchema } from '@/data/calculatorSchemaData';
+import CalculatorFaq from '@/components/sections/CalculatorFaq';
+import { vehicleFinanceFaqs } from '@/data/calculatorFaqs';
 
 const DEFAULT_INPUTS: VehicleFinanceInputs = {
   vehiclePrice: 300000,
@@ -147,6 +149,12 @@ export default function VehicleFinanceCalculatorPage() {
           </div>
         </div>
       </Section>
+
+      <CalculatorFaq
+        faqs={vehicleFinanceFaqs}
+        title="Vehicle finance: frequently asked questions"
+        subtitle="Deposits, balloon payments, interest rates, and the real cost of financing a car in South Africa."
+      />
     </>
   );
 }
