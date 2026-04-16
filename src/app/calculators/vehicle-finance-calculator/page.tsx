@@ -21,7 +21,7 @@ const DEFAULT_INPUTS: VehicleFinanceInputs = {
 const vehicleCalcSchema = buildVehicleCalculatorSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'Vehicle Finance Calculator', url: '/calculators/vehicle-finance-calculator' },
 ]);
 

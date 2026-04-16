@@ -23,7 +23,7 @@ const DEFAULT_INPUTS: RetirementInputs = {
 const retirementSchema = buildRetirementCalculatorSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'Retirement Savings Calculator', url: '/calculators/retirement-savings-calculator' },
 ]);
 

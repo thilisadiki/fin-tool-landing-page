@@ -1,0 +1,821 @@
+WordPress Articles Integration — Full Implementation Reference
+=============================================================
+
+This document describes every file and every decision in a Next.js (App Router) project
+that pulls articles from a self-hosted WordPress instance living on a subdomain
+(articles.yourdomain.com). The Next.js site lives at www.yourdomain.com.
+No GraphQL plugin is used — everything is plain WordPress REST API (/wp/v2/).
+
+
+Architecture Overview
+---------------------
+
+  articles.yourdomain.com  <-  WordPress (content source, WP REST API)
+  www.yourdomain.com       <-  Next.js App Router (presentation layer)
+
+The Next.js app never exposes the WordPress subdomain to the browser directly.
+It either fetches at build/request time on the server, or proxies through an
+internal API route. Images are served directly from the WordPress subdomain via
+Next.js <Image> (configured in next.config.ts).
+
+The URL for all WP REST calls is https://articles.yourdomain.com/wp-json and is
+hardcoded as a constant (WP_API) in each file that needs it. There is no
+environment variable for it — it is treated as a stable infrastructure constant.
+
+
+=============================================================
+FILE 1: app/api/articles/route.ts — Internal API proxy
+=============================================================
+
+import { NextRequest, NextResponse } from 'next/server';
+
+const WP_API = 'https://articles.yourdomain.com/wp-json';
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const perPage = searchParams.get('per_page') ?? '3';
+  const search = searchParams.get('search');
+
+  let url = `${WP_API}/wp/v2/posts?per_page=${perPage}&_embed`;
+  if (search) {
+    url += `&search=${encodeURIComponent(search)}`;
+  }
+
+  const response = await fetch(url, {
+    headers: { Host: 'articles.yourdomain.com' },
+    next: { revalidate: 300 },
+  });
+
+  if (!response.ok) {
+    return NextResponse.json(
+      { error: 'Failed to fetch articles from WordPress' },
+      { status: response.status }
+    );
+  }
+
+  const data = await response.json();
+  return NextResponse.json(data);
+}
+
+PURPOSE:
+This is the only route that client-side React components call. It exists to avoid
+CORS issues — the browser never talks to articles.yourdomain.com directly. The route
+passes _embed so the response includes wp:featuredmedia (featured image) inline. It
+supports two query params: per_page (default 3) and search (optional keyword filter).
+Raw WP post objects are passed through unchanged so callers can extract _embedded,
+slug, title.rendered, excerpt.rendered, etc. Cache revalidates every 300 seconds
+(5 minutes).
+
+
+=============================================================
+FILE 2: app/blog/page.tsx — Blog listing page (Server Component)
+=============================================================
+
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Calendar, ArrowRight, BookOpen, ChevronRight } from 'lucide-react';
+import NewsletterBanner from '@/components/shared/NewsletterBanner';
+
+export const revalidate = 300;
+
+const WP_API = 'https://articles.yourdomain.com/wp-json';
+const SITE_URL = 'https://www.yourdomain.com';
+const PER_PAGE = 12;
+
+export const metadata: Metadata = {
+  title: 'Blog Title | Site Name',
+  description: '...',
+  alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: { ... },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+  ],
+};
+
+// Only fetch the fields actually needed for the listing page.
+// _embed=wp:featuredmedia fetches the featured image inline.
+const LISTING_FIELDS = '_fields=id,slug,title,excerpt,date,_links&_embed=wp:featuredmedia';
+
+async function fetchPosts(page: number) {
+  try {
+    const res = await fetch(
+      `${WP_API}/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&${LISTING_FIELDS}`,
+      { next: { revalidate: 300 } }
+    );
+    if (!res.ok) return { posts: [], total: 0, totalPages: 1 };
+
+    const posts = await res.json();
+    // WordPress returns total count and page count in response headers
+    const total = parseInt(res.headers.get('X-WP-Total') ?? '0');
+    const totalPages = parseInt(res.headers.get('X-WP-TotalPages') ?? '1');
+    return { posts, total, totalPages };
+  } catch {
+    return { posts: [], total: 0, totalPages: 1 };
+  }
+}
+
+function formatPost(post: any) {
+  // Extract featured image from embedded media
+  const imageUrl =
+    post._embedded?.['wp:featuredmedia']?.[0]?.source_url ??
+    'https://fallback-image-url.jpg';
+  // Strip all HTML tags from excerpt
+  const cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+  const date = new Date(post.date).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'short', day: 'numeric',
+  });
+  return {
+    id: post.id,
+    slug: post.slug,
+    title: post.title.rendered,
+    excerpt: cleanExcerpt.substring(0, 150) + '...',
+    date,
+    imageUrl,
+  };
+}
+
+// Page component receives searchParams as a Promise (Next.js App Router requirement)
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const resolvedParams = await searchParams;
+  const page = Math.max(1, parseInt(resolvedParams.page ?? '1'));
+  const { posts, total, totalPages } = await fetchPosts(page);
+  const formattedPosts = posts.map(formatPost);
+
+  // First post on page 1 is promoted to a large featured card
+  const featuredPost = page === 1 ? formattedPosts[0] : null;
+  const gridPosts = page === 1 ? formattedPosts.slice(1) : formattedPosts;
+
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Site Blog',
+    url: `${SITE_URL}/blog`,
+    publisher: { '@type': 'Organization', name: 'Site Name', url: SITE_URL },
+    blogPost: formattedPosts.slice(0, 6).map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      datePublished: post.date,
+      image: post.imageUrl,
+    })),
+  };
+
+  return (
+    <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      {/* Featured card (page 1 only) */}
+      {featuredPost && <FeaturedCard post={featuredPost} />}
+
+      {/* 3-column grid for remaining posts */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {gridPosts.map(post => (
+          <Link key={post.id} href={`/blog/${post.slug}`}>
+            <Image src={post.imageUrl} ... />
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+          </Link>
+        ))}
+      </div>
+
+      {/* Pagination — simple prev/next links, no JS */}
+      {totalPages > 1 && (
+        <div>
+          {page > 1 && <Link href={`/blog?page=${page - 1}`}>Previous</Link>}
+          {page < totalPages && <Link href={`/blog?page=${page + 1}`}>Next</Link>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+KEY DECISIONS:
+- This is a Server Component — fetches happen at request time, ISR cached for 300s.
+- _fields= is used to limit the WP REST response to only required fields (listing does
+  not need full content).
+- _embed=wp:featuredmedia tells WordPress to inline the featured image data so there
+  is no second round-trip.
+- Pagination totals come from WP response headers X-WP-Total and X-WP-TotalPages,
+  not from counting posts.
+- The first post on page 1 is visually promoted to a featured hero card; the rest go
+  into a uniform grid.
+- Pagination is purely URL-based (?page=N) — no client-side state, fully crawlable
+  by search engines.
+
+
+=============================================================
+FILE 3: app/blog/[slug]/page.tsx — Individual post page (Server Component)
+=============================================================
+
+import { cache } from 'react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+
+export const revalidate = 3600;    // ISR: regenerate once per hour
+export const dynamicParams = true; // posts published after build still work
+
+const WP_API = 'https://articles.yourdomain.com/wp-json';
+const SITE_URL = 'https://www.yourdomain.com';
+
+--- Request deduplication with React.cache ---
+
+// React.cache memoises the result for the lifetime of a single server request.
+// Both generateMetadata() and the page component call fetchPostBySlug(slug).
+// Without cache(), that would be two network requests to WP for the same slug.
+// With cache(), the second call returns the already-resolved Promise — one request only.
+const fetchPostBySlug = cache(async (slug: string) => {
+  try {
+    const res = await fetch(`${WP_API}/wp/v2/posts?slug=${slug}&_embed`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    const posts = await res.json();
+    return posts[0] ?? null; // WP returns an array even for slug queries
+  } catch {
+    return null;
+  }
+});
+
+--- HTML content cleaning ---
+
+WordPress Gutenberg produces HTML full of editor noise. This function cleans it
+before rendering:
+
+function cleanContent(html: string): string {
+  return html
+    // 1. Rewrite absolute subdomain links to internal Next.js routes
+    //    e.g. https://articles.yourdomain.com/some-post -> /blog/some-post
+    .replace(/https:\/\/articles\.yourdomain\.com\//g, '/blog/')
+    // 2. Remove Gutenberg block comments: <!-- wp:paragraph --> etc.
+    .replace(/<!--\s*\/?wp:[^>]*-->/g, '')
+    // 3. Remove all inline style="..." attributes (editor sets these, they conflict with your CSS)
+    .replace(/\s+style="[^"]*"/g, '')
+    // 4. Remove data-* attributes (editor metadata, not needed in rendered output)
+    .replace(/\s+data-[\w-]+="[^"]*"/g, '')
+    // 5. Remove wp-block-* class values (keep non-WP classes like has-fixed-layout on tables)
+    .replace(/\s+class="wp-block-[^"]*"/g, '')
+    // 6. Unwrap bare <span> tags with no remaining attributes (pure noise wrappers)
+    .replace(/<span>([^<]*)<\/span>/g, '$1')
+    // 7. Remove empty paragraphs left behind by cleanup
+    .replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '')
+    // 8. Collapse 3+ consecutive blank lines
+    .replace(/(\s*\n){3,}/g, '\n\n')
+    .trim();
+}
+
+--- Related posts fetcher ---
+
+async function fetchRelatedPosts(categoryIds: number[], excludeId: number) {
+  if (categoryIds.length === 0) return [];
+  try {
+    const res = await fetch(
+      `${WP_API}/wp/v2/posts?per_page=3&categories=${categoryIds.join(',')}&exclude=${excludeId}&_fields=id,slug,title,excerpt,date,_links&_embed=wp:featuredmedia`,
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+// Fetches up to 3 posts from the same WP categories, excluding the current post.
+// Uses the same field-limiting pattern as the listing page.
+
+--- Static params generation (ISR pre-render) ---
+
+export async function generateStaticParams() {
+  const slugs: { slug: string }[] = [];
+  let page = 1;
+
+  while (true) {
+    try {
+      const res = await fetch(
+        `${WP_API}/wp/v2/posts?per_page=100&page=${page}&_fields=slug`,
+        { next: { revalidate: 3600 } }
+      );
+      if (!res.ok) break;
+      const posts: { slug: string }[] = await res.json();
+      if (posts.length === 0) break;
+      slugs.push(...posts.map((p) => ({ slug: p.slug })));
+      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') ?? '1');
+      if (page >= totalPages) break;
+      page++;
+    } catch {
+      break;
+    }
+  }
+
+  return slugs;
+}
+// Paginates through ALL WP posts at build time (100 per request).
+// Reads X-WP-TotalPages header to know when to stop.
+// Combined with dynamicParams = true, posts published after the build
+// are still served — they just are not pre-rendered until first request.
+
+--- Metadata generation ---
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await fetchPostBySlug(slug); // uses React.cache — no extra request
+  if (!post) return { title: 'Article Not Found | Site Name' };
+
+  const description = post.excerpt.rendered.replace(/<[^>]+>/g, '').substring(0, 160);
+  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+
+  return {
+    title: `${post.title.rendered} | Site Name`,
+    description,
+    alternates: { canonical: `${SITE_URL}/blog/${slug}` },
+    robots: { index: true, follow: true, 'max-image-preview': 'large' },
+    openGraph: {
+      title: post.title.rendered,
+      description,
+      url: `${SITE_URL}/blog/${slug}`,
+      type: 'article',
+      ...(imageUrl && {
+        images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title.rendered }],
+      }),
+    },
+  };
+}
+
+--- Page component ---
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await fetchPostBySlug(slug); // cache hit, no second request
+  if (!post) notFound();
+
+  // Extract embedded data
+  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+  const categories: any[] = post._embedded?.['wp:term']?.[0] ?? [];
+  const categoryIds: number[] = categories.map((c: any) => c.id);
+  const author = post._embedded?.author?.[0] ?? null;
+
+  // Run content cleaning and related posts fetch in parallel
+  const [content, relatedRaw] = await Promise.all([
+    Promise.resolve(cleanContent(post.content.rendered)),
+    fetchRelatedPosts(categoryIds, post.id),
+  ]);
+
+  // Schema.org Article structured data
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title.rendered,
+    description: post.excerpt.rendered.replace(/<[^>]+>/g, '').substring(0, 160),
+    datePublished: post.date_gmt ? `${post.date_gmt}Z` : post.date,
+    dateModified: post.modified_gmt ? `${post.modified_gmt}Z` : post.modified,
+    url: `${SITE_URL}/blog/${slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${slug}` },
+    author: author
+      ? { '@type': 'Person', name: author.name, url: SITE_URL }
+      : { '@type': 'Organization', name: 'Site Name', url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site Name',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo-512x512.png`,
+        width: 512,
+        height: 512,
+      },
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: imageUrl ?? `${SITE_URL}/fallback-logo.png`,
+      width: 1200,
+      height: 630,
+    },
+  };
+
+  return (
+    <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+
+      {/* Featured image */}
+      {imageUrl && (
+        <Image src={imageUrl} alt={post.title.rendered} fill priority sizes="..." />
+      )}
+
+      {/* Title rendered with dangerouslySetInnerHTML because WP encodes HTML entities */}
+      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+
+      {/* Author + date + category badges */}
+      <span>{date}</span>
+      {author && <span>{author.name}</span>}
+      {categories.map(cat => <span key={cat.id}>{cat.name}</span>)}
+
+      {/* Cleaned post HTML rendered into a scoped CSS class */}
+      <div className="wp-content" dangerouslySetInnerHTML={{ __html: content }} />
+
+      {/* Author bio card — uses author.avatar_urls['96'] for Gravatar */}
+      {author && (
+        <div>
+          <Image src={author.avatar_urls?.['96']} ... />
+          <p>{author.name}</p>
+          {author.description && <p>{author.description}</p>}
+        </div>
+      )}
+
+      {/* Related posts grid */}
+      {related.map(r => (
+        <Link key={r.slug} href={`/blog/${r.slug}`}>...</Link>
+      ))}
+    </div>
+  );
+}
+
+KEY DECISIONS:
+- dynamicParams = true means WP posts published after the last build are still served
+  (on-demand ISR). They get cached after first request.
+- React.cache prevents generateMetadata and the page component from making duplicate
+  network requests to WordPress for the same slug — critical for performance.
+- post.title.rendered and post.content.rendered both use dangerouslySetInnerHTML
+  because WordPress HTML-encodes smart quotes and special characters in titles, and
+  because post content is trusted first-party HTML (not user-generated).
+- content.rendered is cleaned with 8 regex passes to remove Gutenberg editor noise
+  before rendering.
+- Author avatar comes from WordPress's Gravatar integration via
+  author.avatar_urls['96'] (96px size).
+- Schema.org uses date_gmt / modified_gmt fields (UTC) with a trailing Z for
+  ISO 8601 compliance.
+
+
+=============================================================
+FILE 4: components/home/LatestArticles.tsx — Client Component for the homepage
+=============================================================
+
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+interface Article {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  link: string;
+  date: string;
+  imageUrl: string;
+}
+
+export default function LatestArticles({
+  searchQuery,
+  customTitle,
+  customSubtitle,
+  perPage = 3,
+  initialArticles,        // SSR-prefetched articles passed from server component
+}: {
+  searchQuery?: string;
+  customTitle?: string;
+  customSubtitle?: string;
+  perPage?: number;
+  initialArticles?: Article[];
+} = {}) {
+  const [articles, setArticles] = useState<Article[]>(initialArticles ?? []);
+  const [loading, setLoading] = useState(!initialArticles);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // If initialArticles was provided (server-prefetched), skip the client fetch entirely
+    if (initialArticles) return;
+
+    const fetchArticles = async () => {
+      try {
+        let url = `/api/articles?per_page=${perPage}`;
+        if (searchQuery) url += `&search=${encodeURIComponent(searchQuery)}`;
+
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('...');
+
+        let data = await response.json();
+
+        // If search returns no results, fall back to latest articles
+        if (data.length === 0 && searchQuery) {
+          const fallback = await fetch(`/api/articles?per_page=${perPage}`);
+          if (fallback.ok) data = await fallback.json();
+        }
+
+        const formattedArticles: Article[] = data.map((post: any) => {
+          let imageUrl = 'https://fallback-image-url.jpg';
+          if (post._embedded?.['wp:featuredmedia']?.[0]?.source_url) {
+            imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+          }
+
+          // In a client component, use DOM API to strip HTML from excerpt
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = post.excerpt.rendered;
+          const cleanExcerpt = tempDiv.textContent || tempDiv.innerText || '';
+
+          return {
+            id: post.id,
+            slug: post.slug,
+            title: post.title.rendered,
+            excerpt: cleanExcerpt.substring(0, 120) + '...',
+            link: post.link,
+            date: new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric', month: 'short', day: 'numeric'
+            }),
+            imageUrl,
+          };
+        });
+
+        setArticles(formattedArticles);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, [searchQuery, initialArticles]);
+
+  if (loading) return <SkeletonGrid />;   // 3 animated skeleton cards
+  if (error) return <ErrorMessage error={error} />;
+  if (articles.length === 0) return <EmptyState />;
+
+  return (
+    <section>
+      <h2>{customTitle || 'Latest Articles'}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {articles.map(article => (
+          <Link key={article.id} href={`/blog/${article.slug}`}>
+            {/* Uses plain <img> tag (not next/image) because the image URL
+                comes from a client-side fetch and may not be in the
+                allowed remotePatterns at render time */}
+            <img src={article.imageUrl} alt={article.title} loading="lazy" />
+            <h3>{article.title}</h3>
+            <p>{article.excerpt}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+KEY DECISIONS:
+- This is a 'use client' component because it supports an optional client-side fetch
+  path (for cases like dynamic search filtering on other pages).
+- The initialArticles prop is the performance optimisation: when the server component
+  pre-fetches articles and passes them in, the component skips useEffect entirely and
+  hydrates with content immediately — no client-side waterfall, no loading skeleton
+  flash on the homepage.
+- When no initialArticles are provided and searchQuery is set (used on other pages),
+  it calls the internal /api/articles proxy — never articles.yourdomain.com directly.
+- HTML stripping uses document.createElement('div') instead of regex because this
+  runs client-side where the DOM is available.
+- Uses a regular <img> tag instead of Next.js <Image> because in the client-fetched
+  path the image source domain is not guaranteed to match remotePatterns at render time.
+
+
+=============================================================
+FILE 5: app/page.tsx — Homepage server component (articles portion)
+=============================================================
+
+export const revalidate = 300;
+
+async function fetchHomeArticles(perPage: number) {
+  try {
+    // Direct server-to-server call — no proxy needed, no CORS
+    const response = await fetch(
+      `https://articles.yourdomain.com/wp-json/wp/v2/posts?per_page=${perPage}&_embed`,
+      { next: { revalidate: 300 } }
+    );
+    if (!response.ok) return undefined;
+
+    const data = await response.json();
+    return data.map((post: any) => {
+      let imageUrl = 'https://fallback-image-url.jpg';
+      if (post._embedded?.['wp:featuredmedia']?.[0]?.source_url) {
+        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+      }
+
+      const cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+      return {
+        id: post.id,
+        slug: post.slug,
+        title: post.title.rendered,
+        excerpt: cleanExcerpt.substring(0, 120) + '...',
+        link: post.link,
+        date: new Date(post.date).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: 'numeric'
+        }),
+        imageUrl,
+      };
+    });
+  } catch {
+    return undefined; // graceful degradation — homepage still renders without articles
+  }
+}
+
+export default async function Home() {
+  const homeArticles = await fetchHomeArticles(6);
+
+  return (
+    <main>
+      {/* Pass pre-fetched articles to the client component.
+          LatestArticles sees initialArticles !== undefined
+          and skips the useEffect fetch entirely. */}
+      <LatestArticles perPage={6} initialArticles={homeArticles} />
+    </main>
+  );
+}
+
+KEY DECISIONS:
+- The homepage directly calls articles.yourdomain.com/wp-json — no internal proxy —
+  because this is a server-to-server call that does not go through the browser.
+  No CORS issue exists here.
+- Returns undefined on failure rather than throwing, so the homepage degrades
+  gracefully (the LatestArticles component falls through to the empty-state path).
+- This is the SSR pre-fetch pattern: server fetches -> passes initialArticles ->
+  client component skips its own fetch.
+
+
+=============================================================
+FILE 6: app/sitemap.ts — Sitemap generation
+=============================================================
+
+const WP_API = 'https://articles.yourdomain.com/wp-json';
+
+async function fetchAllBlogPosts(): Promise<{ slug: string; modified: string }[]> {
+  const posts: { slug: string; modified: string }[] = [];
+  let page = 1;
+  while (true) {
+    try {
+      const res = await fetch(
+        `${WP_API}/wp/v2/posts?per_page=100&page=${page}&_fields=slug,modified`,
+        { next: { revalidate: 3600 } }
+      );
+      if (!res.ok) break;
+      const batch = await res.json();
+      if (!Array.isArray(batch) || batch.length === 0) break;
+      posts.push(...batch);
+      if (batch.length < 100) break; // fewer than 100 means this is the last page
+      page++;
+    } catch {
+      break;
+    }
+  }
+  return posts;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const wpPosts = await fetchAllBlogPosts();
+  const blogPostPages = wpPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.modified), // use WP's actual modification date
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPostPages];
+}
+
+KEY DECISIONS:
+- Uses _fields=slug,modified — absolute minimum data needed for sitemap entries.
+- Paginates 100 posts per request (WP REST API maximum), looping until
+  batch.length < 100 (meaning no more pages).
+- lastModified uses the post's actual WP modified date — accurate for search engine
+  crawl prioritisation.
+- Cached with revalidate: 3600 — sitemap rebuilds once per hour.
+
+
+=============================================================
+FILE 7: next.config.ts — Infrastructure configuration
+=============================================================
+
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // 301 redirect from /articles (old URL) to /blog (current URL)
+      // Fixes canonical issues if the old path was indexed.
+      {
+        source: '/articles',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
+  images: {
+    remotePatterns: [
+      // Allow next/image to optimise images from the WP subdomain
+      { protocol: 'https', hostname: 'articles.yourdomain.com' },
+      // Allow Gravatar images for author avatars
+      { protocol: 'https', hostname: 'secure.gravatar.com' },
+      { protocol: 'https', hostname: '*.gravatar.com' },
+      // Fallback images (e.g. Unsplash)
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+    ],
+  },
+};
+
+KEY DECISIONS:
+- articles.yourdomain.com must be in remotePatterns or Next.js <Image> will throw
+  at runtime when rendering featured images.
+- Gravatar hostnames are needed for author avatar images fetched from WP's
+  author.avatar_urls field.
+- The /articles -> /blog permanent redirect handles any externally linked or indexed
+  old URLs.
+
+
+=============================================================
+WordPress REST API fields reference
+=============================================================
+
+Field on WP post object                              | What it contains
+-----------------------------------------------------|--------------------------------------------------
+post.id                                              | Integer post ID
+post.slug                                            | URL slug (used as dynamic route param)
+post.title.rendered                                  | Post title (may contain HTML entities)
+post.excerpt.rendered                                | Short summary HTML — strip tags before display
+post.content.rendered                                | Full post HTML — run through cleanContent()
+post.date                                            | ISO 8601 local publish date
+post.date_gmt                                        | ISO 8601 UTC publish date (use for Schema.org)
+post.modified                                        | ISO 8601 local last-modified date
+post.modified_gmt                                    | ISO 8601 UTC last-modified date
+post._embedded['wp:featuredmedia'][0].source_url     | Featured image URL (requires ?_embed)
+post._embedded['wp:term'][0]                         | Array of category objects { id, name, slug }
+post._embedded.author[0]                             | Author object with name, description, avatar_urls
+
+
+=============================================================
+Data flow summary
+=============================================================
+
+Build time:
+  generateStaticParams()
+    -> WP REST paginated slug list
+    -> pre-renders all post pages
+
+Request time (ISR, revalidate: 3600):
+  /blog/[slug]
+    -> fetchPostBySlug(slug) [React.cache]
+    -> WP REST ?slug=...&_embed
+    -> fetchRelatedPosts(categoryIds, id)
+    -> WP REST ?categories=...
+    -> cleanContent(content.rendered)
+    -> dangerouslySetInnerHTML
+
+Request time (ISR, revalidate: 300):
+  /blog
+    -> fetchPosts(page)
+    -> WP REST ?per_page=12&page=N&_fields=...&_embed=wp:featuredmedia
+  / (homepage)
+    -> fetchHomeArticles(6)
+    -> WP REST ?per_page=6&_embed
+    -> passed as initialArticles to LatestArticles component
+
+Client-side (no ISR):
+  /api/articles
+    -> WP REST (proxied, avoids CORS)
+    -> consumed by LatestArticles useEffect
+    -> only triggers when initialArticles is not provided
+
+Sitemap (revalidate: 3600):
+  /sitemap.xml
+    -> fetchAllBlogPosts()
+    -> WP REST paginated ?_fields=slug,modified
+
+
+=============================================================
+Adapting this to your own site
+=============================================================
+
+Replace every occurrence of:
+  articles.graduateshub.co.za  ->  your WP subdomain
+  www.graduateshub.co.za       ->  your main domain
+  /blog                        ->  whatever route you want articles to live under
+
+The WP REST API endpoints are standard and will work on any self-hosted WordPress
+install without plugins. The only requirement is that the REST API is not disabled
+(it is enabled by default in WP 4.7+).
+
+If your WordPress is on the same domain (e.g. /wp) rather than a subdomain, change
+the Host header in app/api/articles/route.ts accordingly, or remove it entirely if
+not needed.

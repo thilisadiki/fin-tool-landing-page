@@ -38,10 +38,10 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center space-x-6"
         >
-          <NavAnchor hash="#tools">Calculators</NavAnchor>
+          <Link href="/calculators" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Calculators</Link>
           <NavAnchor hash="#about">About</NavAnchor>
           <NavAnchor hash="#faq">FAQ</NavAnchor>
-          <a href="/articles" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Articles</a>
+          <Link href="/blog" className="hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
           <ThemeToggle />
         </motion.nav>
       </div>

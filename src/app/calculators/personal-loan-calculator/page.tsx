@@ -20,7 +20,7 @@ const DEFAULT_INPUTS: PersonalLoanInputs = {
 const loanCalcSchema = buildPersonalLoanCalculatorSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'Personal Loan Calculator', url: '/calculators/personal-loan-calculator' },
 ]);
 

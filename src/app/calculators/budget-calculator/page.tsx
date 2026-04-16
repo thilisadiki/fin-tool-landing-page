@@ -34,7 +34,7 @@ const DEFAULT_INPUTS: BudgetInputs = {
 const budgetCalcSchema = buildBudgetCalculatorSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'Budget Calculator', url: '/calculators/budget-calculator' },
 ]);
 

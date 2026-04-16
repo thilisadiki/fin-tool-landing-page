@@ -25,7 +25,7 @@ const DEFAULT_INPUTS: TaxInputs = {
 const taxCalcSchema = buildTaxCalculatorSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'SARS Income Tax Calculator', url: '/calculators/sars-income-tax-calculator' },
 ]);
 

@@ -25,7 +25,7 @@ const Footer = () => {
               <div>
                 <h3 className="text-foreground font-semibold mb-4">Tools</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li><a href="https://quickmoneytool.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Blog</a></li>
+                  <li><Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
                   <li><Link href="/calculators/sars-income-tax-calculator" className="hover:text-foreground transition-colors">SARS Tax Calculator</Link></li>
                   <li><Link href="/calculators/vehicle-finance-calculator" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</Link></li>
                   <li><Link href="/calculators/retirement-savings-calculator" className="hover:text-foreground transition-colors">Retirement Savings Calculator</Link></li>

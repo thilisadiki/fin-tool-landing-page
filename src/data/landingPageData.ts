@@ -1,5 +1,7 @@
 import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, type LucideIcon } from 'lucide-react';
 
+export type CalculatorGoal = 'borrowing' | 'saving' | 'tax' | 'daily';
+
 export interface Tool {
   icon: LucideIcon;
   title: string;
@@ -9,6 +11,7 @@ export interface Tool {
   keywords: string[];
   url: string;
   isInternal?: boolean;
+  goals: CalculatorGoal[];
 }
 
 export interface Feature {
@@ -31,7 +34,8 @@ export const tools: Tool[] = [
     features: ["Updated 2026/2027 tax brackets", "Medical aid credits", "Retirement fund deductions"],
     keywords: ["sars tax calculator", "income tax south africa", "provisional tax"],
     url: "/calculators/sars-income-tax-calculator",
-    isInternal: true
+    isInternal: true,
+    goals: ["tax"]
   },
   {
     icon: Car,
@@ -41,7 +45,8 @@ export const tools: Tool[] = [
     features: ["Monthly payment estimates", "Balloon payment options", "Total cost of credit"],
     keywords: ["vehicle finance calculator", "car payment calculator", "car loan south africa"],
     url: "/calculators/vehicle-finance-calculator",
-    isInternal: true
+    isInternal: true,
+    goals: ["borrowing"]
   },
   {
     icon: PiggyBank,
@@ -51,7 +56,8 @@ export const tools: Tool[] = [
     features: ["Compound growth projection", "Inflation adjustment", "Retirement goal tracking"],
     keywords: ["retirement calculator south africa", "retirement annuity", "savings goal"],
     url: "/calculators/retirement-savings-calculator",
-    isInternal: true
+    isInternal: true,
+    goals: ["saving"]
   },
   {
     icon: Landmark,
@@ -61,7 +67,8 @@ export const tools: Tool[] = [
     features: ["Interest rate impact", "Loan term analysis", "Total repayment amount"],
     keywords: ["personal loan calculator", "loan repayment", "debt consolidation"],
     url: "/calculators/personal-loan-calculator",
-    isInternal: true
+    isInternal: true,
+    goals: ["borrowing"]
   },
   {
     icon: Wallet,
@@ -71,7 +78,8 @@ export const tools: Tool[] = [
     features: ["Categorize expenses", "Visualize spending habits", "Set savings goals"],
     keywords: ["budget calculator", "monthly budget planner", "expense tracker"],
     url: "/calculators/budget-calculator",
-    isInternal: true
+    isInternal: true,
+    goals: ["daily", "saving"]
   },
   {
     icon: Repeat,
@@ -81,8 +89,43 @@ export const tools: Tool[] = [
     features: ["Real-time rates", "Multiple currencies", "Historical data charts"],
     keywords: ["currency converter", "exchange rates", "foreign exchange"],
     url: "/calculators/currency-converter",
-    isInternal: true
+    isInternal: true,
+    goals: ["daily"]
   }
+];
+
+export interface GoalGroup {
+  id: CalculatorGoal | 'all';
+  label: string;
+  description: string;
+}
+
+export const calculatorGoals: GoalGroup[] = [
+  {
+    id: 'all',
+    label: 'All calculators',
+    description: 'Every free tool we offer: tax, borrowing, saving, and daily money decisions.',
+  },
+  {
+    id: 'borrowing',
+    label: 'Borrowing',
+    description: 'Work out monthly instalments and total cost before signing for a car or loan.',
+  },
+  {
+    id: 'saving',
+    label: 'Saving',
+    description: 'Project long-term growth on retirement annuities and savings goals.',
+  },
+  {
+    id: 'tax',
+    label: 'Tax',
+    description: 'Estimate PAYE and provisional tax using the latest SARS brackets.',
+  },
+  {
+    id: 'daily',
+    label: 'Daily money',
+    description: 'Everyday tools for monthly budgeting and currency conversion.',
+  },
 ];
 
 export const features: Feature[] = [

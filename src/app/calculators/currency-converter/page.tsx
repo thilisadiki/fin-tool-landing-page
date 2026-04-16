@@ -13,7 +13,7 @@ import { buildCurrencyConverterSchema, buildBreadcrumbSchema } from '@/data/calc
 const currencySchema = buildCurrencyConverterSchema();
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Calculators', url: '/#tools' },
+  { name: 'Calculators', url: '/calculators' },
   { name: 'Currency Converter', url: '/calculators/currency-converter' },
 ]);
 
