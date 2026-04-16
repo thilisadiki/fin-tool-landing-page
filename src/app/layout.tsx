@@ -28,6 +28,16 @@ export const metadata: Metadata = {
     'free financial tools',
   ],
   metadataBase: new URL('https://www.quickmoneytool.com'),
+  openGraph: {
+    type: 'website',
+    siteName: 'Quick Money Tool',
+    locale: 'en_ZA',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@quickmoneytool',
+    creator: '@quickmoneytool',
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-ZA" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Script
