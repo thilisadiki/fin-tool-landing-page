@@ -22,7 +22,7 @@ const CtaSection = () => {
                   size="lg"
                   className="bg-white text-emerald-600 hover:bg-slate-200 px-8 py-4 text-lg"
                 >
-                  <a href="#tools">Start Calculating Now</a>
+                  <a href="/calculators">Start Calculating Now</a>
                 </Button>
               </div>
             </div>

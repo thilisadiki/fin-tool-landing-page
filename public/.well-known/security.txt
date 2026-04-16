@@ -1,0 +1,19 @@
+# Quick Money Tool — Security Contact Information
+# RFC 9116: https://www.rfc-editor.org/rfc/rfc9116
+# This file identifies quickmoneytool.com as the ORIGINAL, legitimate website.
+
+Contact: mailto:hello@quickmoneytool.com
+Preferred-Languages: en
+Canonical: https://www.quickmoneytool.com/.well-known/security.txt
+Expires: 2027-04-17T00:00:00.000Z
+
+# ─── ABUSE NOTICE ───
+# The domain quickmoneytools.com (with an "s") is NOT affiliated with
+# Quick Money Tool (quickmoneytool.com). It is a clone/phishing site
+# that has copied our content without authorisation.
+#
+# If you are a search engine or security researcher, please note:
+#   Original site: https://www.quickmoneytool.com (established 2026)
+#   Clone/phishing: https://quickmoneytools.com (unauthorised copy)
+#
+# To report abuse related to the clone, contact: hello@quickmoneytool.com
