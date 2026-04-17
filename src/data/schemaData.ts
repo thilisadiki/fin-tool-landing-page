@@ -12,6 +12,7 @@ export const organizationSchema = {
     "@id": `${BASE_URL}/#organization`,
     "name": "Quick Money Tool",
     "url": BASE_URL,
+    "description": "A personal finance guide for South Africa offering free calculators and research-based money guides, all professionally reviewed by qualified tax and finance experts.",
     "logo": {
       "@type": "ImageObject",
       "url": `${BASE_URL}/logo-512-512.png`,
@@ -36,7 +37,7 @@ export const websiteSchema = {
     "@id": `${BASE_URL}/#website`,
     "name": "Quick Money Tool",
     "url": BASE_URL,
-    "description": "Free, accurate financial calculators for South Africa. Simplify your SARS income tax, vehicle finance, and retirement savings planning with our easy-to-use online tools.",
+    "description": "Your personal finance guide for South Africa. Free calculators for SARS income tax, vehicle finance, loans, and retirement savings, plus research-based guides reviewed by tax professionals.",
     "publisher": { "@id": `${BASE_URL}/#organization` },
     "inLanguage": "en-ZA",
     "mainEntity": tools.map(tool => ({
@@ -66,7 +67,7 @@ export const aboutPageSchema = {
   "url": `${BASE_URL}/about`,
   "name": "About Quick Money Tool",
   "description":
-    "Learn about Quick Money Tool: a small, independent South African team building free, accurate, privacy-first financial calculators for SARS tax, vehicle finance, personal loans, retirement, and budgeting.",
+    "Learn about Quick Money Tool: a personal finance guide for South Africans offering free calculators and research-based money guides, all reviewed by qualified tax professionals.",
   "inLanguage": "en-ZA",
   "isPartOf": { "@id": `${BASE_URL}/#website` },
   "about": { "@id": `${BASE_URL}/#organization` },
@@ -125,6 +126,31 @@ export function buildTermsOfServiceSchema(lastReviewedIso: string) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
         { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": `${BASE_URL}/terms-of-service` },
+      ],
+    },
+  };
+}
+
+export function buildDisclaimerSchema(lastReviewedIso: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${BASE_URL}/disclaimer#webpage`,
+    "url": `${BASE_URL}/disclaimer`,
+    "name": "Disclaimer",
+    "description":
+      "Disclaimer for Quick Money Tool's free South African financial calculators. Estimates for informational purposes only, not a substitute for professional financial advice.",
+    "inLanguage": "en-ZA",
+    "isPartOf": { "@id": `${BASE_URL}/#website` },
+    "about": { "@id": `${BASE_URL}/#organization` },
+    "publisher": { "@id": `${BASE_URL}/#organization` },
+    "lastReviewed": lastReviewedIso,
+    "dateModified": lastReviewedIso,
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Disclaimer", "item": `${BASE_URL}/disclaimer` },
       ],
     },
   };

@@ -25,19 +25,19 @@ const values = [
   {
     icon: TrendingUp,
     title: 'Always Accurate',
-    description: 'Our calculators are kept up-to-date with the latest SARS tax brackets, lending rates, and financial regulations for South Africa. See sars.gov.za for current figures.',
+    description: 'Our calculators and guides are kept up-to-date with the latest SARS tax brackets, lending rates, and financial regulations for South Africa. See sars.gov.za for current figures.',
     color: 'from-blue-500 to-indigo-600',
   },
   {
     icon: Zap,
     title: '100% Free',
-    description: 'Every tool on Quick Money Tool is completely free to use, with no hidden sign-ups, subscriptions, or paywalls.',
+    description: 'Every tool and guide on Quick Money Tool is completely free to use, with no hidden sign-ups, subscriptions, or paywalls.',
     color: 'from-amber-500 to-orange-600',
   },
   {
     icon: Heart,
     title: 'Built for South Africans',
-    description: 'Our tools are designed specifically for the South African financial landscape, including ZAR formatting, local tax rules, and SA-relevant defaults.',
+    description: 'Our tools and guides are designed specifically for the South African financial landscape, covering local tax rules, ZAR formatting, and real-world SA situations.',
     color: 'from-pink-500 to-rose-600',
   },
 ];
@@ -71,7 +71,7 @@ export default function AboutPage() {
               About Quick Money Tool
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We believe that every South African deserves access to accurate, easy-to-use financial tools, no matter their background or income level.
+              Your personal finance guide for South Africa. Free calculators, research-based guides, and practical money advice for real situations.
             </p>
           </motion.div>
         </div>
@@ -90,10 +90,10 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Quick Money Tool was created with a simple goal: to make financial planning accessible to everyone. We noticed that many South Africans struggle with understanding tax deductions, loan repayments, and retirement projections, not because of a lack of intelligence, but because of a lack of accessible tools.
+              Quick Money Tool was created with a simple goal: to make personal finance accessible to every South African. Many people struggle with tax deductions, loan repayments, and retirement projections, not because of a lack of intelligence, but because of a lack of accessible tools and plain-language guidance.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              That&apos;s why we built a suite of free, no-nonsense calculators that give you instant, accurate results without requiring you to create an account or hand over your personal information.
+              That&apos;s why we built a suite of free calculators alongside research-based guides and resources that address real financial situations in South Africa. No sign-ups, no paywalls, and no jargon.
             </p>
           </motion.div>
 
@@ -107,15 +107,17 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Quick Money Tool is a small, independent team based in South Africa. Our calculators are built by developers who care about financial literacy, and every SARS, retirement, and personal finance tool is reviewed by a qualified contributor working inside the South African tax profession. We source our data from authorities like{' '}
-              <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>,{' '}
-              the{' '}
+              Quick Money Tool is a small, independent team based in South Africa. We are not just a calculator site. We are a personal finance guide that combines free tools with research-based content written for real South African situations. Every calculator, guide, and article is reviewed by{' '}
+              <Link href="/authors/ndulamiso-mamburu" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">Ndulamiso Mamburu</Link>,
+              a qualified Tax Professional working at{' '}
+              <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>.
+              We source our data from authorities like SARS, the{' '}
               <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Reserve Bank</a>,{' '}
               and the{' '}
               <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator</a>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We are not affiliated with any bank, lender, or government body. Our tools and recommendations are independent, unbiased, and designed to serve you, the user, first.
+              We are not affiliated with any bank, lender, or government body. Our tools, guides, and recommendations are independent, unbiased, and designed to serve you first.
             </p>
           </motion.div>
         </div>
@@ -235,7 +237,10 @@ export default function AboutPage() {
         <div className="p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border text-center">
           <h3 className="text-lg font-semibold text-foreground mb-3">Important Disclaimer</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Quick Money Tool provides estimations and projections for informational purposes only. Our calculators are not a substitute for professional financial advice. For complex tax matters, investment decisions, or significant financial commitments, we strongly recommend consulting with a registered South African financial advisor or tax practitioner.
+            Quick Money Tool provides estimations and projections for informational purposes only. Our calculators are not a substitute for professional financial advice. For complex tax matters, investment decisions, or significant financial commitments, we strongly recommend consulting with a registered South African financial advisor or tax practitioner.{' '}
+            <Link href="/disclaimer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">
+              Read our full disclaimer
+            </Link>.
           </p>
         </div>
       </Section>

@@ -141,20 +141,24 @@ export const features: Feature[] = [
   },
   {
     icon: TrendingUp,
-    title: "Always Up-to-Date",
-    description: "We constantly update our calculators with the latest regulations and financial data."
+    title: "Research-Based Guides",
+    description: "Practical money guides grounded in real South African situations, from tax season to monthly budgeting."
   },
   {
     icon: Users,
-    title: "User-Friendly Design",
-    description: "Simple, intuitive interfaces designed for everyone, no financial expertise required."
+    title: "Professionally Reviewed",
+    description: "Every calculator and guide is reviewed by a qualified tax professional working at SARS."
   }
 ];
 
 export const faqs: Faq[] = [
   {
     question: "Are these financial calculators free to use?",
-    answer: "Yes, absolutely! All financial tools on Quick Money Tool are 100% free to use. Our goal is to provide accessible financial planning resources for all South Africans."
+    answer: "Yes, absolutely! All financial tools and guides on Quick Money Tool are 100% free to use. Our goal is to provide accessible financial planning resources for all South Africans."
+  },
+  {
+    question: "Who reviews your calculators and guides?",
+    answer: "Every calculator and guide is reviewed by Ndulamiso Mamburu, a qualified Tax Professional working at the South African Revenue Service (SARS). He checks our tools against current SARS tax tables and regulatory guidance to ensure accuracy."
   },
   {
     question: "How accurate is the SARS Income Tax Calculator?",
@@ -163,6 +167,10 @@ export const faqs: Faq[] = [
   {
     question: "Is my personal information safe?",
     answer: "Your privacy is our top priority. All calculations are performed directly in your browser. We do not see, save, or store any of the personal financial data you enter."
+  },
+  {
+    question: "Is Quick Money Tool just a calculator site?",
+    answer: "No. Quick Money Tool is a personal finance guide for South Africans. Alongside our free calculators, we publish research-based articles, practical money guides, and financial explainers tailored to real situations in South Africa, from filing your tax return to budgeting on a local salary."
   },
   {
     question: "Can I use the Vehicle Finance Calculator for used cars?",

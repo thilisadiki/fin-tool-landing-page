@@ -13,7 +13,7 @@ const CtaSection = () => {
                 Ready to Take Control of Your Finances?
               </h2>
               <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                Start using our free finance calculators today and make smarter, more informed decisions about your money.
+                Explore our free calculators and research-based guides to make smarter, more informed decisions about your money.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

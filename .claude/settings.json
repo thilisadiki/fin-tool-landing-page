@@ -5,7 +5,8 @@
       "Bash(gh pr *)",
       "Bash(find src/components -name \"*.tsx\" -exec wc -l {} \\\\;)",
       "Bash(npm run *)",
-      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)"
+      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
+      "Bash(npx next *)"
     ]
   }
 }

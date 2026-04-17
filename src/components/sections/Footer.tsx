@@ -58,6 +58,11 @@ const Footer = () => {
                       Terms of Service
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/disclaimer" className="hover:text-foreground transition-colors">
+                      Disclaimer
+                    </Link>
+                  </li>
                 </ul>
 
                 <h3 className="text-foreground font-semibold mb-4 mt-8">Sources</h3>

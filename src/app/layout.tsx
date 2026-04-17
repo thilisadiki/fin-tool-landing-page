@@ -13,12 +13,13 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Quick Money Tool | Free Finance Calculators for South Africans',
+    default: 'Quick Money Tool | Free Finance Calculators & Guides for South Africans',
     template: '%s | Quick Money Tool',
   },
   description:
-    'Free, accurate financial calculators for South Africa. Simplify your SARS income tax, vehicle finance, and retirement savings planning with our easy-to-use online tools.',
+    'Your personal finance guide for South Africa. Free calculators for SARS income tax, vehicle finance, loans, and retirement savings, plus research-based guides reviewed by tax professionals.',
   keywords: [
+    'personal finance guide south africa',
     'financial calculator south africa',
     'sars tax calculator',
     'paye calculator',
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     'car payment calculator',
     'income tax calculator',
     'free financial tools',
+    'money guide south africa',
+    'financial advice SA',
   ],
   metadataBase: new URL('https://www.quickmoneytool.com'),
   manifest: '/manifest.json',

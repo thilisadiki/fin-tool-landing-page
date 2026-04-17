@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Quick Money Tool: free, accurate financial calculators built for South Africans. Our mission is to make financial planning accessible to everyone.',
+    'Learn about Quick Money Tool: a personal finance guide for South Africans with free calculators and research-based guides, all reviewed by qualified tax professionals.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: 'About Us | Quick Money Tool',
     description:
-      'Free, accurate financial calculators built for South Africans.',
+      'A personal finance guide for South Africans with free calculators and professionally reviewed money guides.',
     url: '/about',
     type: 'website',
   },
