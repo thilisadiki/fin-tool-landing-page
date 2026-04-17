@@ -113,8 +113,11 @@ export default function SarsIncomeTaxCalculatorPage() {
         </div>
       </Section>
 
-      {/* Guide: Table of Contents */}
-      <Section maxWidth="max-w-4xl">
+      {/* Guide content wrapper — tighter spacing than default Section py-20 */}
+      <div className="px-6 py-12">
+        <div className="max-w-4xl mx-auto space-y-12">
+
+          {/* Table of Contents */}
         <div className="p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border">
           <h2 className="text-2xl font-bold text-foreground mb-4">In this guide</h2>
           <nav>
@@ -146,11 +149,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             </ul>
           </nav>
         </div>
-      </Section>
 
-      {/* Guide Section 1: Tax-Free Threshold */}
-      <Section maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="tax-free-threshold">
+          {/* Section 1: Tax-Free Threshold */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="tax-free-threshold">
           <h2 className="text-3xl font-bold text-foreground mb-4">Tax-Free Threshold Explained</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Not everyone who earns an income in South Africa needs to pay tax. SARS sets a minimum annual income
@@ -200,11 +201,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             on the full amount above R0, less the rebates.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 2: How PAYE Works */}
-      <Section className="bg-accent/30" maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="how-paye-works">
+          {/* Section 2: How PAYE Works */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="how-paye-works">
           <h2 className="text-3xl font-bold text-foreground mb-4">How PAYE Is Deducted Monthly</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             PAYE stands for Pay-As-You-Earn. It is the system your employer uses to deduct income tax from your salary
@@ -234,11 +233,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             will owe SARS the difference.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 3: Provisional Tax vs PAYE */}
-      <Section maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="provisional-tax-vs-paye">
+          {/* Section 3: Provisional Tax vs PAYE */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="provisional-tax-vs-paye">
           <h2 className="text-3xl font-bold text-foreground mb-4">Provisional Tax vs PAYE</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             PAYE and provisional tax are two different ways of paying income tax during the year. They serve the same
@@ -281,11 +278,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             which makes filling in your provisional tax return (IRP6) much easier.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 4: Foreign Income Exemption */}
-      <Section className="bg-accent/30" maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="foreign-income-exemption">
+          {/* Section 4: Foreign Income Exemption */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="foreign-income-exemption">
           <h2 className="text-3xl font-bold text-foreground mb-4">Section 10(1)(o)(ii): Foreign Income Exemption</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             South Africa taxes residents on their worldwide income. However, if you work abroad for an extended period,
@@ -313,11 +308,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS personal income tax guide</a>.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 5: What Is Taxable */}
-      <Section maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="what-is-taxable">
+          {/* Section 5: What Is Taxable */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="what-is-taxable">
           <h2 className="text-3xl font-bold text-foreground mb-4">What Is Taxable in South Africa</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             South Africa operates on a <strong className="text-foreground">residence-based</strong> tax system. If you are a South African
@@ -373,11 +366,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             (40% of R460,000) is added to your taxable income for the year.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 6: When You Don't Need to File */}
-      <Section className="bg-accent/30" maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="when-you-dont-need-to-file">
+          {/* Section 6: When You Don't Need to File */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="when-you-dont-need-to-file">
           <h2 className="text-3xl font-bold text-foreground mb-4">When You Don&apos;t Need to Submit a Tax Return</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Not every South African taxpayer needs to file an annual return. SARS runs an{' '}
@@ -407,11 +398,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             in your IRP5. When in doubt, file. There is no penalty for submitting a return you did not strictly need to.
           </p>
         </div>
-      </Section>
 
-      {/* Guide Section 7: Tax Brackets, Rebates & Credits (existing content, restructured) */}
-      <Section maxWidth="max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none" id="tax-brackets">
+          {/* Section 7: Tax Brackets, Rebates & Credits */}
+          <div className="prose prose-slate dark:prose-invert max-w-none" id="tax-brackets">
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Tax Brackets, Rebates &amp; Credits ({CURRENT_TAX_YEAR.year})
           </h2>
@@ -459,7 +448,9 @@ export default function SarsIncomeTaxCalculatorPage() {
             </div>
           </div>
         </div>
-      </Section>
+
+        </div>
+      </div>
 
       {/* FAQ */}
       <div id="tax-faq">

@@ -167,24 +167,44 @@ export const personalLoanFaqs: CalculatorFaq[] = [
 
 export const budgetFaqs: CalculatorFaq[] = [
   {
+    question: 'How accurate is this budget calculator?',
+    answer:
+      'The calculator provides a reliable estimate based on the data you enter. However, actual results depend on your spending habits and financial discipline. The more honest and detailed you are with your numbers, the more useful the output will be.',
+  },
+  {
     question: 'What is the 50/30/20 rule?',
     answer:
-      'The 50/30/20 rule suggests allocating 50% of your after-tax income to needs (rent, groceries, transport, utilities, medical aid, minimum debt payments), 30% to wants (eating out, entertainment, hobbies, subscriptions), and 20% to savings and extra debt repayment. It is a starting framework, not a strict law — young professionals with expensive rent in Cape Town or Johannesburg may need to shift the percentages.',
+      'The 50/30/20 rule suggests allocating 50% of your after-tax income to needs (rent, groceries, transport, utilities, medical aid, minimum debt payments), 30% to wants (eating out, entertainment, hobbies, subscriptions), and 20% to savings and extra debt repayment. It is a starting framework, not a strict law. Young professionals with expensive rent in Cape Town or Johannesburg may need to shift the percentages.',
+  },
+  {
+    question: 'Should I include savings as an expense in my budget?',
+    answer:
+      'Yes. Savings should be treated as a fixed monthly commitment, not something you do only when money is left over. By treating it as a non-negotiable expense, you build the habit of paying yourself first and ensure your long-term financial goals stay on track.',
+  },
+  {
+    question: 'How often should I update my budget?',
+    answer:
+      'You should review your budget at least once a month or whenever your income or expenses change significantly. Life events like salary increases, new debt, moving house, or having a child all require budget adjustments. The more regularly you review, the more effective your budget becomes.',
   },
   {
     question: 'How do I budget if my income is irregular?',
     answer:
-      'If you are a freelancer, commission earner, or business owner, budget against your lowest expected monthly income, not your average. Route all income into a holding account, pay yourself a fixed "salary" each month, and keep the surplus as a buffer. Build a 3–6 month emergency fund before you start investing, because irregular income needs more runway than a salaried role.',
+      'If you are a freelancer, commission earner, or business owner, budget against your lowest expected monthly income, not your average. Route all income into a holding account, pay yourself a fixed "salary" each month, and keep the surplus as a buffer. Build a 3 to 6 month emergency fund before you start investing, because irregular income needs more runway than a salaried role.',
+  },
+  {
+    question: 'Can budgeting help me get out of debt?',
+    answer:
+      'Yes. Budgeting helps you allocate funds toward debt repayment while preventing further overspending. By identifying unnecessary expenses and redirecting that money toward your highest-interest debt first (credit cards, store cards, personal loans), you can systematically reduce what you owe and avoid paying more interest than necessary.',
   },
   {
     question: 'Should I save or pay off debt first?',
     answer:
-      'First build a small emergency buffer (around R10,000–R20,000) so a flat tyre or a broken geyser does not force you to borrow. Then prioritise paying off any debt with an interest rate above about 10% — credit cards, store cards, personal loans. Only once that high-interest debt is gone does it make sense to redirect the same amount into investments like a tax-free savings account or RA.',
+      'First build a small emergency buffer (around R10,000 to R20,000) so a flat tyre or a broken geyser does not force you to borrow. Then prioritise paying off any debt with an interest rate above about 10%, such as credit cards, store cards, and personal loans. Only once that high-interest debt is gone does it make sense to redirect the same amount into investments like a tax-free savings account or RA.',
   },
   {
     question: 'What counts as a "need" vs a "want" in a South African budget?',
     answer:
-      'Needs are things you would still pay for if your income was halved: rent or bond, groceries (not take-aways), basic transport (including petrol and car instalment if you need the car for work), utilities, medical aid, school fees, and minimum debt repayments. Wants are the negotiables — DStv, gym, streaming subscriptions, restaurant meals, new clothes beyond replacement. Being honest about the split is the first step.',
+      'Needs are things you would still pay for if your income was halved: rent or bond, groceries (not takeaways), basic transport (including petrol and car instalment if you need the car for work), utilities, medical aid, school fees, and minimum debt repayments. Wants are the negotiables: DStv, gym, streaming subscriptions, restaurant meals, and new clothes beyond replacement. Being honest about the split is the first step.',
   },
   {
     question: 'How do I budget for annual expenses like car licences or school fees?',
@@ -194,7 +214,7 @@ export const budgetFaqs: CalculatorFaq[] = [
   {
     question: 'How much should I keep in an emergency fund?',
     answer:
-      'The standard guidance is three to six months of essential expenses — rent, groceries, transport, utilities, minimum debt, medical. Single-income households, freelancers, and those in industries at risk of retrenchment should aim for six months. Keep the fund in an instant-access account earning interest (a money market account works well), separate from your everyday transaction account.',
+      'The standard guidance is three to six months of essential expenses, covering rent, groceries, transport, utilities, minimum debt, and medical costs. Single-income households, freelancers, and those in industries at risk of retrenchment should aim for six months. Keep the fund in an instant-access account earning interest (a money market account works well), separate from your everyday transaction account.',
   },
 ];
 
