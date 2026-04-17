@@ -60,10 +60,10 @@ export default function VehicleFinanceCalculatorPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950 from-slate-50 via-blue-50 to-indigo-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-xl flex items-center justify-center mx-auto mb-6">
               <Car className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -120,7 +120,7 @@ export default function VehicleFinanceCalculatorPage() {
               <h3 className="text-xl font-semibold text-foreground mb-3">Understanding the Interest Rate</h3>
               <p className="text-muted-foreground mb-4">
                 The{' '}
-                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">prime lending rate</a>{' '}
+                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">prime lending rate</a>{' '}
                 published by the South African Reserve Bank (SARB) typically dictates the baseline interest for car loans in SA. Your personalized interest rate will depend on your credit score, affordability, and the size of your deposit. An interest rate below prime is excellent, while a rate higher than prime is more typical for high-risk profiles.
               </p>
 
@@ -147,9 +147,9 @@ export default function VehicleFinanceCalculatorPage() {
             <h3 className="text-xl font-semibold text-foreground mb-3">Important Costs to Remember</h3>
             <p className="text-muted-foreground mb-3">
               Remember that when buying a car, the monthly installment is just one part of the cost. The{' '}
-              <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator (NCR)</a>{' '}
+              <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Regulator (NCR)</a>{' '}
               regulates the maximum fees lenders may charge under the{' '}
-              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Act</a>.
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Act</a>.
               Always account for:
             </p>
             <ul className="space-y-2 text-muted-foreground">
@@ -176,7 +176,7 @@ export default function VehicleFinanceCalculatorPage() {
             </ul>
             <p className="text-xs text-muted-foreground mt-3">
               Fee caps sourced from the{' '}
-              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">NCR maximum rates &amp; fees schedule</a>.
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">NCR maximum rates &amp; fees schedule</a>.
             </p>
           </div>
         </div>

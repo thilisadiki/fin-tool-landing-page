@@ -4,7 +4,7 @@ import Section from '@/components/ui/Section';
 const CtaSection = () => {
     return (
         <Section
-          className="bg-gradient-to-r from-emerald-500 to-blue-600"
+          className="bg-gradient-to-r from-[#0F2744] to-[#1E3A5F]"
           maxWidth="max-w-4xl"
           containerClassName="text-center"
         >
@@ -20,7 +20,7 @@ const CtaSection = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white text-emerald-600 hover:bg-slate-200 px-8 py-4 text-lg"
+                  className="bg-white text-[#0F2744] hover:bg-[#C9A84C] hover:text-white px-8 py-4 text-lg font-semibold transition-colors"
                 >
                   <a href="/calculators">Start Calculating Now</a>
                 </Button>

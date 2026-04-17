@@ -64,10 +64,10 @@ export default function SarsIncomeTaxCalculatorPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6 border border-[#C9A84C]/30">
               <FileText className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -123,28 +123,28 @@ export default function SarsIncomeTaxCalculatorPage() {
           <nav>
             <ul className="grid md:grid-cols-2 gap-2 text-sm">
               <li>
-                <a href="#tax-free-threshold" className="text-emerald-600 dark:text-emerald-400 hover:underline">1. Tax-free threshold explained</a>
+                <a href="#tax-free-threshold" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">1. Tax-free threshold explained</a>
               </li>
               <li>
-                <a href="#how-paye-works" className="text-emerald-600 dark:text-emerald-400 hover:underline">2. How PAYE is deducted monthly</a>
+                <a href="#how-paye-works" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">2. How PAYE is deducted monthly</a>
               </li>
               <li>
-                <a href="#provisional-tax-vs-paye" className="text-emerald-600 dark:text-emerald-400 hover:underline">3. Provisional tax vs PAYE</a>
+                <a href="#provisional-tax-vs-paye" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">3. Provisional tax vs PAYE</a>
               </li>
               <li>
-                <a href="#foreign-income-exemption" className="text-emerald-600 dark:text-emerald-400 hover:underline">4. Foreign income exemption</a>
+                <a href="#foreign-income-exemption" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">4. Foreign income exemption</a>
               </li>
               <li>
-                <a href="#what-is-taxable" className="text-emerald-600 dark:text-emerald-400 hover:underline">5. What is taxable in South Africa</a>
+                <a href="#what-is-taxable" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">5. What is taxable in South Africa</a>
               </li>
               <li>
-                <a href="#when-you-dont-need-to-file" className="text-emerald-600 dark:text-emerald-400 hover:underline">6. When you don&apos;t need to file a return</a>
+                <a href="#when-you-dont-need-to-file" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">6. When you don&apos;t need to file a return</a>
               </li>
               <li>
-                <a href="#tax-brackets" className="text-emerald-600 dark:text-emerald-400 hover:underline">7. Tax brackets, rebates &amp; credits</a>
+                <a href="#tax-brackets" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">7. Tax brackets, rebates &amp; credits</a>
               </li>
               <li>
-                <a href="#tax-faq" className="text-emerald-600 dark:text-emerald-400 hover:underline">8. Frequently asked questions</a>
+                <a href="#tax-faq" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">8. Frequently asked questions</a>
               </li>
             </ul>
           </nav>
@@ -177,7 +177,7 @@ export default function SarsIncomeTaxCalculatorPage() {
             <h3 className="text-lg font-semibold text-foreground mb-3">Tax Thresholds ({CURRENT_TAX_YEAR.year})</h3>
             <p className="text-sm text-muted-foreground mb-3">
               Source:{' '}
-              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS, Rates of tax for individuals</a>.
+              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS, Rates of tax for individuals</a>.
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex justify-between">
@@ -305,7 +305,7 @@ export default function SarsIncomeTaxCalculatorPage() {
             This exemption does not apply to freelancers, business owners, or passive income like dividends and rental income.
             It only covers employment income (salary, bonuses, and allowances) from services physically performed outside South Africa.
             For the full legislation, see the{' '}
-            <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS personal income tax guide</a>.
+            <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS personal income tax guide</a>.
           </p>
         </div>
 
@@ -344,7 +344,7 @@ export default function SarsIncomeTaxCalculatorPage() {
             as a capital gain, in which case only 40% of the gain is included in your taxable income (for individuals).
             The classification depends on your intention, frequency of trading, and the period of holding.
             SARS has published a{' '}
-            <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">crypto asset guide</a>{' '}
+            <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">crypto asset guide</a>{' '}
             that outlines how they distinguish between revenue and capital treatment.
           </p>
 
@@ -412,7 +412,7 @@ export default function SarsIncomeTaxCalculatorPage() {
                 South Africa uses a progressive tax system where higher earners pay a higher percentage of tax.
                 For the {CURRENT_TAX_YEAR.year} tax year, rates range from 18% on the first R245,100 up to 45%
                 on income above R1,878,600. These brackets are published annually by the{' '}
-                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Revenue Service (SARS)</a>.
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">South African Revenue Service (SARS)</a>.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Tax Rebates</h3>
@@ -421,7 +421,7 @@ export default function SarsIncomeTaxCalculatorPage() {
                 Taxpayers aged 65 to 74 receive an additional secondary rebate of {formatZAR(CURRENT_TAX_YEAR.rebates.secondary)},
                 and those 75 and older receive a further tertiary rebate of {formatZAR(CURRENT_TAX_YEAR.rebates.tertiary)}.
                 Rebate amounts are set by{' '}
-                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>{' '}
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS</a>{' '}
                 and adjust periodically with the annual Budget Speech.
               </p>
             </div>
@@ -434,7 +434,7 @@ export default function SarsIncomeTaxCalculatorPage() {
                 {' '}{formatZAR(CURRENT_TAX_YEAR.medicalCredits.firstDependent)} for the first dependent,
                 and {formatZAR(CURRENT_TAX_YEAR.medicalCredits.additional)} for each additional dependent.
                 Credit amounts are specified in the{' '}
-                <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/medical-credits/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS medical tax credit schedule</a>.
+                <a href="https://www.sars.gov.za/types-of-tax/personal-income-tax/medical-credits/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS medical tax credit schedule</a>.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">Retirement Fund Deductions</h3>
@@ -442,7 +442,7 @@ export default function SarsIncomeTaxCalculatorPage() {
                 Contributions to approved retirement funds (pension, provident, or retirement annuity) are deductible
                 up to 27.5% of your remuneration, with an annual cap of {formatZAR(CURRENT_TAX_YEAR.retirementDeductionCap)}.
                 This deduction is governed by section 11F of the Income Tax Act. See the{' '}
-                <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS retirement fund guide</a>{' '}
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS retirement fund guide</a>{' '}
                 for full details.
               </p>
             </div>

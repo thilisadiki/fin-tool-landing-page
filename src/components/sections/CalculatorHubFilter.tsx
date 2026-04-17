@@ -39,7 +39,7 @@ export default function CalculatorHubFilter() {
               onClick={() => setActive(group.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
                 isActive
-                  ? 'bg-emerald-500 text-white border-emerald-500 hover:bg-emerald-600'
+                  ? 'bg-[#0F2744] text-white border-[#0F2744] hover:bg-[#1E3A5F]'
                   : 'border-border text-muted-foreground hover:text-foreground hover:border-accent bg-background'
               }`}
             >
@@ -76,7 +76,7 @@ export default function CalculatorHubFilter() {
                     key={idx}
                     className="flex items-center text-muted-foreground"
                   >
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 shrink-0" />
+                    <div className="w-2 h-2 bg-[#C9A84C] rounded-full mr-3 shrink-0" />
                     {feature}
                   </li>
                 ))}

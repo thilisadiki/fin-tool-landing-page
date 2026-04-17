@@ -6,47 +6,47 @@
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --foreground: 214 67% 16%;
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 214 67% 16%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
+  --popover-foreground: 214 67% 16%;
+  --primary: 214 67% 16%;
   --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --secondary: 214 30% 94%;
+  --secondary-foreground: 214 67% 16%;
+  --muted: 214 30% 94%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 214 30% 94%;
+  --accent-foreground: 214 67% 16%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --border: 214 25% 88%;
+  --input: 214 25% 88%;
+  --ring: 41 51% 55%;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
+  --background: 214 60% 8%;
   --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
+  --card: 214 60% 8%;
   --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
+  --popover: 214 60% 8%;
   --popover-foreground: 210 40% 98%;
   --primary: 210 40% 98%;
-  --primary-foreground: 222.2 84% 4.9%;
-  --secondary: 217.2 32.6% 17.5%;
+  --primary-foreground: 214 67% 16%;
+  --secondary: 214 45% 14%;
   --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
+  --muted: 214 45% 14%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 214 45% 14%;
   --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
+  --border: 214 45% 14%;
+  --input: 214 45% 14%;
+  --ring: 41 51% 55%;
 }
 
 * {
@@ -78,12 +78,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #10b981, #3b82f6);
+  background: linear-gradient(135deg, #C9A84C, #0F2744);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #059669, #2563eb);
+  background: linear-gradient(135deg, #B8943E, #0a1f38);
 }
 
 /* Gradient text animation */
@@ -94,7 +94,7 @@ html {
 }
 
 .animate-gradient {
-  background: linear-gradient(-45deg, #10b981, #3b82f6, #8b5cf6, #ec4899);
+  background: linear-gradient(-45deg, #C9A84C, #0F2744, #1E3A5F, #B8943E);
   background-size: 400% 400%;
   animation: gradient-shift 3s ease infinite;
   -webkit-background-clip: text;
@@ -152,7 +152,7 @@ html {
 }
 
 .wp-content a {
-  color: #10b981;
+  color: #C9A84C;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -160,15 +160,15 @@ html {
 }
 
 .wp-content a:hover {
-  color: #059669;
+  color: #B8943E;
 }
 
 .dark .wp-content a {
-  color: #34d399;
+  color: #D4B96A;
 }
 
 .dark .wp-content a:hover {
-  color: #6ee7b7;
+  color: #E5CF9A;
 }
 
 .wp-content ul,
@@ -185,11 +185,11 @@ html {
 .wp-content li > ol { margin-top: 0.5em; }
 
 .wp-content li::marker {
-  color: #10b981;
+  color: #C9A84C;
 }
 
 .wp-content blockquote {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid #C9A84C;
   padding: 0.25em 0 0.25em 1.25em;
   font-style: italic;
   color: hsl(var(--muted-foreground));
@@ -267,8 +267,8 @@ html {
 }
 
 .wp-content .wp-callout {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08));
-  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(15, 39, 68, 0.08));
+  border-left: 4px solid #C9A84C;
   padding: 1em 1.25em;
   border-radius: 0.5em;
   color: hsl(var(--foreground));

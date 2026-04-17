@@ -12,7 +12,7 @@ const FaqSection = () => {
     return (
         <Section id="faq" maxWidth="max-w-4xl">
             <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
-              <HelpCircle className="mx-auto h-12 w-12 text-emerald-400 mb-4" />
+              <HelpCircle className="mx-auto h-12 w-12 text-[#C9A84C] mb-4" />
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Frequently Asked Questions
               </h2>

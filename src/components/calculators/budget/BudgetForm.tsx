@@ -210,7 +210,7 @@ export default function BudgetForm({ inputs, onChange, onCalculate }: BudgetForm
 
       <Button
         size="lg"
-        className="w-full mt-8 bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-600 hover:to-green-700 text-white text-lg py-6"
+        className="w-full mt-8 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] hover:from-[#1E3A5F] hover:to-[#0F2744] text-white text-lg py-6"
         onClick={onCalculate}
       >
         Analyze My Budget

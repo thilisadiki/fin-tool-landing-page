@@ -26,7 +26,7 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
         >
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-lg flex items-center justify-center border border-[#C9A84C]/30">
               <Calculator className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold text-foreground">Quick Money Tool</span>

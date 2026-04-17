@@ -24,7 +24,7 @@ export default function ReviewedBy({ author, dateReviewed }: ReviewedByProps) {
     <section className="px-6 py-4 border-y border-border bg-accent/30">
       <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
         <div className="flex items-center gap-2 shrink-0">
-          <UserCheck className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+          <UserCheck className="w-4 h-4 text-[#C9A84C]" aria-hidden="true" />
           <span className="text-muted-foreground">Reviewed by</span>
         </div>
         <Link

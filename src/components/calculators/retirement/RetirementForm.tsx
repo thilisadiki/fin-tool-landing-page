@@ -119,7 +119,7 @@ export default function RetirementForm({ inputs, onChange, onCalculate }: Retire
 
       <Button
         size="lg"
-        className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-lg py-6"
+        className="w-full bg-gradient-to-r from-[#0F2744] to-[#C9A84C] hover:from-[#C9A84C] hover:to-[#0F2744] text-white text-lg py-6"
         onClick={onCalculate}
       >
         Project My Retirement

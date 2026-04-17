@@ -10,7 +10,7 @@ export default function OgImage() {
     title: 'Estimate your 2026/2027 SARS tax',
     subtitle:
       'PAYE, rebates, medical credits, and retirement deductions calculated instantly.',
-    accentFrom: '#10b981',
-    accentTo: '#14b8a6',
+    accentFrom: '#C9A84C',
+    accentTo: '#0F2744',
   });
 }

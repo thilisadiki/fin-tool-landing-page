@@ -10,7 +10,7 @@ export default function OgImage() {
     title: 'Project your retirement annuity growth',
     subtitle:
       'Compound growth, inflation, and the 4% rule. See if you are on track.',
-    accentFrom: '#a855f7',
-    accentTo: '#ec4899',
+    accentFrom: '#C9A84C',
+    accentTo: '#0F2744',
   });
 }

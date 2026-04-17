@@ -66,16 +66,16 @@ export default function AuthorPage({ params }: AuthorPageProps) {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
           <div
             aria-hidden="true"
-            className="w-28 h-28 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg shrink-0"
+            className="w-28 h-28 rounded-full bg-gradient-to-br from-[#0F2744] to-[#C9A84C] flex items-center justify-center text-white text-3xl font-bold shadow-lg shrink-0"
           >
             {initialsFor(author.name)}
           </div>
           <div className="flex-1 text-center md:text-left">
-            <p className="text-sm uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold mb-2">
+            <p className="text-sm uppercase tracking-wider text-[#C9A84C] dark:text-[#D4B96A] font-semibold mb-2">
               Author &amp; Technical Reviewer
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">
@@ -122,7 +122,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
       {/* Biography */}
       <Section maxWidth="max-w-3xl">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-lg flex items-center justify-center">
             <User className="w-5 h-5 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-foreground">Biography</h2>
@@ -135,7 +135,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-lg flex items-center justify-center">
                 <Briefcase className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-foreground">Role</h2>
@@ -149,7 +149,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
           </div>
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-[#B8943E] to-[#9A7A32] rounded-lg flex items-center justify-center">
                 <GraduationCap className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-foreground">Qualifications</h2>
@@ -160,7 +160,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                   key={credential}
                   className="text-muted-foreground leading-relaxed flex items-start gap-2"
                 >
-                  <span className="text-emerald-500 mt-1.5 shrink-0">•</span>
+                  <span className="text-[#C9A84C] mt-1.5 shrink-0">•</span>
                   <span>{credential}</span>
                 </li>
               ))}
@@ -172,7 +172,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
       {/* Expertise */}
       <Section maxWidth="max-w-4xl">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-r from-[#1E3A5F] to-[#C9A84C] rounded-lg flex items-center justify-center">
             <Target className="w-5 h-5 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-foreground">Areas of expertise</h2>
@@ -202,7 +202,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
             <li key={review}>
               <Link
                 href="/calculators"
-                className="block px-4 py-3 rounded-lg bg-white dark:bg-slate-800/50 border border-border text-sm text-foreground hover:border-emerald-500 transition-colors"
+                className="block px-4 py-3 rounded-lg bg-white dark:bg-slate-800/50 border border-border text-sm text-foreground hover:border-[#C9A84C] transition-colors"
               >
                 {review}
               </Link>

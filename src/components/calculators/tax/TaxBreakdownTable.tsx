@@ -50,17 +50,17 @@ export default function TaxBreakdownTable({ result }: TaxBreakdownTableProps) {
             {result.annualRetirementDeduction > 0 && (
               <div className="flex justify-between py-2 border-b border-border/50">
                 <span className="text-muted-foreground">Retirement deduction</span>
-                <span className="font-medium text-emerald-500">-{formatZAR(result.annualRetirementDeduction)}</span>
+                <span className="font-medium text-[#C9A84C]">-{formatZAR(result.annualRetirementDeduction)}</span>
               </div>
             )}
             <div className="flex justify-between py-2 border-b border-border/50">
               <span className="text-muted-foreground">Tax rebates</span>
-              <span className="font-medium text-emerald-500">-{formatZAR(result.annualRebates)}</span>
+              <span className="font-medium text-[#C9A84C]">-{formatZAR(result.annualRebates)}</span>
             </div>
             {result.annualMedicalCredits > 0 && (
               <div className="flex justify-between py-2 border-b border-border/50">
                 <span className="text-muted-foreground">Medical tax credits</span>
-                <span className="font-medium text-emerald-500">-{formatZAR(result.annualMedicalCredits)}</span>
+                <span className="font-medium text-[#C9A84C]">-{formatZAR(result.annualMedicalCredits)}</span>
               </div>
             )}
             <div className="flex justify-between py-2 font-bold border-b border-border/50">

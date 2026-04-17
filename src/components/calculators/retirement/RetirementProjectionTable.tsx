@@ -39,8 +39,8 @@ export default function RetirementProjectionTable({ result }: RetirementProjecti
                     <td className="py-3 px-4 text-foreground font-medium">{row.year}</td>
                     <td className="py-3 px-4 text-right text-foreground">{row.age}</td>
                     <td className="py-3 px-4 text-right text-foreground">{formatZAR(row.startBalance)}</td>
-                    <td className="py-3 px-4 text-right text-purple-500">{formatZAR(row.contributions)}</td>
-                    <td className="py-3 px-4 text-right text-emerald-500">{formatZAR(row.growth)}</td>
+                    <td className="py-3 px-4 text-right text-[#1E3A5F] dark:text-[#7B9CC4]">{formatZAR(row.contributions)}</td>
+                    <td className="py-3 px-4 text-right text-[#C9A84C]">{formatZAR(row.growth)}</td>
                     <td className="py-3 px-4 text-right text-foreground font-medium">{formatZAR(row.endBalance)}</td>
                   </tr>
                 ))}
@@ -51,11 +51,11 @@ export default function RetirementProjectionTable({ result }: RetirementProjecti
           <div className="mt-6 flex flex-col space-y-3 text-sm p-4 rounded-xl border border-border/50 bg-accent/20">
             <div className="flex justify-between border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Total Contributions</span>
-              <span className="font-medium text-purple-500">{formatZAR(result.totalContributions)}</span>
+              <span className="font-medium text-[#1E3A5F] dark:text-[#7B9CC4]">{formatZAR(result.totalContributions)}</span>
             </div>
             <div className="flex justify-between border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Total Investment Growth</span>
-              <span className="font-medium text-emerald-500">{formatZAR(result.totalGrowth)}</span>
+              <span className="font-medium text-[#C9A84C]">{formatZAR(result.totalGrowth)}</span>
             </div>
             <div className="flex justify-between font-bold pt-1">
               <span className="text-foreground">Projected Total at Retirement</span>

@@ -15,8 +15,8 @@ export function renderOgImage({
   eyebrow = 'Quick Money Tool',
   title,
   subtitle,
-  accentFrom = '#10b981',
-  accentTo = '#0ea5e9',
+  accentFrom = '#C9A84C',
+  accentTo = '#0F2744',
 }: OgParams) {
   return new ImageResponse(
     (
@@ -29,7 +29,7 @@ export function renderOgImage({
           justifyContent: 'space-between',
           padding: '72px 80px',
           background:
-            'linear-gradient(135deg, #0f172a 0%, #064e3b 60%, #0f172a 100%)',
+            'linear-gradient(135deg, #070f1a 0%, #0F2744 60%, #070f1a 100%)',
           color: '#f8fafc',
           fontFamily:
             'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',

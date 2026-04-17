@@ -98,7 +98,7 @@ function RelatedPostCard({ post }: { post: WPPost }) {
         </div>
       )}
       <div className="p-5">
-        <h3 className="font-semibold text-foreground group-hover:text-emerald-500 transition-colors leading-snug">
+        <h3 className="font-semibold text-foreground group-hover:text-[#C9A84C] transition-colors leading-snug">
           {stripHtml(post.title.rendered)}
         </h3>
         <p className="text-xs text-muted-foreground mt-2">
@@ -203,7 +203,7 @@ export default async function BlogPostPage({
               {categories.map((c) => (
                 <span
                   key={c.id}
-                  className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400"
+                  className="text-xs font-semibold uppercase tracking-wide text-[#C9A84C] dark:text-[#D4B96A]"
                 >
                   {c.name}
                 </span>

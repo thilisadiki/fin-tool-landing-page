@@ -15,42 +15,42 @@ export default function RetirementResultsPanel({ result }: RetirementResultsPane
       key: 'projected',
       label: 'Projected Savings',
       icon: TrendingUp,
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-[#0F2744] to-[#1E3A5F]',
       value: formatZAR(result.projectedSavings),
     },
     {
       key: 'goal',
       label: 'Retirement Goal',
       icon: Target,
-      color: result.onTrack ? 'from-emerald-500 to-teal-600' : 'from-red-500 to-rose-600',
+      color: result.onTrack ? 'from-[#C9A84C] to-[#B8943E]' : 'from-red-500 to-rose-600',
       value: formatZAR(result.retirementGoal),
     },
     {
       key: 'income',
       label: 'Est. Monthly Income (4% Rule)',
       icon: Wallet,
-      color: 'from-blue-500 to-indigo-600',
+      color: 'from-[#1E3A5F] to-[#C9A84C]',
       value: formatZAR(result.projectedMonthlyIncome4Pct),
     },
     {
       key: 'years',
       label: 'Years to Retirement',
       icon: CalendarDays,
-      color: 'from-amber-500 to-orange-600',
+      color: 'from-[#B8943E] to-[#9A7A32]',
       value: `${result.yearsToRetirement} years`,
     },
     {
       key: 'contributions',
       label: 'Total Contributions',
       icon: PiggyBank,
-      color: 'from-teal-500 to-cyan-600',
+      color: 'from-[#0F2744] to-[#C9A84C]',
       value: formatZAR(result.totalContributions),
     },
     {
       key: 'growth',
       label: 'Total Investment Growth',
       icon: Percent,
-      color: 'from-lime-500 to-green-600',
+      color: 'from-[#C9A84C] to-[#1E3A5F]',
       value: formatZAR(result.totalGrowth),
     },
   ];
@@ -63,7 +63,7 @@ export default function RetirementResultsPanel({ result }: RetirementResultsPane
         animate={{ opacity: 1, scale: 1 }}
         className={`rounded-xl p-4 text-center border ${
           result.onTrack
-            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400'
+            ? 'bg-[#C9A84C]/10 border-[#C9A84C]/30 text-[#B8943E] dark:text-[#D4B96A]'
             : 'bg-red-500/10 border-red-500/30 text-red-600 dark:text-red-400'
         }`}
       >

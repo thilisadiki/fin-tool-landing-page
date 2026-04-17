@@ -63,10 +63,10 @@ export default function RetirementSavingsCalculatorPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-purple-950 dark:to-pink-950 from-slate-50 via-purple-50 to-pink-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#C9A84C] rounded-xl flex items-center justify-center mx-auto mb-6">
               <PiggyBank className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -128,7 +128,7 @@ export default function RetirementSavingsCalculatorPage() {
               <h3 className="text-xl font-semibold text-foreground mb-3">Retirement Annuities (RAs)</h3>
               <p className="text-muted-foreground mb-4">
                 A Retirement Annuity is a private pension plan in South Africa that offers significant tax benefits. Contributions to an RA are tax-deductible up to 27.5% of your taxable income (capped at R350,000 per year), as outlined in the{' '}
-                <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS retirement fund guide</a>.
+                <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS retirement fund guide</a>.
                 This means your investment grows more efficiently because you&apos;re investing pre-tax money. RAs are available through most financial service providers.
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function RetirementSavingsCalculatorPage() {
               </li>
               <li className="flex justify-between">
                 <span>Living Annuity</span>
-                <span className="text-foreground">Flexible income (2.5%–17.5% p.a.) at retirement — <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS guide</a></span>
+                <span className="text-foreground">Flexible income (2.5%–17.5% p.a.) at retirement — <a href="https://www.sars.gov.za/tax-rates/income-tax/retirement-lump-sum-benefits/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS guide</a></span>
               </li>
               <li className="flex justify-between">
                 <span>Life Annuity</span>

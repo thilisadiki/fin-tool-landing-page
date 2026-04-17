@@ -20,25 +20,25 @@ const values = [
     icon: Shield,
     title: 'Privacy First',
     description: 'All calculations happen directly in your browser. We never see, store, or transmit your personal financial data.',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-[#0F2744] to-[#1E3A5F]',
   },
   {
     icon: TrendingUp,
     title: 'Always Accurate',
     description: 'Our calculators and guides are kept up-to-date with the latest SARS tax brackets, lending rates, and financial regulations for South Africa. See sars.gov.za for current figures.',
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-[#C9A84C] to-[#B8943E]',
   },
   {
     icon: Zap,
     title: '100% Free',
     description: 'Every tool and guide on Quick Money Tool is completely free to use, with no hidden sign-ups, subscriptions, or paywalls.',
-    color: 'from-amber-500 to-orange-600',
+    color: 'from-[#1E3A5F] to-[#C9A84C]',
   },
   {
     icon: Heart,
     title: 'Built for South Africans',
     description: 'Our tools and guides are designed specifically for the South African financial landscape, covering local tax rules, ZAR formatting, and real-world SA situations.',
-    color: 'from-pink-500 to-rose-600',
+    color: 'from-[#B8943E] to-[#9A7A32]',
   },
 ];
 
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6">
               <Calculator className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -85,7 +85,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-xl flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
@@ -102,19 +102,19 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mb-4">
               <Users className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Quick Money Tool is a small, independent team based in South Africa. We are not just a calculator site. We are a personal finance guide that combines free tools with research-based content written for real South African situations. Every calculator, guide, and article is reviewed by{' '}
-              <Link href="/authors/ndulamiso-mamburu" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">Ndulamiso Mamburu</Link>,
+              <Link href="/authors/ndulamiso-mamburu" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">Ndulamiso Mamburu</Link>,
               a qualified Tax Professional working at{' '}
-              <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>.
+              <a href="https://www.sars.gov.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS</a>.
               We source our data from authorities like SARS, the{' '}
-              <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">South African Reserve Bank</a>,{' '}
+              <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">South African Reserve Bank</a>,{' '}
               and the{' '}
-              <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator</a>.
+              <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Regulator</a>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We are not affiliated with any bank, lender, or government body. Our tools, guides, and recommendations are independent, unbiased, and designed to serve you first.
@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* Reviewer */}
       <Section maxWidth="max-w-4xl">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C9A84C]/10 text-[#B8943E] dark:text-[#D4B96A] text-xs font-semibold uppercase tracking-wider mb-4">
             <UserCheck className="w-3.5 h-3.5" />
             Reviewed by a professional
           </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
             <div
               aria-hidden="true"
-              className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl font-bold shrink-0"
+              className="w-24 h-24 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#B8943E] flex items-center justify-center text-white text-2xl font-bold shrink-0"
             >
               {ndulamiso.name
                 .split(' ')
@@ -179,7 +179,7 @@ export default function AboutPage() {
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 <Link
                   href={`/authors/${ndulamiso.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#C9A84C] to-[#B8943E] hover:from-[#B8943E] hover:to-[#9A7A32] text-white text-sm font-medium transition-colors"
                 >
                   View full profile
                 </Link>
@@ -238,7 +238,7 @@ export default function AboutPage() {
           <h3 className="text-lg font-semibold text-foreground mb-3">Important Disclaimer</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Quick Money Tool provides estimations and projections for informational purposes only. Our calculators are not a substitute for professional financial advice. For complex tax matters, investment decisions, or significant financial commitments, we strongly recommend consulting with a registered South African financial advisor or tax practitioner.{' '}
-            <Link href="/disclaimer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">
+            <Link href="/disclaimer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">
               Read our full disclaimer
             </Link>.
           </p>

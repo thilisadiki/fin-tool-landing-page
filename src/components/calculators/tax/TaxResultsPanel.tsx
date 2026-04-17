@@ -12,7 +12,7 @@ const RESULT_CARDS = [
     key: 'gross',
     label: 'Gross Monthly Income',
     icon: DollarSign,
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-[#0F2744] to-[#1E3A5F]',
     getValue: (r: TaxResult) => formatZAR(r.monthlyGross),
   },
   {
@@ -26,14 +26,14 @@ const RESULT_CARDS = [
     key: 'net',
     label: 'Net Monthly Income',
     icon: Wallet,
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-[#C9A84C] to-[#B8943E]',
     getValue: (r: TaxResult) => formatZAR(r.monthlyNet),
   },
   {
     key: 'rate',
     label: 'Effective Tax Rate',
     icon: Percent,
-    color: 'from-purple-500 to-pink-600',
+    color: 'from-[#1E3A5F] to-[#C9A84C]',
     getValue: (r: TaxResult) => formatPercent(r.effectiveTaxRate),
   },
 ] as const;

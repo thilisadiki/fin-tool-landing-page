@@ -42,7 +42,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
               onClick={() => update({ incomeFrequency: 'monthly' })}
               className={`px-4 py-3 text-sm font-medium transition-colors ${
                 inputs.incomeFrequency === 'monthly'
-                  ? 'bg-emerald-500 text-white'
+                  ? 'bg-[#0F2744] text-white'
                   : 'bg-background text-muted-foreground hover:bg-accent'
               }`}
             >
@@ -53,7 +53,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
               onClick={() => update({ incomeFrequency: 'annual' })}
               className={`px-4 py-3 text-sm font-medium transition-colors ${
                 inputs.incomeFrequency === 'annual'
-                  ? 'bg-emerald-500 text-white'
+                  ? 'bg-[#0F2744] text-white'
                   : 'bg-background text-muted-foreground hover:bg-accent'
               }`}
             >
@@ -87,7 +87,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
               onClick={() => update({ ageCategory: opt.value })}
               className={`flex-1 rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${
                 inputs.ageCategory === opt.value
-                  ? 'border-emerald-500 bg-emerald-500 text-white'
+                  ? 'border-[#0F2744] bg-[#0F2744] text-white'
                   : 'border-input bg-background text-muted-foreground hover:bg-accent'
               }`}
             >
@@ -131,7 +131,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
           id="includeUIF"
           checked={inputs.includeUIF}
           onChange={(e) => update({ includeUIF: e.target.checked })}
-          className="w-5 h-5 rounded border-input text-emerald-500 focus:ring-emerald-500"
+          className="w-5 h-5 rounded border-input text-[#C9A84C] focus:ring-[#C9A84C]"
         />
         <label htmlFor="includeUIF" className="text-sm font-medium text-foreground cursor-pointer">
           Include UIF contribution (1% capped at R177.12/m)
@@ -140,7 +140,7 @@ export default function TaxCalculatorForm({ inputs, onChange, onCalculate }: Tax
 
       <Button
         size="lg"
-        className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-lg py-6"
+        className="w-full bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] hover:from-[#1E3A5F] hover:to-[#0F2744] text-white text-lg py-6"
         onClick={onCalculate}
       >
         Calculate Tax

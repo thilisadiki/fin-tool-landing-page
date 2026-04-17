@@ -57,7 +57,7 @@ function PostCard({ post, featured = false }: { post: WPPost; featured?: boolean
             {categories.slice(0, 2).map((c) => (
               <span
                 key={c.id}
-                className="text-xs font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400"
+                className="text-xs font-semibold uppercase tracking-wide text-[#C9A84C] dark:text-[#D4B96A]"
               >
                 {c.name}
               </span>
@@ -69,7 +69,7 @@ function PostCard({ post, featured = false }: { post: WPPost; featured?: boolean
             featured ? 'text-2xl md:text-3xl' : 'text-xl'
           }`}
         >
-          <Link href={href} className="hover:text-emerald-500 transition-colors">
+          <Link href={href} className="hover:text-[#C9A84C] transition-colors">
             {stripHtml(post.title.rendered)}
           </Link>
         </h2>
@@ -163,9 +163,9 @@ export default async function BlogIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6 border border-[#C9A84C]/30">
             <BookOpen className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">

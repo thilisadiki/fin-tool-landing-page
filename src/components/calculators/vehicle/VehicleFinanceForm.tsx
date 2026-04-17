@@ -70,7 +70,7 @@ export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: Ve
               onClick={() => update({ loanTermMonths: term })}
               className={`flex-1 min-w-[3rem] rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                 inputs.loanTermMonths === term
-                  ? 'border-indigo-500 bg-indigo-500 text-white'
+                  ? 'border-[#0F2744] bg-[#0F2744] text-white'
                   : 'border-input bg-background text-muted-foreground hover:bg-accent'
               }`}
             >
@@ -99,7 +99,7 @@ export default function VehicleFinanceForm({ inputs, onChange, onCalculate }: Ve
 
       <Button
         size="lg"
-        className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg py-6"
+        className="w-full bg-gradient-to-r from-[#C9A84C] to-[#B8943E] hover:from-[#B8943E] hover:to-[#9A7A32] text-white text-lg py-6"
         onClick={onCalculate}
       >
         Calculate Finance

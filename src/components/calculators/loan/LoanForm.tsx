@@ -85,7 +85,7 @@ export default function LoanForm({ inputs, onChange, onCalculate }: LoanFormProp
 
       <Button
         size="lg"
-        className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-lg py-6"
+        className="w-full bg-gradient-to-r from-[#B8943E] to-[#9A7A32] hover:from-[#9A7A32] hover:to-[#B8943E] text-white text-lg py-6"
         onClick={onCalculate}
       >
         Calculate Loan

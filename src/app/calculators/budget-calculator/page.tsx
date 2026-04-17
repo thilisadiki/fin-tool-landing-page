@@ -72,10 +72,10 @@ export default function BudgetCalculatorPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-lime-950 dark:to-green-950 from-slate-50 via-lime-50 to-green-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-lime-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#C9A84C] rounded-xl flex items-center justify-center mx-auto mb-6">
               <Wallet className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -128,34 +128,34 @@ export default function BudgetCalculatorPage() {
           <nav>
             <ul className="grid md:grid-cols-2 gap-2 text-sm">
               <li>
-                <a href="#what-is-budget-calculator" className="text-lime-600 dark:text-lime-400 hover:underline">1. What is a budget calculator?</a>
+                <a href="#what-is-budget-calculator" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">1. What is a budget calculator?</a>
               </li>
               <li>
-                <a href="#how-to-use" className="text-lime-600 dark:text-lime-400 hover:underline">2. How to use this calculator</a>
+                <a href="#how-to-use" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">2. How to use this calculator</a>
               </li>
               <li>
-                <a href="#why-budgeting-matters" className="text-lime-600 dark:text-lime-400 hover:underline">3. Why budgeting matters in South Africa</a>
+                <a href="#why-budgeting-matters" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">3. Why budgeting matters in South Africa</a>
               </li>
               <li>
-                <a href="#budget-categories" className="text-lime-600 dark:text-lime-400 hover:underline">4. Key budget categories</a>
+                <a href="#budget-categories" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">4. Key budget categories</a>
               </li>
               <li>
-                <a href="#50-30-20-rule" className="text-lime-600 dark:text-lime-400 hover:underline">5. The 50/30/20 rule explained</a>
+                <a href="#50-30-20-rule" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">5. The 50/30/20 rule explained</a>
               </li>
               <li>
-                <a href="#save-more-money" className="text-lime-600 dark:text-lime-400 hover:underline">6. How to save more money</a>
+                <a href="#save-more-money" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">6. How to save more money</a>
               </li>
               <li>
-                <a href="#inflation-impact" className="text-lime-600 dark:text-lime-400 hover:underline">7. The impact of inflation</a>
+                <a href="#inflation-impact" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">7. The impact of inflation</a>
               </li>
               <li>
-                <a href="#life-stages" className="text-lime-600 dark:text-lime-400 hover:underline">8. Budgeting for different life stages</a>
+                <a href="#life-stages" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">8. Budgeting for different life stages</a>
               </li>
               <li>
-                <a href="#common-mistakes" className="text-lime-600 dark:text-lime-400 hover:underline">9. Common budgeting mistakes</a>
+                <a href="#common-mistakes" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">9. Common budgeting mistakes</a>
               </li>
               <li>
-                <a href="#budget-faq" className="text-lime-600 dark:text-lime-400 hover:underline">10. Frequently asked questions</a>
+                <a href="#budget-faq" className="text-[#C9A84C] dark:text-[#D4B96A] hover:underline">10. Frequently asked questions</a>
               </li>
             </ul>
           </nav>
@@ -176,7 +176,7 @@ export default function BudgetCalculatorPage() {
           <p className="text-muted-foreground leading-relaxed mb-4">
             For many individuals in South Africa, managing money effectively has become increasingly important due to
             rising living costs, inflation, and interest rate changes. According to the{' '}
-            <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">South African Reserve Bank</a>,
+            <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">South African Reserve Bank</a>,
             inflation and repo rate adjustments directly impact household expenses, making budgeting a necessary
             financial habit rather than an optional one.
           </p>
@@ -204,7 +204,7 @@ export default function BudgetCalculatorPage() {
               { step: '5', title: 'Review your results', desc: 'The calculator will show whether you have a surplus (money left over) or a deficit (overspending).' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4 p-4 rounded-xl dark:bg-slate-800/50 bg-white border border-border">
-                <div className="w-8 h-8 bg-gradient-to-r from-lime-500 to-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">
+                <div className="w-8 h-8 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">
                   {item.step}
                 </div>
                 <div>
@@ -232,7 +232,7 @@ export default function BudgetCalculatorPage() {
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
             According to the{' '}
-            <a href="https://www.treasury.gov.za" target="_blank" rel="noopener noreferrer" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">National Treasury</a>,
+            <a href="https://www.treasury.gov.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Treasury</a>,
             improving financial literacy and budgeting habits is essential for long-term economic stability at both
             individual and national levels.
           </p>
@@ -270,11 +270,11 @@ export default function BudgetCalculatorPage() {
 
           <p className="text-muted-foreground leading-relaxed mt-6">
             To get a complete picture of your finances, you can also use our{' '}
-            <a href="/calculators/sars-income-tax-calculator" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">SARS income tax calculator</a>{' '}
+            <a href="/calculators/sars-income-tax-calculator" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS income tax calculator</a>{' '}
             to estimate your take-home income, our{' '}
-            <a href="/calculators/retirement-savings-calculator" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">retirement savings calculator</a>{' '}
+            <a href="/calculators/retirement-savings-calculator" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">retirement savings calculator</a>{' '}
             to project future savings growth, and our{' '}
-            <a href="/calculators/personal-loan-calculator" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">personal loan calculator</a>{' '}
+            <a href="/calculators/personal-loan-calculator" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">personal loan calculator</a>{' '}
             to understand debt repayments.
           </p>
         </div>
@@ -338,17 +338,17 @@ export default function BudgetCalculatorPage() {
 
           <div className="grid md:grid-cols-3 gap-6 not-prose mb-6">
             <div className="p-5 rounded-xl border border-border text-center">
-              <div className="text-4xl font-bold text-lime-500 mb-2">50%</div>
+              <div className="text-4xl font-bold text-[#C9A84C] mb-2">50%</div>
               <h3 className="font-semibold text-foreground mb-1">Needs</h3>
               <p className="text-sm text-muted-foreground">Essential expenses like rent, groceries, utilities, medical aid, and minimum debt repayments.</p>
             </div>
             <div className="p-5 rounded-xl border border-border text-center">
-              <div className="text-4xl font-bold text-lime-500 mb-2">30%</div>
+              <div className="text-4xl font-bold text-[#C9A84C] mb-2">30%</div>
               <h3 className="font-semibold text-foreground mb-1">Wants</h3>
               <p className="text-sm text-muted-foreground">Lifestyle and discretionary spending like entertainment, dining out, and subscriptions.</p>
             </div>
             <div className="p-5 rounded-xl border border-border text-center">
-              <div className="text-4xl font-bold text-lime-500 mb-2">20%</div>
+              <div className="text-4xl font-bold text-[#C9A84C] mb-2">20%</div>
               <h3 className="font-semibold text-foreground mb-1">Savings</h3>
               <p className="text-sm text-muted-foreground">Savings, investments, and extra debt repayment for long-term financial security.</p>
             </div>
@@ -423,7 +423,7 @@ export default function BudgetCalculatorPage() {
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             The{' '}
-            <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-lime-600 dark:text-lime-400 underline hover:text-lime-500">South African Reserve Bank</a>{' '}
+            <a href="https://www.resbank.co.za" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">South African Reserve Bank</a>{' '}
             regularly adjusts interest rates to control inflation, which can affect:
           </p>
           <ul className="space-y-2 text-muted-foreground mb-4">

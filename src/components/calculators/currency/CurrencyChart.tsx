@@ -63,7 +63,7 @@ export default function CurrencyChart({ fromCurrency, toCurrency }: CurrencyChar
             Exchange rate history
             {data.length > 0 && (
               isPositiveTrend ? (
-                <TrendingUp className="w-4 h-4 text-emerald-500 ml-2" />
+                <TrendingUp className="w-4 h-4 text-[#C9A84C] ml-2" />
               ) : (
                 <TrendingDown className="w-4 h-4 text-rose-500 ml-2" />
               )
@@ -102,8 +102,8 @@ export default function CurrencyChart({ fromCurrency, toCurrency }: CurrencyChar
             <AreaChart data={data} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorRate" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={isPositiveTrend ? '#10b981' : '#f43f5e'} stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor={isPositiveTrend ? '#10b981' : '#f43f5e'} stopOpacity={0}/>
+                  <stop offset="5%" stopColor={isPositiveTrend ? '#C9A84C' : '#f43f5e'} stopOpacity={0.3}/>
+                  <stop offset="95%" stopColor={isPositiveTrend ? '#C9A84C' : '#f43f5e'} stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <XAxis 
@@ -140,7 +140,7 @@ export default function CurrencyChart({ fromCurrency, toCurrency }: CurrencyChar
               <Area 
                 type="monotone" 
                 dataKey="rate" 
-                stroke={isPositiveTrend ? '#10b981' : '#f43f5e'} 
+                stroke={isPositiveTrend ? '#C9A84C' : '#f43f5e'} 
                 strokeWidth={2}
                 fillOpacity={1} 
                 fill="url(#colorRate)" 

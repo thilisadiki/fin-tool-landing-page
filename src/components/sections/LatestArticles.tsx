@@ -36,7 +36,7 @@ export default async function LatestArticles() {
         </div>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300 font-semibold transition-colors group"
+          className="inline-flex items-center gap-2 text-[#C9A84C] hover:text-[#B8943E] dark:text-[#D4B96A] dark:hover:text-[#E5CF9A] font-semibold transition-colors group"
         >
           View all articles
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -73,7 +73,7 @@ export default async function LatestArticles() {
                 <h3 className="font-bold text-foreground mb-3 leading-tight text-xl">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="hover:text-emerald-500 transition-colors"
+                    className="hover:text-[#C9A84C] transition-colors"
                   >
                     {stripHtml(post.title.rendered)}
                   </Link>

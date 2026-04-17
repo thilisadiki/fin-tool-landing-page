@@ -35,7 +35,7 @@ export default function VehicleAmortizationTable({ result }: VehicleAmortization
                   <tr key={row.month} className="border-b border-border/20 last:border-0 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                     <td className="py-3 px-4 text-foreground font-medium">{row.month}</td>
                     <td className="py-3 px-4 text-right text-foreground">{formatZAR(row.payment)}</td>
-                    <td className="py-3 px-4 text-right text-emerald-500">{formatZAR(row.principalPayment)}</td>
+                    <td className="py-3 px-4 text-right text-[#C9A84C]">{formatZAR(row.principalPayment)}</td>
                     <td className="py-3 px-4 text-right text-amber-500">{formatZAR(row.interestPayment)}</td>
                     <td className="py-3 px-4 text-right text-foreground">{formatZAR(row.remainingBalance)}</td>
                   </tr>

@@ -107,7 +107,7 @@ export function calculateBudget(inputs: BudgetInputs): BudgetResult {
       amount: totalSavings,
       percentageOfIncome: savingsPercentage,
       percentageOfExpenses: totalExpenses > 0 ? (totalSavings / totalExpenses) * 100 : 0,
-      color: 'bg-emerald-500',
+      color: 'bg-[#C9A84C]',
     }
   ];
   

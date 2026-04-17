@@ -45,7 +45,7 @@ export default function CalculatorFaqSection({
       />
       <Section maxWidth="max-w-4xl">
         <div className="text-center mb-12">
-          <HelpCircle className="mx-auto h-10 w-10 text-emerald-400 mb-4" />
+          <HelpCircle className="mx-auto h-10 w-10 text-[#C9A84C] mb-4" />
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {title}
           </h2>

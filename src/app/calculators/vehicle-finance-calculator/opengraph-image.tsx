@@ -10,7 +10,7 @@ export default function OgImage() {
     title: 'Work out your real monthly car payment',
     subtitle:
       'Monthly installments, balloon payments, and total cost of credit for any car loan.',
-    accentFrom: '#3b82f6',
-    accentTo: '#6366f1',
+    accentFrom: '#C9A84C',
+    accentTo: '#0F2744',
   });
 }

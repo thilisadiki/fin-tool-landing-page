@@ -60,9 +60,9 @@ export default function CalculatorsHubPage() {
 
       <Breadcrumbs items={breadcrumbItems} />
 
-      <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-emerald-950 dark:to-teal-950 from-slate-50 via-emerald-50 to-teal-50">
+      <section className="px-6 py-20 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6 border border-[#C9A84C]/30">
             <Calculator className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -101,7 +101,7 @@ export default function CalculatorsHubPage() {
                 the numbers yourself. The{' '}
                 <Link
                   href="/calculators/vehicle-finance-calculator"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   vehicle finance calculator
                 </Link>{' '}
@@ -109,7 +109,7 @@ export default function CalculatorsHubPage() {
                 car over the full term. The{' '}
                 <Link
                   href="/calculators/personal-loan-calculator"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   personal loan calculator
                 </Link>{' '}
@@ -125,7 +125,7 @@ export default function CalculatorsHubPage() {
                 The{' '}
                 <Link
                   href="/calculators/retirement-savings-calculator"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   retirement savings calculator
                 </Link>{' '}
@@ -143,7 +143,7 @@ export default function CalculatorsHubPage() {
                 The{' '}
                 <Link
                   href="/calculators/sars-income-tax-calculator"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   SARS income tax calculator
                 </Link>{' '}
@@ -160,7 +160,7 @@ export default function CalculatorsHubPage() {
                 The everyday tools: the{' '}
                 <Link
                   href="/calculators/budget-calculator"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   budget calculator
                 </Link>{' '}
@@ -168,7 +168,7 @@ export default function CalculatorsHubPage() {
                 the{' '}
                 <Link
                   href="/calculators/currency-converter"
-                  className="text-emerald-600 dark:text-emerald-400 underline"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
                 >
                   currency converter
                 </Link>{' '}
@@ -187,9 +187,9 @@ export default function CalculatorsHubPage() {
               is sent to our servers, and nothing is stored. Tax tables,
               interest-rate formulas, and amortisation schedules are reviewed
               whenever{' '}
-              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARS</a>,
+              <a href="https://www.sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARS</a>,
               the{' '}
-              <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">SARB</a>,
+              <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">SARB</a>,
               or major lenders update their numbers.
               The tools are free, with no sign-up, no paywall, and no newsletter
               nag.

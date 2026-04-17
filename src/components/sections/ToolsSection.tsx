@@ -33,7 +33,7 @@ const ToolsSection = () => {
               <ul className="space-y-2 mb-8">
                 {tool.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 shrink-0" />
+                    <div className="w-2 h-2 bg-[#C9A84C] rounded-full mr-3 shrink-0" />
                     {feature}
                   </li>
                 ))}

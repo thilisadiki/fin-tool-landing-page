@@ -12,7 +12,7 @@ const RESULT_CARDS = [
     key: 'monthly',
     label: 'Monthly Payment',
     icon: DollarSign,
-    color: 'from-amber-500 to-orange-600',
+    color: 'from-[#0F2744] to-[#1E3A5F]',
     getValue: (r: PersonalLoanResult) => formatZAR(r.monthlyPayment),
   },
   {
@@ -26,7 +26,7 @@ const RESULT_CARDS = [
     key: 'total',
     label: 'Total Amount Paid',
     icon: Wallet,
-    color: 'from-purple-500 to-pink-600',
+    color: 'from-[#1E3A5F] to-[#C9A84C]',
     getValue: (r: PersonalLoanResult) => formatZAR(r.totalAmountPaid),
   },
   {
@@ -40,14 +40,14 @@ const RESULT_CARDS = [
     key: 'effective',
     label: 'Effective Annual Rate',
     icon: Percent,
-    color: 'from-teal-500 to-cyan-600',
+    color: 'from-[#B8943E] to-[#9A7A32]',
     getValue: (r: PersonalLoanResult) => `${r.effectiveRate.toFixed(2)}%`,
   },
   {
     key: 'costOfCredit',
     label: 'Total Cost of Credit',
     icon: TrendingUp,
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-[#C9A84C] to-[#B8943E]',
     getValue: (r: PersonalLoanResult) => formatZAR(r.totalInterest + r.totalFeesPaid),
   },
 ] as const;

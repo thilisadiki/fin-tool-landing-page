@@ -15,28 +15,28 @@ export default function BudgetResultsPanel({ result }: BudgetResultsPanelProps) 
       key: 'income',
       label: 'Total Net Income',
       icon: DollarSign,
-      color: 'from-blue-500 to-indigo-600',
+      color: 'from-[#0F2744] to-[#1E3A5F]',
       getValue: (r: BudgetResult) => formatZAR(r.totalIncome),
     },
     {
       key: 'expenses',
       label: 'Total Expenses',
       icon: TrendingDown,
-      color: 'from-amber-500 to-orange-600',
+      color: 'from-red-500 to-rose-600',
       getValue: (r: BudgetResult) => formatZAR(r.totalExpenses),
     },
     {
       key: 'net',
       label: 'Leftover (Net Income)',
       icon: Wallet,
-      color: isDeficit ? 'from-red-500 to-rose-600' : 'from-emerald-500 to-teal-600',
+      color: isDeficit ? 'from-red-500 to-rose-600' : 'from-[#C9A84C] to-[#B8943E]',
       getValue: (r: BudgetResult) => formatZAR(r.netIncome),
     },
     {
       key: 'savings',
       label: 'Total Savings',
       icon: PiggyBank,
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-[#1E3A5F] to-[#C9A84C]',
       getValue: (r: BudgetResult) => formatZAR(r.totalSavings),
     },
   ];
@@ -71,7 +71,7 @@ export default function BudgetResultsPanel({ result }: BudgetResultsPanelProps) 
           isDeficit 
             ? 'bg-rose-50 dark:bg-rose-950/30 border-rose-200 dark:border-rose-900' 
             : result.isHealthy 
-              ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-900'
+              ? 'bg-[#C9A84C]/5 dark:bg-[#C9A84C]/10 border-[#C9A84C]/20 dark:border-[#C9A84C]/20'
               : 'bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-900'
         }`}
       >
@@ -80,7 +80,7 @@ export default function BudgetResultsPanel({ result }: BudgetResultsPanelProps) 
             {isDeficit ? (
               <AlertCircle className="w-6 h-6 text-rose-500" />
             ) : result.isHealthy ? (
-              <Smile className="w-6 h-6 text-emerald-500" />
+              <Smile className="w-6 h-6 text-[#C9A84C]" />
             ) : (
               <AlertCircle className="w-6 h-6 text-amber-500" />
             )}
@@ -88,7 +88,7 @@ export default function BudgetResultsPanel({ result }: BudgetResultsPanelProps) 
           <div>
             <h3 className={`text-lg font-bold mb-1 ${
               isDeficit ? 'text-rose-700 dark:text-rose-400' 
-              : result.isHealthy ? 'text-emerald-700 dark:text-emerald-400'
+              : result.isHealthy ? 'text-[#B8943E] dark:text-[#D4B96A]'
               : 'text-amber-700 dark:text-amber-400'
             }`}>
               {isDeficit ? 'Budget Deficit Alert' : result.isHealthy ? 'Excellent Budget!' : 'Room for Improvement'}

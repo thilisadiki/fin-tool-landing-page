@@ -45,7 +45,7 @@ export default function ContactPage() {
       <section className="px-6 py-20 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6">
               <MessageSquare className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -77,7 +77,7 @@ export default function ContactPage() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-lg flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-lg flex items-center justify-center shrink-0">
                   <MessageSquare className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center h-full py-16 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-full flex items-center justify-center mb-6">
                   <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Your email client should open now</h3>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg py-6"
+                  className="w-full bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] hover:from-[#1E3A5F] hover:to-[#0F2744] text-white text-lg py-6"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Send Message

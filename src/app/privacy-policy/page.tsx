@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
       <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 from-slate-50 via-white to-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-xl flex items-center justify-center mx-auto mb-6 border border-[#C9A84C]/30">
               <Shield className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <Section maxWidth="max-w-3xl">
         <div className="prose prose-slate dark:prose-invert max-w-none space-y-8">
-          <div className="p-5 rounded-xl dark:bg-emerald-950/30 bg-emerald-50 border border-emerald-200 dark:border-emerald-800">
+          <div className="p-5 rounded-xl dark:bg-[#C9A84C]/5 bg-[#C9A84C]/5 border border-[#C9A84C]/20">
             <p className="text-sm text-muted-foreground leading-relaxed m-0">
               <strong className="text-foreground">In short:</strong> Quick Money Tool processes all calculations directly in your browser. We do not collect, store, or transmit your personal financial data to any server.
             </p>
@@ -64,15 +64,15 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="text-emerald-500 mt-1">•</span>
+                <span className="text-[#C9A84C] mt-1">•</span>
                 <span>Your income, salary, tax, loan, and savings figures <strong className="text-foreground">never leave your device</strong>.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-500 mt-1">•</span>
+                <span className="text-[#C9A84C] mt-1">•</span>
                 <span>We do not store calculation inputs or results on any server.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-500 mt-1">•</span>
+                <span className="text-[#C9A84C] mt-1">•</span>
                 <span>We do not require you to create an account or log in.</span>
               </li>
             </ul>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
 
             <h3 className="text-lg font-semibold text-foreground mb-2 mt-4">b) Advertising (Google AdSense)</h3>
             <p className="text-muted-foreground leading-relaxed">
-              We display advertisements through Google AdSense to support the free operation of the Site. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-emerald-500 transition-colors">Google Ads Settings</a>.
+              We display advertisements through Google AdSense to support the free operation of the Site. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-[#C9A84C] transition-colors">Google Ads Settings</a>.
             </p>
           </div>
 
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold text-foreground mb-3">9. Contact Us</h2>
             <p className="text-muted-foreground leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:hello@quickmoneytool.com" className="text-foreground underline hover:text-emerald-500 transition-colors">
+              <a href="mailto:hello@quickmoneytool.com" className="text-foreground underline hover:text-[#C9A84C] transition-colors">
                 hello@quickmoneytool.com
               </a>.
             </p>

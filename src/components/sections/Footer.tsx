@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               <div className="md:col-span-2">
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-[#0F2744] to-[#1E3A5F] rounded-lg flex items-center justify-center border border-[#C9A84C]/30">
                     <Calculator className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-lg font-bold text-foreground">Quick Money Tool</span>
@@ -17,7 +17,7 @@ const Footer = () => {
                   Empowering South Africans with accurate, easy-to-use finance calculators for better money management and planning.
                 </p>
                 <div className="flex items-center space-x-2">
-                  <Award className="w-5 h-5 text-emerald-400" />
+                  <Award className="w-5 h-5 text-[#C9A84C]" />
                   <span className="text-muted-foreground">Free, Secure &amp; Accurate</span>
                 </div>
               </div>

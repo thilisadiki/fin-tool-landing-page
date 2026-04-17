@@ -61,7 +61,7 @@ export default function BudgetBreakdown({ result }: BudgetBreakdownProps) {
                </div>
                <div className="flex justify-between font-bold pt-1">
                   <span className="text-foreground">Remaining Budget</span>
-                  <span className={result.netIncome < 0 ? 'text-rose-500' : 'text-emerald-500'}>
+                  <span className={result.netIncome < 0 ? 'text-rose-500' : 'text-[#C9A84C]'}>
                     {formatZAR(result.netIncome)}
                   </span>
                </div>

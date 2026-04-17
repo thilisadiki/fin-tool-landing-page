@@ -59,10 +59,10 @@ export default function PersonalLoanCalculatorPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="px-6 py-16 bg-gradient-to-br dark:from-slate-900 dark:via-amber-950 dark:to-orange-950 from-slate-50 via-amber-50 to-orange-50">
+      <section className="px-6 py-16 bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#B8943E] to-[#9A7A32] rounded-xl flex items-center justify-center mx-auto mb-6">
               <Landmark className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -124,9 +124,9 @@ export default function PersonalLoanCalculatorPage() {
               <h3 className="text-xl font-semibold text-foreground mb-3">Interest Rate Factors</h3>
               <p className="text-muted-foreground mb-4">
                 Your interest rate is highly dependent on your credit score and affordability profile. In South Africa, personal loan rates can range from the{' '}
-                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">prime lending rate</a>{' '}
+                <a href="https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/current-market-rates" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">prime lending rate</a>{' '}
                 (currently around 11.75%) to well above 20% for higher-risk applicants. The{' '}
-                <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Act caps unsecured lending rates</a>{' '}
+                <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Act caps unsecured lending rates</a>{' '}
                 at the repo rate × 2.2 + 20% per annum. Always compare offers from multiple lenders before committing.
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function PersonalLoanCalculatorPage() {
               <h3 className="text-xl font-semibold text-foreground mb-3">Total Cost of Credit</h3>
               <p className="text-muted-foreground mb-4">
                 The{' '}
-                <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Act (NCA)</a>{' '}
+                <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Act (NCA)</a>{' '}
                 requires lenders to disclose the total cost of credit, which includes all interest and fees over the life of the loan. Our calculator shows you this figure upfront, helping you understand exactly what you&apos;ll pay. A longer term means lower monthly payments but significantly more interest over time.
               </p>
 
@@ -150,9 +150,9 @@ export default function PersonalLoanCalculatorPage() {
             <h3 className="text-xl font-semibold text-foreground mb-3">Fees You Should Know About</h3>
             <p className="text-muted-foreground mb-3">
               The{' '}
-              <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">National Credit Regulator (NCR)</a>{' '}
+              <a href="https://www.ncr.org.za/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">National Credit Regulator (NCR)</a>{' '}
               sets maximum fees lenders may charge under the National Credit Act. These caps are published in the{' '}
-              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">NCR maximum rates & fees schedule</a>.
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">NCR maximum rates & fees schedule</a>.
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex justify-between">
@@ -170,7 +170,7 @@ export default function PersonalLoanCalculatorPage() {
             </ul>
             <p className="text-xs text-muted-foreground mt-3">
               Fee caps sourced from the{' '}
-              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500">NCR maximum rates &amp; fees schedule</a>.
+              <a href="https://www.ncr.org.za/documents/pages/guidelines/Maximum-rate-interest-and-fees.pdf" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] dark:text-[#D4B96A] underline hover:text-[#B8943E]">NCR maximum rates &amp; fees schedule</a>.
             </p>
           </div>
         </div>
