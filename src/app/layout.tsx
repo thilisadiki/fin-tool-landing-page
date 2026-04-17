@@ -66,8 +66,6 @@ export default function RootLayout({
   return (
     <html lang="en-ZA" suppressHydrationWarning>
       <head>
-        {/* ── Anti-clone: Reinforce this domain as the canonical origin ── */}
-        <link rel="canonical" href="https://www.quickmoneytool.com" />
         <meta
           name="google-site-verification"
           content="quickmoneytool-verified"
