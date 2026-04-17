@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-ZA" suppressHydrationWarning>
+    <html lang="en-ZA" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <meta
           name="google-site-verification"
