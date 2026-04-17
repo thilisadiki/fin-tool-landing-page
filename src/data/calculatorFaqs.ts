@@ -7,7 +7,7 @@ export const sarsTaxFaqs: CalculatorFaq[] = [
   {
     question: 'How is PAYE calculated in South Africa?',
     answer:
-      'PAYE is worked out by taking your annual taxable income, applying the progressive SARS tax tables to get your annual tax liability, subtracting the primary rebate (plus the secondary rebate if you are 65–74 and tertiary rebate if 75+), and then dividing by 12 to get your monthly deduction. Employers must deduct PAYE every month and pay it over to SARS by the 7th of the following month. See the official brackets at sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/.',
+      'PAYE is worked out by taking your annual taxable income, applying the progressive SARS tax tables to get your annual tax liability, subtracting the primary rebate (plus the secondary rebate if you are 65 to 74 and tertiary rebate if 75+), and then dividing by 12 to get your monthly deduction. Employers must deduct PAYE every month and pay it over to SARS by the 7th of the following month. See the official brackets at sars.gov.za/tax-rates/income-tax/rates-of-tax-for-individuals/.',
   },
   {
     question: 'When is the 2026/2027 tax return due in South Africa?',
@@ -32,12 +32,37 @@ export const sarsTaxFaqs: CalculatorFaq[] = [
   {
     question: 'What tax rebates do South African pensioners get?',
     answer:
-      'Every taxpayer gets the primary rebate. Pensioners aged 65–74 get an additional secondary rebate, and those 75 and older get a further tertiary rebate on top of that. These rebates lift your tax-free threshold significantly: for over-75s, you only start paying tax after a much higher annual income than a taxpayer under 65.',
+      'Every taxpayer gets the primary rebate. Pensioners aged 65 to 74 get an additional secondary rebate, and those 75 and older get a further tertiary rebate on top of that. These rebates lift your tax-free threshold significantly: for over-75s, you only start paying tax after a much higher annual income than a taxpayer under 65.',
   },
   {
     question: 'Does this SARS tax calculator handle bonuses and 13th cheques?',
     answer:
       'Add your bonus or 13th cheque into the "Other Income" field. The calculator will include it in your annual taxable income, which pushes more of your earnings into higher brackets. That is why your PAYE on a bonus month is higher than on a normal salary month, even though the tax rate tables have not changed.',
+  },
+  {
+    question: 'Is rental income taxable in South Africa?',
+    answer:
+      'Yes. Rental income from property (including Airbnb) must be declared to SARS. You can deduct expenses directly related to earning that income, such as bond interest, rates, levies, insurance, repairs, and agent fees. The net profit is added to your other income and taxed at your marginal rate. If you earn rental income, you are a provisional taxpayer and must make estimated payments twice a year.',
+  },
+  {
+    question: 'Do I pay tax on cryptocurrency in South Africa?',
+    answer:
+      'Yes. SARS treats crypto as an intangible asset. If you trade frequently, profits are taxed as income at your marginal rate. If you hold crypto as a long-term investment and sell occasionally, it may be treated as a capital gain, where only 40% of the gain is included in your taxable income (for individuals). The classification depends on your intention, trading frequency, and how long you held the asset.',
+  },
+  {
+    question: 'What is the foreign income exemption under section 10(1)(o)(ii)?',
+    answer:
+      'If you are a South African tax resident working abroad, the first R1.25 million of your foreign employment income may be exempt from SA tax. You must spend more than 183 days outside South Africa in any 12-month period, with at least 60 of those days being consecutive. This exemption only applies to employment income (salary, bonuses), not freelance work, business income, or passive income like dividends.',
+  },
+  {
+    question: 'When do I not need to submit a tax return?',
+    answer:
+      'You may not need to file if your total employment income is below R500,000, you have only one employer, you earn no other income (rental, freelance, or business), you have no additional deductions to claim, and you have no capital gains. SARS may auto-assess you using IRP5 and third-party data. If the auto-assessment is correct, you can simply accept it on eFiling.',
+  },
+  {
+    question: 'How does medical tax credit work?',
+    answer:
+      'If you contribute to a registered medical aid, you receive a monthly tax credit that reduces your tax liability directly (not your taxable income). The credit is a fixed amount per month for yourself, your first dependent, and each additional dependent. These credits are the same regardless of your income level, which means they benefit lower earners proportionally more than higher earners.',
   },
 ];
 

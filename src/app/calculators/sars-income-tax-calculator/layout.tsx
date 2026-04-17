@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Free SARS Income Tax Calculator 2026/2027',
   description:
-    'Free SARS income tax calculator for South Africa (2026/2027). Calculate your PAYE, tax rebates, medical credits, and take-home pay instantly.',
+    'Free SARS income tax calculator for South Africa (2026/2027). Calculate your PAYE, rebates, medical credits, and take-home pay. Includes guides on tax thresholds, provisional tax, foreign income exemption, and what is taxable.',
   keywords: [
     'sars income tax calculator',
     'paye calculator',
@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     'tax rebates',
     'medical tax credits',
     '2026 2027 tax brackets',
+    'provisional tax south africa',
+    'tax free threshold',
+    'foreign income exemption',
+    'rental income tax south africa',
+    'crypto tax south africa',
   ],
   alternates: {
     canonical: '/calculators/sars-income-tax-calculator',
