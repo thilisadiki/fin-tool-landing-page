@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
+import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import ToolsSection from '@/components/sections/ToolsSection';
+import TrustBandSection from '@/components/sections/TrustBandSection';
 import AboutSection from '@/components/sections/AboutSection';
 import FaqSection from '@/components/sections/FaqSection';
 import CtaSection from '@/components/sections/CtaSection';
@@ -31,7 +33,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeBreadcrumbSchema) }}
       />
       <HeroSection />
+      <HowItWorksSection />
       <ToolsSection />
+      <TrustBandSection />
       <AboutSection />
       <FaqSection />
       <CtaSection />
