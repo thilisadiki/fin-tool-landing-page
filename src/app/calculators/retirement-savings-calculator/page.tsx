@@ -73,7 +73,7 @@ export default function RetirementSavingsCalculatorPage() {
               Retirement Savings Calculator
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Project your retirement savings growth, see if you&apos;re on track to meet your goal, and estimate your monthly retirement income using the 4% Rule.
+              Use the Quick Money Tool retirement calculator to project your savings growth, see if you&apos;re on track to meet your goal, and estimate your monthly retirement income using the 4% Rule.
             </p>
           </motion.div>
         </div>

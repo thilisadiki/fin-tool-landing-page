@@ -82,7 +82,7 @@ export default function BudgetCalculatorPage() {
               Monthly Budget Calculator
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Track your income and expenses. Evaluate your spending habits and find out if your budget is balanced using the popular 50/30/20 rule.
+              Track your income and expenses with the Quick Money Tool budget calculator. Evaluate your spending habits and find out if your budget is balanced using the popular 50/30/20 rule.
             </p>
           </motion.div>
         </div>

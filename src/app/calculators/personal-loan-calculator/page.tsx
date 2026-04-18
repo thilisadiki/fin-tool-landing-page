@@ -69,7 +69,7 @@ export default function PersonalLoanCalculatorPage() {
               Personal Loan Calculator
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Calculate your monthly personal loan repayments, see how much interest you&apos;ll pay, and understand the full cost of your loan before you commit.
+              Use the Quick Money Tool personal loan calculator to work out your monthly repayments, see how much interest you&apos;ll pay, and understand the full cost of your loan before you commit.
             </p>
           </motion.div>
         </div>

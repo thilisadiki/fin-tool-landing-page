@@ -70,7 +70,7 @@ export default function VehicleFinanceCalculatorPage() {
               Vehicle Finance Calculator
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Calculate your monthly car payments, total interest, and evaluate whether a balloon payment makes sense for your budget.
+              Use the Quick Money Tool vehicle finance calculator to work out your monthly car payments, total interest, and evaluate whether a balloon payment makes sense for your budget.
             </p>
           </motion.div>
         </div>

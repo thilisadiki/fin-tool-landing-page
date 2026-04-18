@@ -69,7 +69,7 @@ export default function CalculatorsHubPage() {
             Finance calculators for South Africans
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Every tool on this site in one place. Free, private, and built around
+            Every Quick Money Tool calculator in one place. Free, private, and built around
             South African tax brackets, interest rates, and currency pairs. Pick
             a goal below and get an answer in under a minute.
           </p>
@@ -180,10 +180,10 @@ export default function CalculatorsHubPage() {
 
           <div className="mt-10 p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border">
             <h3 className="text-xl font-semibold text-foreground mb-3">
-              Why trust these calculators?
+              Why trust Quick Money Tool calculators?
             </h3>
             <p className="text-muted-foreground">
-              Every calculation runs entirely in your browser. Nothing you type
+              Every Quick Money Tool calculation runs entirely in your browser. Nothing you type
               is sent to our servers, and nothing is stored. Tax tables,
               interest-rate formulas, and amortisation schedules are reviewed
               whenever{' '}

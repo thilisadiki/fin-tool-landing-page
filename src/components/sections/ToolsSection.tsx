@@ -8,10 +8,10 @@ const ToolsSection = () => {
     <Section id="tools">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-          Our Finance Calculators
+          Quick Money Tool Calculators
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Select a tool to get started. All our calculators are free, secure, and designed for the South African financial landscape.
+          Select a Quick Money Tool calculator to get started. Every tool is free, secure, and designed for the South African financial landscape.
         </p>
       </div>
 

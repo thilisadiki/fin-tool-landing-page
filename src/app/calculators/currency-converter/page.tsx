@@ -89,7 +89,7 @@ export default function CurrencyConverterPage() {
               Currency Converter
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real-time exchange rates for global currencies. Convert money securely and track historical trends. 
+              The Quick Money Tool currency converter gives you real-time exchange rates for global currencies. Convert money securely and track historical trends.
             </p>
           </motion.div>
         </div>

@@ -74,7 +74,7 @@ export default function SarsIncomeTaxCalculatorPage() {
               SARS Income Tax Calculator
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Calculate your South African income tax for the {CURRENT_TAX_YEAR.year} tax year.
+              Calculate your South African income tax for the {CURRENT_TAX_YEAR.year} tax year with the Quick Money Tool SARS calculator.
               Get instant results for PAYE, rebates, medical credits, and your take-home pay.
             </p>
           </motion.div>

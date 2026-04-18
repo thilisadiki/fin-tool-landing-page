@@ -12,7 +12,7 @@ const HeroSection = () => {
 
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-150">
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Free calculators, research-based guides, and practical money advice built for real South African situations. All professionally reviewed by qualified tax and finance experts.
+              Quick Money Tool is your personal finance guide for South Africa, offering free calculators, research-based guides, and practical money advice for real situations. All content is professionally reviewed by qualified tax and finance experts.
             </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
