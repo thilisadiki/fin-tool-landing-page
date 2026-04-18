@@ -116,9 +116,6 @@ const Header = () => {
     const previousOverflow = style.overflow;
     style.overflow = 'hidden';
 
-    const focusable = getFocusable();
-    focusable[0]?.focus();
-
     window.addEventListener('keydown', handleKey);
     document.addEventListener('mousedown', handleClickOutside);
 
@@ -173,9 +170,6 @@ const Header = () => {
           <motion.div
             id="mobile-nav"
             ref={panelRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Main navigation"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
