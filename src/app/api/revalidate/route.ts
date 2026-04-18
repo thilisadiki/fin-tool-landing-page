@@ -35,12 +35,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
   }
 
-  revalidateTag('wp:posts');
+  revalidateTag('wp:posts', 'max');
   revalidatePath('/blog');
   revalidatePath('/sitemap.xml');
 
   if (body.slug) {
-    revalidateTag(`wp:post:${body.slug}`);
+    revalidateTag(`wp:post:${body.slug}`, 'max');
     revalidatePath(`/blog/${body.slug}`);
   }
 
