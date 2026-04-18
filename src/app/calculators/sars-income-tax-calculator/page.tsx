@@ -113,7 +113,7 @@ export default function SarsIncomeTaxCalculatorPage() {
         </div>
       </Section>
 
-      {/* Guide content wrapper — tighter spacing than default Section py-20 */}
+      {/* Guide content wrapper with tighter spacing than default Section py-20 */}
       <div className="px-6 py-12">
         <div className="max-w-4xl mx-auto space-y-12">
 

@@ -89,7 +89,7 @@ export default function DisclaimerPage() {
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-3">3. Accuracy and Completeness</h2>
             <p className="text-muted-foreground leading-relaxed">
-              While we make every effort to ensure that our calculators use accurate and current data — including SARS tax brackets, prevailing interest rates, and financial regulations, we do not warrant or guarantee the accuracy, completeness, or timeliness of any results. Tax laws, interest rates, and regulations change frequently, and there may be a delay between when changes take effect and when our tools are updated.
+              While we make every effort to ensure that our calculators use accurate and current data, including SARS tax brackets, prevailing interest rates, and financial regulations, we do not warrant or guarantee the accuracy, completeness, or timeliness of any results. Tax laws, interest rates, and regulations change frequently, and there may be a delay between when changes take effect and when our tools are updated.
             </p>
           </div>
 

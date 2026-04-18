@@ -120,7 +120,7 @@ export default function BudgetCalculatorPage() {
         </div>
       </Section>
 
-      {/* Guide content wrapper — tighter spacing */}
+      {/* Guide content wrapper with tighter spacing */}
       <div className="px-6 py-12">
         <div className="max-w-4xl mx-auto space-y-12">
         <div className="p-6 rounded-xl dark:bg-slate-800/50 bg-slate-100 border border-border">

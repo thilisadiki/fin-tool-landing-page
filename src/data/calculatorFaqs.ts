@@ -85,7 +85,7 @@ export const vehicleFinanceFaqs: CalculatorFaq[] = [
   {
     question: 'What interest rate can I expect on a car loan?',
     answer:
-      'South African vehicle finance rates are typically quoted as "prime plus X%". The current prime rate is set by the South African Reserve Bank (see resbank.co.za). The exact spread depends on your credit score, deposit size, and the age of the car. New cars with good credit often get close to prime, while used cars or weaker credit profiles can pay prime + 3% or more. Always negotiate — dealers are paid commission on the rate they sell you.',
+      'South African vehicle finance rates are typically quoted as "prime plus X%". The current prime rate is set by the South African Reserve Bank (see resbank.co.za). The exact spread depends on your credit score, deposit size, and the age of the car. New cars with good credit often get close to prime, while used cars or weaker credit profiles can pay prime + 3% or more. Always negotiate, because dealers are paid commission on the rate they sell you.',
   },
   {
     question: 'Should I finance or lease my next car?',
@@ -95,7 +95,22 @@ export const vehicleFinanceFaqs: CalculatorFaq[] = [
   {
     question: 'Does the calculator include VAT and on-the-road fees?',
     answer:
-      'The calculator works on the final financed amount you enter, so add anything the bank is actually going to finance — the purchase price (usually VAT-inclusive for SA dealer sales), delivery fees, on-the-road charges, and any extras like service plans if you are rolling them into the deal. Trade-in value and cash deposits should be deducted to get the financed amount.',
+      'The calculator works on the final financed amount you enter, so add anything the bank is actually going to finance: the purchase price (usually VAT-inclusive for SA dealer sales), delivery fees, on-the-road charges, and any extras like service plans if you are rolling them into the deal. Trade-in value and cash deposits should be deducted to get the financed amount.',
+  },
+  {
+    question: 'How accurate is this vehicle finance calculator?',
+    answer:
+      'The calculator provides an estimate based on the values you enter. Actual repayments may vary depending on your lender, your credit profile, and additional fees such as the NCR-capped initiation fee and monthly service fee. Use it as an independent second opinion when comparing dealer and bank quotes.',
+  },
+  {
+    question: 'Can I pay off my car loan early?',
+    answer:
+      'Yes, most South African lenders allow early settlement. Under the National Credit Act you are entitled to a settlement quotation, but lenders may charge a limited early-settlement penalty on agreements above R250,000 (typically up to three months\' interest). Check your credit agreement for the exact terms before paying extra or settling in full.',
+  },
+  {
+    question: 'How long should I finance a car for?',
+    answer:
+      'Shorter terms (36–60 months) are generally better because they reduce the total interest paid and limit the risk of being "underwater", which means owing more than the car is worth. A 72-month term lowers the monthly instalment but costs significantly more in total interest, and most cars depreciate faster than you pay them off at that length.',
   },
 ];
 
@@ -113,7 +128,7 @@ export const retirementSavingsFaqs: CalculatorFaq[] = [
   {
     question: 'What is the difference between a pension fund, provident fund, and retirement annuity?',
     answer:
-      'Pension and provident funds are employer-sponsored — your employer chooses the fund and usually matches part of your contribution. A retirement annuity (RA) is a personal product you open yourself, which is useful if you are self-employed or want to save more than your employer fund allows. All three enjoy the same tax deduction up to 27.5% of remuneration, capped at R350,000 per year (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/).',
+      'Pension and provident funds are employer-sponsored, so your employer chooses the fund and usually matches part of your contribution. A retirement annuity (RA) is a personal product you open yourself, which is useful if you are self-employed or want to save more than your employer fund allows. All three enjoy the same tax deduction up to 27.5% of remuneration, capped at R350,000 per year (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/).',
   },
   {
     question: 'Does the retirement calculator account for inflation?',
@@ -129,6 +144,26 @@ export const retirementSavingsFaqs: CalculatorFaq[] = [
     question: 'What tax do I pay on my retirement savings when I retire?',
     answer:
       'At retirement, you can take up to one-third of most retirement funds as a lump sum (provident funds contributed before 1 March 2021 may allow more). The lump sum is taxed on the retirement tax table, where the first R550,000 is tax-free (see sars.gov.za/types-of-tax/personal-income-tax/tax-and-retirement-fund/). The remaining two-thirds must be used to buy an annuity (a living annuity or a guaranteed life annuity), and the monthly income from that annuity is taxed as normal income.',
+  },
+  {
+    question: 'How accurate is this retirement calculator?',
+    answer:
+      'The calculator gives a realistic projection based on the numbers you enter: current age, retirement age, monthly contribution, expected return, and inflation assumption. Real outcomes will differ because investment returns are not linear, inflation varies year to year, and your contributions may change. Use it as a planning tool and revisit the numbers every year or whenever your salary, fund, or goals change.',
+  },
+  {
+    question: 'When should I start saving for retirement?',
+    answer:
+      'As early as possible. Compound growth is the single biggest lever in retirement planning: R1,000 a month from age 25 often beats R2,500 a month from age 40 by retirement. If you are in your first job, start with whatever you can afford, even R500 a month into a retirement annuity, and increase it every time you get a raise.',
+  },
+  {
+    question: 'What happens if I start saving late?',
+    answer:
+      'You can still build a meaningful retirement pot, but you will need to contribute more aggressively, delay retirement if possible, and lean harder on tax-deductible vehicles like a retirement annuity (up to 27.5% of remuneration, capped at R350,000 per year). Prioritise clearing high-interest debt first so every spare rand can go to retirement instead of interest.',
+  },
+  {
+    question: 'Can I rely on government support in retirement?',
+    answer:
+      'The South African state old-age grant provides a modest monthly payment to qualifying citizens over 60, subject to a means test. It is designed as a safety net, not a retirement plan, and is well below what most people need to maintain their pre-retirement lifestyle. Treat any grant as a supplement to your own retirement savings, not a replacement for them.',
   },
 ];
 
@@ -156,12 +191,32 @@ export const personalLoanFaqs: CalculatorFaq[] = [
   {
     question: 'What is APR and why is it different from the interest rate?',
     answer:
-      'The interest rate is what the lender charges on the outstanding balance. APR (annual percentage rate) bundles in initiation fees, monthly service fees, and credit life insurance so you see the true annual cost. Two loans with the same interest rate can have very different APRs depending on fees. South African lenders must quote both — always compare the APR.',
+      'The interest rate is what the lender charges on the outstanding balance. APR (annual percentage rate) bundles in initiation fees, monthly service fees, and credit life insurance so you see the true annual cost. Two loans with the same interest rate can have very different APRs depending on fees. South African lenders must quote both, so always compare the APR.',
   },
   {
     question: 'How much personal loan can I qualify for?',
     answer:
       'South African lenders use affordability assessments under the NCA: they look at your net income, subtract necessary living expenses and existing debt commitments, and apply a debt-to-income ratio (usually the monthly instalment cannot exceed 30–40% of your disposable income). A good credit score, stable employment, and low existing debt pushes the amount you can qualify for higher.',
+  },
+  {
+    question: 'How accurate is this personal loan calculator?',
+    answer:
+      'The calculator provides a reliable estimate based on the values you enter: loan amount, interest rate, term, and monthly service fee. Actual loan terms may vary depending on your lender and credit profile, and real quotes will include an initiation fee (up to R1,207.50) and sometimes bundled credit life insurance. Use the calculator as an independent second opinion when comparing loan offers.',
+  },
+  {
+    question: 'What is a good interest rate for a personal loan in South Africa?',
+    answer:
+      'A "good" rate depends on your credit score and income. Prime borrowers with clean credit records can get rates close to prime + 3% to 5%. Mid-risk profiles typically see prime + 7% to 12%. Anything close to the NCA cap (repo × 2.2 + 20%) is a signal that you are being priced as high-risk and should shop around or try to improve your credit score first.',
+  },
+  {
+    question: 'How long should I take a personal loan for?',
+    answer:
+      'Shorter terms are generally better because they reduce total interest paid, but the monthly instalment must stay affordable. A 24–36 month term is ideal where possible. Stretching a loan to 60 or 72 months lowers the monthly payment but can double the total interest. Only go long if the shorter term would push your debt-to-income ratio above 40%.',
+  },
+  {
+    question: 'Does applying for a loan affect my credit score?',
+    answer:
+      'Yes. Every formal loan application creates a hard enquiry on your credit report, and multiple enquiries in a short period can lower your score. Before applying, use affordability tools and compare offers using published rates rather than submitting applications to many lenders at once. Pre-qualification checks (soft enquiries) do not affect your score and are a safer way to compare.',
   },
 ];
 
@@ -227,22 +282,22 @@ export const currencyConverterFaqs: CalculatorFaq[] = [
   {
     question: 'Why is the rate my bank gives me different from the rate shown here?',
     answer:
-      'The rate on this page is the interbank (mid-market) rate — what banks pay each other. When you buy forex from a South African bank or cash it at an airport, they add a margin, usually 2–4% for retail customers. Online forex providers and fintechs (Wise, Shyft, PayPal, etc.) typically take smaller spreads. Always compare the total amount of foreign currency you receive, not the advertised "rate".',
+      'The rate on this page is the interbank (mid-market) rate, which is what banks pay each other. When you buy forex from a South African bank or cash it at an airport, they add a margin, usually 2–4% for retail customers. Online forex providers and fintechs (Wise, Shyft, PayPal, etc.) typically take smaller spreads. Always compare the total amount of foreign currency you receive, not the advertised "rate".',
   },
   {
     question: 'What is the best way to get foreign currency in South Africa?',
     answer:
-      'For small amounts under R5,000, a travel-ready app like Shyft or FNB Global Account gives decent rates and instant access. For larger amounts, specialist providers (like Sable, CurrencyAssist, or Investec\'s forex desk) beat retail bank rates. Always order ahead instead of at the airport — airport bureaus have the worst rates in the country.',
+      'For small amounts under R5,000, a travel-ready app like Shyft or FNB Global Account gives decent rates and instant access. For larger amounts, specialist providers (like Sable, CurrencyAssist, or Investec\'s forex desk) beat retail bank rates. Always order ahead instead of at the airport, because airport bureaus have the worst rates in the country.',
   },
   {
     question: 'How much forex can I take out of South Africa per year?',
     answer:
-      'South African tax residents have a R1 million single discretionary allowance (SDA) per calendar year for travel, gifts, maintenance, investment, or online purchases — you do not need SARS approval. Above that, up to R10 million per year requires a SARS tax compliance status (TCS) PIN, and anything above R10 million needs Reserve Bank approval (see resbank.co.za).',
+      'South African tax residents have a R1 million single discretionary allowance (SDA) per calendar year for travel, gifts, maintenance, investment, or online purchases, and you do not need SARS approval for this. Above that, up to R10 million per year requires a SARS tax compliance status (TCS) PIN, and anything above R10 million needs Reserve Bank approval (see resbank.co.za).',
   },
   {
     question: 'Why does the Rand weaken when the US dollar strengthens?',
     answer:
-      'The Rand is an emerging-market currency, so it tends to move with global risk sentiment. When US interest rates rise or there is a global risk-off event (recession fears, geopolitical shocks), investors move money out of emerging markets into safer USD-denominated assets. That capital flow buys dollars and sells Rand, which pushes the ZAR-USD rate higher. Local factors — Eskom, politics, the trade balance — amplify the move.',
+      'The Rand is an emerging-market currency, so it tends to move with global risk sentiment. When US interest rates rise or there is a global risk-off event (recession fears, geopolitical shocks), investors move money out of emerging markets into safer USD-denominated assets. That capital flow buys dollars and sells Rand, which pushes the ZAR-USD rate higher. Local factors like Eskom, politics, and the trade balance amplify the move.',
   },
   {
     question: 'Can I use this currency converter for SARS or accounting purposes?',
