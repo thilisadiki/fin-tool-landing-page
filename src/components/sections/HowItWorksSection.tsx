@@ -3,49 +3,58 @@ import Section from '@/components/ui/Section';
 
 const steps = [
   {
+    num: '01',
     icon: MousePointerClick,
-    title: '1. Pick your calculator',
+    title: 'Pick your calculator',
     description:
-      'Choose the Quick Money Tool calculator that matches your situation: tax, vehicle finance, personal loan, retirement, budget, or currency.',
+      'Choose the tool that matches your situation: tax, vehicle finance, retirement savings, personal loan, or budgeting.',
   },
   {
+    num: '02',
     icon: Calculator,
-    title: '2. Enter your numbers',
+    title: 'Enter your numbers',
     description:
-      'All calculations run in your browser using the latest SA rates from SARS, SARB, and the NCR. Nothing is saved or sent to our servers.',
+      'All calculations run locally in your browser using the latest SA rates from SARS, SARB, and the NCR. Nothing is stored.',
   },
   {
+    num: '03',
     icon: BookOpen,
-    title: '3. Read the SA guide',
+    title: 'Read the SA guide',
     description:
-      'Every calculator is paired with a research-based guide and FAQs reviewed by a qualified SARS tax professional, so you understand the result.',
+      'Every result is paired with a practical, professionally reviewed guide so you understand what the numbers mean for you.',
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    <Section id="how-it-works" className="bg-accent/30">
-      <div className="text-center mb-14 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          How Quick Money Tool Works
+    <Section id="how-it-works" className="bg-secondary/50">
+      <div className="mb-14 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-[#C9A84C]/10 px-3 py-[5px] text-xs font-bold uppercase tracking-wider text-[#C9A84C] dark:text-[#D4B96A]">
+          How it works
+        </div>
+        <h2 className="mb-3.5 text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] tracking-tight text-foreground">
+          From question to confident answer
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Three simple steps from question to confident answer, with no sign-up and no stored data.
+        <p className="mx-auto max-w-[560px] text-[17px] leading-[1.65] text-muted-foreground">
+          Three steps. No sign-up. No stored data.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid gap-6 md:grid-cols-3">
         {steps.map((step, index) => (
           <div
             key={step.title}
-            className="dark:bg-slate-800/50 bg-slate-100 rounded-2xl p-8 border border-border animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both"
+            className="rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44] animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="w-14 h-14 bg-gradient-to-r from-[#C9A84C] to-[#B8943E] rounded-xl flex items-center justify-center mb-5">
-              <step.icon className="w-7 h-7 text-white" />
+            <div className="mb-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#C9A84C]/10 text-[13px] font-bold text-[#C9A84C] dark:text-[#D4B96A]">
+              {step.num}
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-            <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+            <div className="mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
+              <step.icon className="h-[22px] w-[22px]" />
+            </div>
+            <h3 className="mb-2 text-[17px] font-bold text-foreground">{step.title}</h3>
+            <p className="text-sm leading-[1.65] text-muted-foreground">{step.description}</p>
           </div>
         ))}
       </div>

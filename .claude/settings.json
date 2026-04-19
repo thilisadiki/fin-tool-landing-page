@@ -6,7 +6,11 @@
       "Bash(find src/components -name \"*.tsx\" -exec wc -l {} \\\\;)",
       "Bash(npm run *)",
       "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Read(//tmp/design-pkg/quick-money-tools-website/chats/**)",
+      "Read(//private/tmp/design-pkg/quick-money-tools-website/chats/**)",
+      "Read(//tmp/design-pkg/quick-money-tools-website/project/**)",
+      "Read(//private/tmp/design-pkg/quick-money-tools-website/project/**)"
     ]
   }
 }

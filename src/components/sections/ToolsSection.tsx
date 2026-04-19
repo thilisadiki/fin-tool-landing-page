@@ -1,55 +1,93 @@
+'use client';
+
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/Section';
-import { tools } from '@/data/landingPageData';
+import { tools, calculatorGoals, type CalculatorGoal } from '@/data/landingPageData';
+
+type FilterId = CalculatorGoal | 'all';
 
 const ToolsSection = () => {
+  const [active, setActive] = useState<FilterId>('all');
+
+  const filtered = useMemo(() => {
+    if (active === 'all') return tools;
+    return tools.filter((t) => t.goals.includes(active));
+  }, [active]);
+
   return (
     <Section id="tools">
-      <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-          Quick Money Tool Calculators
+      <div className="mb-14 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-[#C9A84C]/10 px-3 py-[5px] text-xs font-bold uppercase tracking-wider text-[#C9A84C] dark:text-[#D4B96A]">
+          Free tools
+        </div>
+        <h2 className="mb-3.5 text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] tracking-tight text-foreground">
+          Six calculators built for SA
         </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Select a Quick Money Tool calculator to get started. Every tool is free, secure, and designed for the South African financial landscape.
+        <p className="max-w-[560px] text-[17px] leading-[1.65] text-muted-foreground">
+          Every tool is free, private, and uses the latest official South African data.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {tools.map((tool, index) => (
+      <div className="mb-10 flex flex-wrap gap-2">
+        {calculatorGoals.map((g) => (
+          <button
+            key={g.id}
+            type="button"
+            onClick={() => setActive(g.id)}
+            className={`rounded-full border-[1.5px] px-4 py-[7px] text-[13px] font-semibold transition-all ${
+              active === g.id
+                ? 'border-[#0F2744] bg-[#0F2744] text-white dark:border-[#C9A84C] dark:bg-[#C9A84C]'
+                : 'border-border bg-transparent text-muted-foreground hover:border-[#C8D4E4] hover:text-foreground dark:hover:border-[#1A2E44]'
+            }`}
+          >
+            {g.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((tool) => (
           <article
             key={tool.title}
-            className="group animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
           >
-            <div className="dark:bg-slate-800/50 bg-slate-100 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-accent hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
-              <div className={`w-16 h-16 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <tool.icon className="w-8 h-8 text-white" />
+            <div className="flex-1">
+              <div className="mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
+                <tool.icon className="h-[22px] w-[22px]" />
               </div>
-
-              <h3 className="text-2xl font-bold text-foreground mb-4">{tool.title}</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">{tool.description}</p>
-
-              <ul className="space-y-2 mb-8">
-                {tool.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-[#C9A84C] rounded-full mr-3 shrink-0" />
+              <h3 className="mb-2 text-[17px] font-bold text-foreground">{tool.title}</h3>
+              <p className="text-sm leading-[1.65] text-muted-foreground">{tool.description}</p>
+              <ul className="mt-3 flex flex-col gap-1.5">
+                {tool.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-[13px] text-muted-foreground"
+                  >
+                    <span className="mt-[5px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#C9A84C]" />
                     {feature}
                   </li>
                 ))}
               </ul>
-
-              <Button asChild className={`w-full mt-auto bg-gradient-to-r ${tool.color} hover:opacity-90 text-white dark:text-white`}>
-                {tool.isInternal ? (
-                  <Link href={tool.url}>
-                    Use {tool.title.split(' ')[0]} Calculator
-                  </Link>
-                ) : (
-                  <a href={tool.url} target="_blank" rel="noopener noreferrer">
-                    Use {tool.title.split(' ')[0]} Calculator
-                  </a>
-                )}
-              </Button>
+            </div>
+            <div className="mt-5">
+              {tool.isInternal ? (
+                <Link
+                  href={tool.url}
+                  className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#0F2744] px-5 py-[9px] text-sm font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#1E3A5F]"
+                >
+                  Open Calculator
+                </Link>
+              ) : (
+                <a
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#0F2744] px-5 py-[9px] text-sm font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#1E3A5F]"
+                >
+                  Open Calculator
+                </a>
+              )}
             </div>
           </article>
         ))}

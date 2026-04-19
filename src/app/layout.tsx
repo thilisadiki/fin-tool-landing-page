@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import Script from 'next/script';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/sections/Header';
@@ -9,7 +9,10 @@ import { Toaster } from '@/components/ui/toaster';
 import { organizationSchema } from '@/data/schemaData';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -96,7 +99,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body className={jakarta.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

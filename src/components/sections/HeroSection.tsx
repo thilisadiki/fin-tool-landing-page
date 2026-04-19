@@ -1,48 +1,73 @@
-import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import AnimatedCalcPreview from '@/components/sections/AnimatedCalcPreview';
 
 const HeroSection = () => {
   return (
-    <section className="relative px-6 py-20 overflow-hidden bg-gradient-to-br dark:from-[#070f1a] dark:via-[#0F2744] dark:to-[#070f1a] from-slate-50 via-[#eef2f7] to-[#e6ecf4]">
-      <div className="max-w-7xl mx-auto text-center">
-        <div>
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Your Personal Finance Guide for
-            <span className="bg-gradient-to-r from-[#C9A84C] via-[#D4B96A] to-[#C9A84C] bg-clip-text text-transparent"> South Africa </span>
-          </h1>
-
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-150">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Quick Money Tool is your personal finance guide for South Africa, offering free calculators, research-based guides, and practical money advice for real situations. All content is professionally reviewed by qualified tax and finance experts.
-            </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-[#C9A84C] to-[#B8943E] hover:from-[#B8943E] hover:to-[#9A7A32] text-white dark:text-white px-8 py-4 text-lg"
-            >
-              <a href="#tools">View All Calculators</a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-border text-foreground hover:bg-accent hover:text-accent-foreground px-8 py-4 text-lg"
-            >
-              <a href="#about">Learn More</a>
-            </Button>
-          </div>
-          </div>
-        </div>
+    <section className="relative overflow-hidden px-7 pb-20 pt-[72px]">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div
+          className="absolute -top-52 -right-24 h-[600px] w-[600px] rounded-full opacity-50 blur-[80px]"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(201,168,76,0.08), transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute -bottom-24 -left-12 h-[400px] w-[400px] rounded-full opacity-50 blur-[80px]"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(15,39,68,0.06), transparent 70%)',
+          }}
+        />
       </div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div
-          className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-[#C9A84C]/20 to-[#0F2744]/20 rounded-full blur-xl animate-pulse"
-        />
-        <div
-          className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-[#0F2744]/20 to-[#1E3A5F]/20 rounded-full blur-xl animate-pulse"
-        />
+      <div className="relative z-10 mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#C9A84C]/20 bg-[#C9A84C]/10 py-[5px] pl-2 pr-[14px]">
+            <span className="h-[6px] w-[6px] rounded-full bg-[#C9A84C]" />
+            <span className="text-xs font-semibold tracking-wide text-[#C9A84C] dark:text-[#D4B96A]">
+              South Africa&apos;s Free Finance Guide
+            </span>
+          </div>
+
+          <h1 className="mb-5 text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.1] tracking-tight text-foreground">
+            Smarter money decisions,
+            <br />
+            <span className="text-[#C9A84C] dark:text-[#D4B96A]">made in minutes.</span>
+          </h1>
+
+          <p className="mb-8 max-w-[480px] text-lg leading-[1.7] text-muted-foreground">
+            Free calculators and research-based guides for real South African situations: SARS tax, vehicle finance, retirement, and more. All professionally reviewed.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/calculators"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#C9A84C] px-[26px] py-[13px] text-[15px] font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#B8943E] hover:shadow-[0_4px_20px_rgba(13,31,53,0.08)]"
+            >
+              Explore Calculators
+            </Link>
+            <Link
+              href="/calculators/sars-income-tax-calculator"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-[#C8D4E4] bg-transparent px-[26px] py-[13px] text-[15px] font-semibold text-foreground transition-colors hover:bg-secondary dark:border-[#1A2E44]"
+            >
+              SARS Tax Calculator
+            </Link>
+          </div>
+
+          <div className="mt-7 flex items-center gap-2 text-[13px] text-muted-foreground">
+            <div className="flex gap-1">
+              <span className="h-2 w-2 rounded-full bg-[#C9A84C]" />
+              <span className="h-2 w-2 rounded-full bg-[#C9A84C]/50" />
+              <span className="h-2 w-2 rounded-full bg-[#C9A84C]/50" />
+            </div>
+            <span>Reviewed by a qualified SARS tax professional</span>
+          </div>
+        </div>
+
+        <div className="relative z-10 hidden md:block animate-in fade-in zoom-in-95 duration-700 fill-mode-both delay-200">
+          <AnimatedCalcPreview />
+        </div>
       </div>
     </section>
   );
