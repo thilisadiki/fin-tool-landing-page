@@ -3,21 +3,18 @@ import Section from '@/components/ui/Section';
 
 const steps = [
   {
-    num: '01',
     icon: MousePointerClick,
     title: 'Pick your calculator',
     description:
       'Choose the tool that matches your situation: tax, vehicle finance, retirement savings, personal loan, or budgeting.',
   },
   {
-    num: '02',
     icon: Calculator,
     title: 'Enter your numbers',
     description:
       'All calculations run locally in your browser using the latest SA rates from SARS, SARB, and the NCR. Nothing is stored.',
   },
   {
-    num: '03',
     icon: BookOpen,
     title: 'Read the SA guide',
     description:
@@ -47,13 +44,12 @@ const HowItWorksSection = () => {
             className="rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44] animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="mb-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#C9A84C]/10 text-[13px] font-bold text-[#C9A84C] dark:text-[#D4B96A]">
-              {step.num}
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
+                <step.icon className="h-[22px] w-[22px]" />
+              </div>
+              <h3 className="text-[17px] font-bold text-foreground">{step.title}</h3>
             </div>
-            <div className="mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
-              <step.icon className="h-[22px] w-[22px]" />
-            </div>
-            <h3 className="mb-2 text-[17px] font-bold text-foreground">{step.title}</h3>
             <p className="text-sm leading-[1.65] text-muted-foreground">{step.description}</p>
           </div>
         ))}
