@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-2 md:gap-16">
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
+        <div className="text-center md:text-left animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#C9A84C]/20 bg-[#C9A84C]/10 py-[5px] pl-2 pr-[14px]">
             <span className="h-[6px] w-[6px] rounded-full bg-[#C9A84C]" />
             <span className="text-xs font-semibold tracking-wide text-[#C9A84C] dark:text-[#D4B96A]">
@@ -36,11 +36,11 @@ const HeroSection = () => {
             <span className="text-[#C9A84C] dark:text-[#D4B96A]">made in minutes.</span>
           </h1>
 
-          <p className="mb-8 max-w-[480px] text-lg leading-[1.7] text-muted-foreground">
+          <p className="mb-8 max-w-[480px] mx-auto md:mx-0 text-lg leading-[1.7] text-muted-foreground">
             Free calculators and research-based guides for real South African situations: SARS tax, vehicle finance, retirement, and more. All professionally reviewed.
           </p>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
             <Link
               href="/calculators"
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#C9A84C] px-[26px] py-[13px] text-[15px] font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#B8943E] hover:shadow-[0_4px_20px_rgba(13,31,53,0.08)]"
@@ -55,7 +55,7 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <div className="mt-7 flex items-center gap-2 text-[13px] text-muted-foreground">
+          <div className="mt-7 flex items-center justify-center gap-2 text-[13px] text-muted-foreground md:justify-start">
             <div className="flex gap-1">
               <span className="h-2 w-2 rounded-full bg-[#C9A84C]" />
               <span className="h-2 w-2 rounded-full bg-[#C9A84C]/50" />
