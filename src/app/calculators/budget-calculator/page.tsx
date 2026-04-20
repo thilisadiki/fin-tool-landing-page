@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Wallet } from 'lucide-react';
 import Section from '@/components/ui/Section';
@@ -49,9 +49,15 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 export default function BudgetCalculatorPage() {
   const [inputs, setInputs] = useState<BudgetInputs>(DEFAULT_INPUTS);
   const [result, setResult] = useState<BudgetResult | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleCalculate = () => {
     setResult(calculateBudget(inputs));
+    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) {
+      requestAnimationFrame(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   };
 
   return (
@@ -102,7 +108,7 @@ export default function BudgetCalculatorPage() {
             />
           </div>
 
-          <div>
+          <div ref={resultsRef} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-foreground mb-6">Budget Summary</h2>
             {result ? (
               <div className="space-y-6">

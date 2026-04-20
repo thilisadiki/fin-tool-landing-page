@@ -53,10 +53,12 @@ const ToolsSection = () => {
             className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
           >
             <div className="flex-1">
-              <div className="mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
-                <tool.icon className="h-[22px] w-[22px]" />
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
+                  <tool.icon className="h-[22px] w-[22px]" />
+                </div>
+                <h3 className="text-[17px] font-bold text-foreground">{tool.title}</h3>
               </div>
-              <h3 className="mb-2 text-[17px] font-bold text-foreground">{tool.title}</h3>
               <p className="text-sm leading-[1.65] text-muted-foreground">{tool.description}</p>
               <ul className="mt-3 flex flex-col gap-1.5">
                 {tool.features.map((feature) => (

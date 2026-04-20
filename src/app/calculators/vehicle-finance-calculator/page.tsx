@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Car } from 'lucide-react';
 import Section from '@/components/ui/Section';
@@ -36,10 +36,16 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 export default function VehicleFinanceCalculatorPage() {
   const [inputs, setInputs] = useState<VehicleFinanceInputs>(DEFAULT_INPUTS);
   const [result, setResult] = useState<VehicleFinanceResult | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleCalculate = () => {
     if (inputs.vehiclePrice <= 0 || inputs.loanTermMonths <= 0) return;
     setResult(calculateVehicleFinance(inputs));
+    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) {
+      requestAnimationFrame(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   };
 
   return (
@@ -90,7 +96,7 @@ export default function VehicleFinanceCalculatorPage() {
             />
           </div>
 
-          <div>
+          <div ref={resultsRef} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-foreground mb-6">Results</h2>
             {result ? (
               <div className="space-y-6">

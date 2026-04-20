@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   tools,
   calculatorGoals,
@@ -53,44 +52,41 @@ export default function CalculatorHubFilter() {
         {activeGroup.description}
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((tool) => (
-          <article key={tool.title} className="group">
-            <div className="dark:bg-slate-800/50 bg-slate-100 backdrop-blur-lg rounded-2xl p-8 border border-border hover:border-accent hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
-              <div
-                className={`w-16 h-16 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <tool.icon className="w-8 h-8 text-white" />
+          <article
+            key={tool.title}
+            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
+          >
+            <div className="flex-1">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl bg-[#C9A84C]/10 text-[#C9A84C] dark:text-[#D4B96A]">
+                  <tool.icon className="h-[22px] w-[22px]" />
+                </div>
+                <h2 className="text-[17px] font-bold text-foreground">{tool.title}</h2>
               </div>
-
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                {tool.title}
-              </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
-                {tool.description}
-              </p>
-
-              <ul className="space-y-2 mb-8">
+              <p className="text-sm leading-[1.65] text-muted-foreground">{tool.description}</p>
+              <ul className="mt-3 flex flex-col gap-1.5">
                 {tool.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center text-muted-foreground"
+                    className="flex items-start gap-2 text-[13px] text-muted-foreground"
                   >
-                    <div className="w-2 h-2 bg-[#C9A84C] rounded-full mr-3 shrink-0" />
+                    <span className="mt-[5px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#C9A84C]" />
                     {feature}
                   </li>
                 ))}
               </ul>
+            </div>
 
-              <Button
-                asChild
-                className={`w-full mt-auto bg-gradient-to-r ${tool.color} hover:opacity-90 text-white dark:text-white`}
+            <div className="mt-5">
+              <Link
+                href={tool.url}
+                className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#0F2744] px-5 py-[9px] text-sm font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#1E3A5F]"
               >
-                <Link href={tool.url}>
-                  Open calculator
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+                Open calculator
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </article>
         ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { PiggyBank } from 'lucide-react';
 import Section from '@/components/ui/Section';
@@ -38,11 +38,17 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 export default function RetirementSavingsCalculatorPage() {
   const [inputs, setInputs] = useState<RetirementInputs>(DEFAULT_INPUTS);
   const [result, setResult] = useState<RetirementResult | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleCalculate = () => {
     if (inputs.currentAge >= inputs.retirementAge) return;
     if (inputs.monthlyContribution <= 0 && inputs.currentSavings <= 0) return;
     setResult(calculateRetirement(inputs));
+    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) {
+      requestAnimationFrame(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   };
 
   return (
@@ -93,7 +99,7 @@ export default function RetirementSavingsCalculatorPage() {
             />
           </div>
 
-          <div>
+          <div ref={resultsRef} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-foreground mb-6">Projection</h2>
             {result ? (
               <div className="space-y-6">
