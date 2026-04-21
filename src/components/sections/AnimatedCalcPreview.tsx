@@ -48,8 +48,10 @@ export default function AnimatedCalcPreview() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-[380px] overflow-hidden rounded-[28px] border border-border bg-card p-7 shadow-[0_12px_48px_rgba(13,31,53,0.12)] dark:shadow-[0_12px_48px_rgba(0,0,0,0.45)]">
-      <div className="pointer-events-none absolute inset-y-0 left-[-100%] w-3/5 animate-[shimmer_2.5s_infinite] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+    <div className="relative mx-auto w-full max-w-[380px] rounded-[28px] border border-border bg-card p-7 pb-20 shadow-[0_12px_48px_rgba(13,31,53,0.12)] dark:shadow-[0_12px_48px_rgba(0,0,0,0.45)]">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[28px]">
+        <div className="absolute inset-y-0 left-[-100%] w-3/5 animate-[shimmer_2.5s_infinite] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      </div>
       <div className="mb-6 flex items-center justify-between">
         <span className="text-[15px] font-bold text-foreground">SARS Tax Calculator</span>
         <span className="rounded-full bg-[#C9A84C]/10 px-[9px] py-[3px] text-[11px] font-bold tracking-wider text-[#C9A84C] dark:text-[#D4B96A]">
@@ -121,7 +123,7 @@ export default function AnimatedCalcPreview() {
       </button>
 
       {results && (
-        <div className="absolute -bottom-4 right-6 flex items-center gap-2 whitespace-nowrap rounded-xl border border-border bg-card px-4 py-[10px] text-[13px] font-semibold text-foreground shadow-[0_4px_20px_rgba(13,31,53,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
+        <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-xl border border-border bg-card px-4 py-[10px] text-[13px] font-semibold text-foreground shadow-[0_4px_20px_rgba(13,31,53,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
           <span className="h-2 w-2 flex-shrink-0 rounded-full bg-[#22C55E]" />
           Browser-only, no data stored
         </div>
