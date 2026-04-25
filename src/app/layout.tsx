@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     'sars tax calculator',
     'paye calculator',
     'vehicle finance calculator',
+    'home loan calculator',
+    'bond calculator south africa',
     'retirement savings calculator',
     'car payment calculator',
     'income tax calculator',

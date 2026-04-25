@@ -1,4 +1,4 @@
-import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, type LucideIcon } from 'lucide-react';
+import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, Home, type LucideIcon } from 'lucide-react';
 
 export type CalculatorGoal = 'borrowing' | 'saving' | 'tax' | 'daily';
 
@@ -67,6 +67,17 @@ export const tools: Tool[] = [
     features: ["Interest rate impact", "Loan term analysis", "Total repayment amount"],
     keywords: ["personal loan calculator", "loan repayment", "debt consolidation"],
     url: "/calculators/personal-loan-calculator",
+    isInternal: true,
+    goals: ["borrowing"]
+  },
+  {
+    icon: Home,
+    title: "Home Loan Calculator",
+    description: "Estimate your monthly bond repayment, transfer duty, and upfront cash needed before you buy property in South Africa.",
+    color: "from-[#0F2744] to-[#C9A84C]",
+    features: ["Monthly bond repayment", "SARS transfer duty estimate", "Total monthly housing cost"],
+    keywords: ["home loan calculator", "bond calculator south africa", "mortgage calculator"],
+    url: "/calculators/home-loan-calculator",
     isInternal: true,
     goals: ["borrowing"]
   },
