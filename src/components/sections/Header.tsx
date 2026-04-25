@@ -3,25 +3,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Calculator, Menu, X } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
-type NavLink =
-  | { label: string; kind: 'route'; href: string }
-  | { label: string; kind: 'hash'; hash: string };
+type NavLink = { label: string; href: string };
 
 const navLinks: NavLink[] = [
-  { label: 'Calculators', kind: 'route', href: '/calculators' },
-  { label: 'About', kind: 'hash', hash: '#about' },
-  { label: 'FAQ', kind: 'hash', hash: '#faq' },
-  { label: 'Blog', kind: 'route', href: '/blog' },
+  { label: 'Calculators', href: '/calculators' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Blog', href: '/blog' },
 ];
-
-function resolveHref(link: NavLink, pathname: string): string {
-  if (link.kind === 'route') return link.href;
-  return pathname === '/' ? link.hash : `/${link.hash}`;
-}
 
 function NavItem({
   link,
@@ -32,26 +24,16 @@ function NavItem({
   variant: 'desktop' | 'mobile';
   onNavigate?: () => void;
 }) {
-  const pathname = usePathname();
-  const href = resolveHref(link, pathname);
-
   const desktopClass =
     'hidden md:inline-block text-muted-foreground hover:text-foreground transition-colors';
   const mobileClass =
     'block px-4 py-3 rounded-lg text-base text-foreground hover:bg-accent transition-colors';
   const className = variant === 'desktop' ? desktopClass : mobileClass;
 
-  if (link.kind === 'route') {
-    return (
-      <Link href={href} onClick={onNavigate} className={className}>
-        {link.label}
-      </Link>
-    );
-  }
   return (
-    <a href={href} onClick={onNavigate} className={className}>
+    <Link href={link.href} onClick={onNavigate} className={className}>
       {link.label}
-    </a>
+    </Link>
   );
 }
 
