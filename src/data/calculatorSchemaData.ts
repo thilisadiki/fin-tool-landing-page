@@ -10,6 +10,7 @@ type CalcSlug =
   | 'vehicle-finance-calculator'
   | 'retirement-savings-calculator'
   | 'personal-loan-calculator'
+  | 'home-loan-calculator'
   | 'budget-calculator'
   | 'currency-converter';
 
@@ -39,6 +40,11 @@ const CALCULATOR_META: Record<CalcSlug, CalcMeta> = {
     datePublished: '2025-05-01',
     dateModified: '2026-01-10',
     softwareVersion: '1.2.0',
+  },
+  'home-loan-calculator': {
+    datePublished: '2026-04-25',
+    dateModified: '2026-04-25',
+    softwareVersion: '1.0.0',
   },
   'budget-calculator': {
     datePublished: '2025-06-15',
@@ -160,6 +166,15 @@ export function buildBudgetCalculatorSchema() {
     name: 'Personal Budget Calculator',
     description:
       'Free personal budget calculator for South Africa. Track your income and expenses, and check if your budget aligns with the 50/30/20 rule.',
+  });
+}
+
+export function buildHomeLoanCalculatorSchema() {
+  return buildCalculatorSchema({
+    slug: 'home-loan-calculator',
+    name: 'Home Loan Calculator',
+    description:
+      'Free home loan calculator for South Africa. Estimate your monthly bond repayment, transfer duty, and total monthly housing cost before you buy.',
   });
 }
 
@@ -313,6 +328,38 @@ const HOWTO_META: Record<CalcSlug, HowToMeta> = {
       },
     ],
   },
+  'home-loan-calculator': {
+    name: 'How to calculate your South African home loan repayment',
+    description:
+      'Estimate your monthly bond repayment, transfer duty, and upfront cash needed when buying property in South Africa.',
+    totalTime: 'PT2M',
+    steps: [
+      {
+        name: 'Enter the property price',
+        text: 'Type the agreed purchase price of the home in Rands.',
+      },
+      {
+        name: 'Add your deposit',
+        text: 'Enter the cash deposit you plan to pay upfront. A larger deposit usually lowers your interest rate and monthly repayment.',
+      },
+      {
+        name: 'Enter the interest rate',
+        text: 'Use the rate quoted by the bank or broker. South African bonds are usually priced relative to prime.',
+      },
+      {
+        name: 'Choose the bond term',
+        text: 'Select a repayment term, typically 20 to 30 years. Longer terms lower the instalment but increase total interest.',
+      },
+      {
+        name: 'Add monthly rates and levies',
+        text: 'Include municipal rates and body corporate or estate levies so you can see the full monthly housing cost.',
+      },
+      {
+        name: 'Calculate and review',
+        text: 'Click Calculate Bond to see your estimated monthly repayment, total interest, transfer duty, and upfront cash required.',
+      },
+    ],
+  },
   'budget-calculator': {
     name: 'How to build a South African monthly budget using the 50/30/20 rule',
     description:
@@ -424,6 +471,10 @@ export function buildPersonalLoanHowToSchema() {
 
 export function buildBudgetHowToSchema() {
   return buildHowToSchema('budget-calculator');
+}
+
+export function buildHomeLoanHowToSchema() {
+  return buildHowToSchema('home-loan-calculator');
 }
 
 export function buildCurrencyConverterHowToSchema() {

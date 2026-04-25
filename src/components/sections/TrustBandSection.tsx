@@ -4,7 +4,7 @@ import Section from '@/components/ui/Section';
 const stats = [
   {
     icon: Calculator,
-    value: '6',
+    value: '7',
     suffix: '',
     label: 'Free SA calculators',
   },

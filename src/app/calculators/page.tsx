@@ -12,7 +12,7 @@ const BASE_URL = 'https://www.quickmoneytool.com';
 export const metadata: Metadata = {
   title: 'South African Finance Calculators: Free & Updated',
   description:
-    'A hub of free South African finance calculators: SARS tax, vehicle finance, personal loans, retirement savings, monthly budgets, and currency conversion.',
+    'A hub of free South African finance calculators: SARS tax, vehicle finance, home loans, personal loans, retirement savings, monthly budgets, and currency conversion.',
   alternates: { canonical: '/calculators' },
   openGraph: {
     type: 'website',
@@ -70,7 +70,7 @@ export default function CalculatorsHubPage() {
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Every Quick Money Tool calculator in one place. Free, private, and built around
-            South African tax brackets, interest rates, and currency pairs. Pick
+            South African tax brackets, property costs, interest rates, and currency pairs. Pick
             a goal below and get an answer in under a minute.
           </p>
         </div>
@@ -99,6 +99,14 @@ export default function CalculatorsHubPage() {
               <p className="text-muted-foreground mb-4">
                 Before you sign a car finance agreement or a personal loan, run
                 the numbers yourself. The{' '}
+                <Link
+                  href="/calculators/home-loan-calculator"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
+                >
+                  home loan calculator
+                </Link>{' '}
+                helps you estimate a monthly bond repayment, transfer duty, and
+                total monthly housing cost before you make an offer. The{' '}
                 <Link
                   href="/calculators/vehicle-finance-calculator"
                   className="text-[#C9A84C] dark:text-[#D4B96A] underline"

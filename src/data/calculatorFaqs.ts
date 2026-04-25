@@ -220,6 +220,49 @@ export const personalLoanFaqs: CalculatorFaq[] = [
   },
 ];
 
+export const homeLoanFaqs: CalculatorFaq[] = [
+  {
+    question: 'How is a bond repayment calculated in South Africa?',
+    answer:
+      'A home loan repayment is calculated using the standard amortisation formula. Your instalment depends on the amount borrowed, the interest rate, and the bond term in months. Each payment covers that month\'s interest first, with the rest paying down capital. Early in the bond, a larger share goes to interest; later, more goes to principal.',
+  },
+  {
+    question: 'How much deposit do I need for a home loan?',
+    answer:
+      'Some buyers qualify for a 100% bond, but a deposit of 10% to 20% usually puts you in a stronger position. It reduces the amount borrowed, lowers your loan-to-value ratio, and can help you negotiate a better interest rate. It also leaves you with less interest to pay over the life of the bond.',
+  },
+  {
+    question: 'Does this calculator include transfer duty?',
+    answer:
+      'Yes. The calculator estimates transfer duty using the current SARS rates that apply from 1 April 2026. For example, transfer duty is 0% up to R1,210,000, then rises on a sliding scale above that. Remember that not every purchase pays transfer duty: some new developments are sold VAT-inclusive instead, in which case transfer duty may not apply.',
+  },
+  {
+    question: 'What property costs are not included here?',
+    answer:
+      'This calculator includes the bond repayment, municipal rates, levies, and an estimate of transfer duty. It does not include conveyancing fees, bond registration attorney fees, deeds office charges, homeowners insurance, life cover, moving costs, maintenance, or utilities. In real life, those costs matter, so treat this as a strong planning estimate, not the full closing statement.',
+  },
+  {
+    question: 'Should I choose a 20-year or 30-year bond?',
+    answer:
+      'A 30-year term lowers your monthly instalment, which helps affordability, but you pay much more interest over time. A 20-year term costs more each month but saves a significant amount in total interest and gets you debt-free sooner. If the 20-year payment still leaves breathing room in your budget, it is usually the better long-term choice.',
+  },
+  {
+    question: 'What interest rate should I use for a South African bond?',
+    answer:
+      'Use the actual rate quoted by your lender if you have it. If you are still estimating, many South African bonds are priced relative to prime. The South African Reserve Bank\'s March 2026 MPC statement kept the policy rate at 6.75%, and the SARB\'s April 2026 consultation paper notes that prime has been a fixed 350 basis points above the policy rate since 2001. That implies a reference prime around 10.25%, but your quoted bond rate can be above or below that depending on your profile and the bank.',
+  },
+  {
+    question: 'How much of my income should go toward my bond?',
+    answer:
+      'A common rule of thumb is to keep your bond repayment below about 25% to 30% of your gross monthly income, and your total housing cost below roughly one-third. Banks also run affordability checks under the National Credit Act, looking at your income, expenses, and existing debts. Just because a bank approves a number does not mean it will feel comfortable in your day-to-day budget.',
+  },
+  {
+    question: 'Can I lower my home loan interest over time?',
+    answer:
+      'Yes. A stronger credit profile, a bigger deposit, and shopping multiple banks through a broker can all help you get a better starting rate. After the bond is in place, paying extra into the loan or refinancing when your profile improves can reduce the interest you pay. Even a small extra payment each month shortens the term faster than most buyers expect.',
+  },
+];
+
 export const budgetFaqs: CalculatorFaq[] = [
   {
     question: 'How accurate is this budget calculator?',

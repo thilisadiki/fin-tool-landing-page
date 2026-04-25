@@ -30,6 +30,7 @@ const Footer = () => {
                   <li><Link href="/calculators/vehicle-finance-calculator" className="hover:text-foreground transition-colors">Vehicle Finance Calculator</Link></li>
                   <li><Link href="/calculators/retirement-savings-calculator" className="hover:text-foreground transition-colors">Retirement Savings Calculator</Link></li>
                   <li><Link href="/calculators/personal-loan-calculator" className="hover:text-foreground transition-colors">Personal Loan Calculator</Link></li>
+                  <li><Link href="/calculators/home-loan-calculator" className="hover:text-foreground transition-colors">Home Loan Calculator</Link></li>
                   <li><Link href="/calculators/budget-calculator" className="hover:text-foreground transition-colors">Budget Calculator</Link></li>
                   <li><Link href="/calculators/currency-converter" className="hover:text-foreground transition-colors">Currency Converter</Link></li>
                 </ul>
@@ -97,4 +98,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
