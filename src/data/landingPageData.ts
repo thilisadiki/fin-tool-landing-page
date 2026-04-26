@@ -1,4 +1,4 @@
-import { Calculator, TrendingUp, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, Home, type LucideIcon } from 'lucide-react';
+import { Calculator, TrendingUp, TrendingDown, PiggyBank, Car, FileText, Shield, Users, Landmark, Wallet, Repeat, Home, type LucideIcon } from 'lucide-react';
 
 export type CalculatorGoal = 'borrowing' | 'saving' | 'tax' | 'daily';
 
@@ -80,6 +80,17 @@ export const tools: Tool[] = [
     url: "/calculators/home-loan-calculator",
     isInternal: true,
     goals: ["borrowing"]
+  },
+  {
+    icon: TrendingDown,
+    title: "Debt Payoff Planner",
+    description: "Compare snowball vs avalanche strategies. See your debt-free date, total interest saved, and the order to clear your debts in.",
+    color: "from-[#0F2744] to-[#C9A84C]",
+    features: ["Snowball vs avalanche comparison", "Payoff date and total interest", "Per-debt clearing order"],
+    keywords: ["debt payoff calculator", "debt snowball calculator", "debt avalanche south africa"],
+    url: "/calculators/debt-payoff-planner",
+    isInternal: true,
+    goals: ["borrowing", "daily"]
   },
   {
     icon: Wallet,

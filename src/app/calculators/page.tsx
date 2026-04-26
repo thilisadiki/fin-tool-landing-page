@@ -122,7 +122,17 @@ export default function CalculatorsHubPage() {
                   personal loan calculator
                 </Link>{' '}
                 lets you compare interest rates and loan terms side-by-side so
-                you can spot the offers that are actually worth taking.
+                you can spot the offers that are actually worth taking. Already
+                carrying balances? The{' '}
+                <Link
+                  href="/calculators/debt-payoff-planner"
+                  className="text-[#C9A84C] dark:text-[#D4B96A] underline"
+                >
+                  debt payoff planner
+                </Link>{' '}
+                compares the snowball and avalanche strategies so you can see
+                your debt-free date and how much interest you save by paying
+                them off in the right order.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">

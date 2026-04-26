@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import ChatWidget from '@/components/chat/ChatWidget';
 import { organizationSchema } from '@/data/schemaData';
 import './globals.css';
 
@@ -113,6 +114,7 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
             <Footer />
+            <ChatWidget />
           </div>
         </ThemeProvider>
         <Analytics />

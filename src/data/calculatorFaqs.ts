@@ -348,3 +348,46 @@ export const currencyConverterFaqs: CalculatorFaq[] = [
       'The converter is a useful reference but is not an official SARS rate. For tax returns and accounting, SARS publishes monthly and annual average exchange rates for the major currencies (see sars.gov.za/legal-counsel/secondary-legislation/exchange-rates/). Use those official tables when translating foreign income, capital gains, or foreign-denominated assets into Rand for your return.',
   },
 ];
+
+export const debtPayoffFaqs: CalculatorFaq[] = [
+  {
+    question: 'What is the difference between the snowball and avalanche methods?',
+    answer:
+      'Both pay the minimums on every debt every month. The snowball method directs any extra payment at the debt with the smallest balance, no matter the interest rate, so you clear whole accounts quickly and stay motivated. The avalanche method directs the extra at the debt with the highest interest rate, so you pay the least interest in total. The calculator runs both side by side so you can see the difference in payoff date and total interest for your specific debts.',
+  },
+  {
+    question: 'Which is better, snowball or avalanche?',
+    answer:
+      'Avalanche always wins on pure maths because it kills the highest-rate interest first. Snowball usually wins in practice because the early account closures keep people committed long enough to actually finish. If avalanche only saves you a small amount, pick snowball. If your highest-rate debt is also a meaningful chunk of what you owe, the avalanche saving can be significant and is usually worth the slower start.',
+  },
+  {
+    question: 'Should I pay extra on the smallest debt or the highest-rate debt?',
+    answer:
+      'Always keep the minimums going on every debt to avoid fees and credit damage. Then pick one target debt for the extra payment. Smallest balance gives you the snowball method (faster wins). Highest interest rate gives you the avalanche method (less total interest). Splitting the extra across multiple debts is the worst option because no single debt clears any faster.',
+  },
+  {
+    question: 'How much extra should I put toward debt each month?',
+    answer:
+      'As much as you can sustain without skipping rent, groceries, or essential bills. Even an extra R500 to R1,000 per month against a high-rate balance can shave years off the payoff timeline because of how compounding works in reverse. Use the calculator to see what different extra amounts do to your payoff date and total interest.',
+  },
+  {
+    question: 'Does this calculator work for credit cards, personal loans, and store accounts?',
+    answer:
+      'Yes. Add any debt that charges interest: credit cards, store accounts, personal loans, vehicle finance, overdrafts. The calculator only needs the current balance, the annual interest rate, and the minimum monthly payment for each one. It does not include home loans by default since those usually have very different payoff strategies tied to bond structuring.',
+  },
+  {
+    question: 'What if my minimum payment is less than the monthly interest?',
+    answer:
+      'Then the debt is going backwards. The calculator detects this and shows a warning instead of an unrealistic payoff date. To fix it, either increase the minimum payment, add an extra monthly amount, or speak to the lender about a restructure. In severe cases, debt review under the National Credit Act is the formal route in South Africa.',
+  },
+  {
+    question: 'Should I consolidate my debts instead of paying them off one by one?',
+    answer:
+      'Consolidation only helps when the new loan has a meaningfully lower interest rate than the weighted average of your existing debts and you actually keep the discipline of not running up the old accounts again. If the consolidation rate is similar or higher, you are just extending the term and paying more interest overall. Run both scenarios through the calculator before committing.',
+  },
+  {
+    question: 'What is debt review under the NCA and when should I consider it?',
+    answer:
+      'Debt review (or debt counselling) is a formal process under the National Credit Act where a registered debt counsellor restructures your repayments to an affordable level and protects you from legal action while the plan runs. It is the right route when you genuinely cannot make the minimum payments on your debts. While in debt review you cannot take on new credit, and your credit profile reflects the status until you exit. See ncr.org.za for the official process.',
+  },
+];

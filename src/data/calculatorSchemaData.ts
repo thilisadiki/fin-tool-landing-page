@@ -11,6 +11,7 @@ type CalcSlug =
   | 'retirement-savings-calculator'
   | 'personal-loan-calculator'
   | 'home-loan-calculator'
+  | 'debt-payoff-planner'
   | 'budget-calculator'
   | 'currency-converter';
 
@@ -42,6 +43,11 @@ const CALCULATOR_META: Record<CalcSlug, CalcMeta> = {
     softwareVersion: '1.2.0',
   },
   'home-loan-calculator': {
+    datePublished: '2026-04-25',
+    dateModified: '2026-04-25',
+    softwareVersion: '1.0.0',
+  },
+  'debt-payoff-planner': {
     datePublished: '2026-04-25',
     dateModified: '2026-04-25',
     softwareVersion: '1.0.0',
@@ -175,6 +181,15 @@ export function buildHomeLoanCalculatorSchema() {
     name: 'Home Loan Calculator',
     description:
       'Free home loan calculator for South Africa. Estimate your monthly bond repayment, transfer duty, and total monthly housing cost before you buy.',
+  });
+}
+
+export function buildDebtPayoffCalculatorSchema() {
+  return buildCalculatorSchema({
+    slug: 'debt-payoff-planner',
+    name: 'Debt Payoff Planner',
+    description:
+      'Free debt payoff planner for South Africa. Compare snowball vs avalanche strategies, see your debt-free date, total interest, and the order to clear debts in.',
   });
 }
 
@@ -360,6 +375,38 @@ const HOWTO_META: Record<CalcSlug, HowToMeta> = {
       },
     ],
   },
+  'debt-payoff-planner': {
+    name: 'How to plan your debt payoff using snowball vs avalanche',
+    description:
+      'List your debts, compare the snowball and avalanche strategies, and see your payoff date and total interest under each approach.',
+    totalTime: 'PT2M',
+    steps: [
+      {
+        name: 'List every debt with a balance',
+        text: 'Add each credit card, store account, personal loan, vehicle finance, or overdraft you currently owe.',
+      },
+      {
+        name: 'Enter the current balance',
+        text: 'Use the latest statement balance for each debt in Rands.',
+      },
+      {
+        name: 'Add the interest rate (APR)',
+        text: 'Enter the annual interest rate for each debt. South African unsecured rates often range from 18% to 28% under the NCA.',
+      },
+      {
+        name: 'Add the minimum payment',
+        text: 'Enter the lender-required minimum monthly payment for each debt. The plan always pays at least this much per debt.',
+      },
+      {
+        name: 'Add any extra monthly payment',
+        text: 'Enter how much extra you can put toward debt each month. This amount gets directed at one target debt at a time.',
+      },
+      {
+        name: 'Compare strategies',
+        text: 'Click Compare Strategies to see snowball vs avalanche side by side, with payoff date, total interest, and the recommended approach.',
+      },
+    ],
+  },
   'budget-calculator': {
     name: 'How to build a South African monthly budget using the 50/30/20 rule',
     description:
@@ -475,6 +522,10 @@ export function buildBudgetHowToSchema() {
 
 export function buildHomeLoanHowToSchema() {
   return buildHowToSchema('home-loan-calculator');
+}
+
+export function buildDebtPayoffHowToSchema() {
+  return buildHowToSchema('debt-payoff-planner');
 }
 
 export function buildCurrencyConverterHowToSchema() {
