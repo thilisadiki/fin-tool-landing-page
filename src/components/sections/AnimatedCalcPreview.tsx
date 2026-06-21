@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function AnimatedCalcPreview() {
@@ -115,12 +116,12 @@ export default function AnimatedCalcPreview() {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="mt-5 w-full rounded-xl border-none bg-[#0F2744] px-4 py-[11px] text-center text-sm font-semibold text-white transition-colors hover:bg-[#1E3A5F] dark:bg-[#C9A84C] dark:hover:bg-[#B8943E]"
+      <Link
+        href="/calculators"
+        className="mt-5 w-full inline-block rounded-xl border-none bg-[#0F2744] px-4 py-[11px] text-center text-sm font-semibold text-white transition-colors hover:bg-[#1E3A5F] dark:bg-[#C9A84C] dark:hover:bg-[#B8943E]"
       >
         Try Full Calculator →
-      </button>
+      </Link>
 
       {results && (
         <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-xl border border-border bg-card px-4 py-[10px] text-[13px] font-semibold text-foreground shadow-[0_4px_20px_rgba(13,31,53,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.35)]">
