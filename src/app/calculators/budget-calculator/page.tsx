@@ -31,6 +31,7 @@ const DEFAULT_INPUTS: BudgetInputs = {
     entertainment: 0,
     shopping: 0,
     subscriptions: 0,
+    other: 0,
     savings: 0,
     investments: 0,
   }

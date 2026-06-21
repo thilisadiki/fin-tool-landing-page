@@ -17,6 +17,7 @@ export interface BudgetExpenses {
   entertainment: number;
   shopping: number;
   subscriptions: number;
+  other: number;
   
   // Savings
   savings: number;
@@ -72,7 +73,8 @@ export function calculateBudget(inputs: BudgetInputs): BudgetResult {
   const totalWants = 
     expenses.entertainment + 
     expenses.shopping + 
-    expenses.subscriptions;
+    expenses.subscriptions + 
+    expenses.other;
     
   const totalSavings = 
     expenses.savings + 

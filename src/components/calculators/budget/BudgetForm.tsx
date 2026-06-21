@@ -152,7 +152,7 @@ export default function BudgetForm({ inputs, onChange, onCalculate }: BudgetForm
         <SectionHeader 
             title="Wants & Lifestyle (30%)" 
             section="wants" 
-            amount={inputs.expenses.entertainment + inputs.expenses.shopping + inputs.expenses.subscriptions}
+            amount={inputs.expenses.entertainment + inputs.expenses.shopping + inputs.expenses.subscriptions + inputs.expenses.other}
         />
         {expandedSection === 'wants' && (
           <div className="p-4 space-y-4 border border-border rounded-lg animate-in fade-in slide-in-from-top-2">
@@ -174,6 +174,13 @@ export default function BudgetForm({ inputs, onChange, onCalculate }: BudgetForm
               <label className="block text-sm font-medium text-foreground mb-2">Subscriptions (Netflix, Gym, etc) (R)</label>
               <input
                 type="number" min={0} value={inputs.expenses.subscriptions || ''} onChange={handleExpenseChange('subscriptions')} placeholder="e.g. 800"
+                className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Other (R)</label>
+              <input
+                type="number" min={0} value={inputs.expenses.other || ''} onChange={handleExpenseChange('other')} placeholder="e.g. 500"
                 className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               />
             </div>
