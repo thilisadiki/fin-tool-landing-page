@@ -25,7 +25,7 @@ export default function CalculatorHubFilter() {
       <div
         role="tablist"
         aria-label="Filter calculators by goal"
-        className="flex flex-wrap justify-center gap-2 mb-6"
+        className="flex overflow-x-auto no-scrollbar py-1 -mx-2 px-2 gap-2 mb-6 md:flex-wrap md:justify-center md:overflow-x-visible"
       >
         {calculatorGoals.map((group) => {
           const isActive = group.id === active;
@@ -36,7 +36,7 @@ export default function CalculatorHubFilter() {
               type="button"
               aria-selected={isActive}
               onClick={() => setActive(group.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+              className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
                 isActive
                   ? 'bg-[#0F2744] text-white border-[#0F2744] hover:bg-[#1E3A5F]'
                   : 'border-border text-muted-foreground hover:text-foreground hover:border-accent bg-background'
@@ -56,7 +56,7 @@ export default function CalculatorHubFilter() {
         {visible.map((tool) => (
           <article
             key={tool.title}
-            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
+            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-[transform,border-color,box-shadow] duration-300 [@media(hover:hover)]:hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
           >
             <div className="flex-1">
               <div className="mb-4 flex items-center gap-3">

@@ -48,7 +48,7 @@ export default function ChatWidget() {
             >
               <motion.span
                 aria-hidden
-                className="absolute inset-0 rounded-full bg-[#C9A84C]"
+                className="pointer-events-none absolute inset-0 rounded-full bg-[#C9A84C]"
                 animate={{ scale: [1, 1.6], opacity: [0.5, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
               />

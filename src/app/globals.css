@@ -60,9 +60,21 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
+
+/* Hide scrollbars for clean horizontal touch scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
