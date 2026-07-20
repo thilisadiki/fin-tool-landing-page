@@ -26,7 +26,7 @@ const ToolsSection = () => {
         {featuredTools.map((tool) => (
           <article
             key={tool.title}
-            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
+            className="flex h-full flex-col rounded-[20px] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(13,31,53,0.06)] transition-[transform,border-color,box-shadow] duration-300 [@media(hover:hover)]:hover:-translate-y-1 hover:border-[#C8D4E4] hover:shadow-[0_8px_32px_rgba(13,31,53,0.14)] dark:hover:border-[#1A2E44]"
           >
             <div className="flex-1">
               <div className="mb-4 flex items-center gap-3">

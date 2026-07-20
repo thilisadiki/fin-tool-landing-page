@@ -61,6 +61,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
@@ -109,7 +112,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
+          <div className="min-h-screen max-w-full overflow-x-hidden bg-background text-foreground transition-colors duration-500">
             <Toaster />
             <Header />
             <main>{children}</main>

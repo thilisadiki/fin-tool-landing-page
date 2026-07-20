@@ -104,8 +104,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('keydown', handleKey);
       document.removeEventListener('mousedown', handleClickOutside);
-      style.overflow = previousOverflow;
-      toggle?.focus();
+      style.overflow = previousOverflow || '';
     };
   }, [isOpen]);
 
