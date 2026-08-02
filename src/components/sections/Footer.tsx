@@ -95,7 +95,7 @@ const Footer = () => {
 
             <div className="border-t border-border pt-8 text-center">
               <p className="text-muted-foreground">
-                &copy; {new Date().getFullYear()} Quick Money Tool. All Rights Reserved. For estimation purposes only. | Website by <a href="https://thilisadiki.dev" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Jason Sadiki</a>
+                &copy; {new Date().getFullYear()} Quick Money Tool. All Rights Reserved. For estimation purposes only. | Website by <a href="https://thilisadiki.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Jason Sadiki</a>
               </p>
             </div>
           </div>
